@@ -1,0 +1,14 @@
+@media (min-width: 700px) {
+  .site-header { padding: 1.25rem 4rem; }
+  .menu-button { display: none; }
+  .site-navigation { align-items: center; background: transparent; display: flex; gap: 2rem; padding: 0; position: static; }
+  .site-navigation a { font-family: Arial, sans-serif; font-size: .75rem; text-transform: uppercase; }
+  .hero { padding: 9rem 8vw 10rem; }
+  .about-section, .courses-section { padding: 5rem 8vw; }
+  .about-section { grid-template-columns: 1.5fr 1fr; }
+  .student-photo img { height: 15rem; }
+  .course-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-footer { align-items: center; grid-template-columns: 1fr 1fr 1fr; padding: 2.5rem 4rem; }
+  .site-footer p:nth-child(2) { justify-content: center; }
+  .site-footer p:last-child { justify-content: end; }
+}
