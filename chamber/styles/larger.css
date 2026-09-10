@@ -1,0 +1,20 @@
+@media (min-width: 700px) {
+  .site-header { padding: 1.2rem 6vw; }
+  .menu-button { display: none; }
+  .site-navigation { align-items: center; background: transparent; display: flex; gap: 2rem; padding: 0; position: static; }
+  .site-navigation a { font-size: .78rem; text-transform: uppercase; }
+  .page-intro { align-items: end; grid-template-columns: 1.3fr 1fr; padding: 8rem 10vw 6rem; }
+  .intro-copy { justify-self: end; }
+  .directory-section { padding: 4rem 10vw 7rem; }
+  .section-toolbar { align-items: end; display: flex; justify-content: space-between; }
+  .view-controls { flex: 0 0 auto; }
+  .grid-view { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .list-view .member-content { align-items: center; grid-template-columns: 1.2fr 1.5fr 1fr auto; gap: 1.25rem; }
+  .list-view .member-content .membership { grid-column: 1; grid-row: 1; }
+  .list-view .member-content h3 { grid-column: 1; grid-row: 2; }
+  .list-view .member-content address { grid-column: 2; grid-row: 1 / span 2; }
+  .list-view .member-content .member-link { grid-column: 4; grid-row: 1 / span 2; margin-top: 0; }
+  .site-footer { align-items: start; grid-template-columns: 1.5fr .5fr 1fr; padding: 3rem 6vw; }
+  .footer-social { justify-content: center; }
+  .footer-meta { justify-self: end; text-align: right; }
+}

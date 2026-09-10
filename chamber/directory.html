@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore cafes and community partners along Kansanga and Gaba Road in the Kansanga Chamber of Commerce directory.">
+  <meta name="author" content="Dira Luke">
+  <meta property="og:title" content="Food Directory | Kansanga Chamber of Commerce">
+  <meta property="og:description" content="Discover cafes and community partners along Kansanga and Gaba Road.">
+  <meta property="og:image" content="https://lukedira02-boop.github.io/-wdd231/chamber/images/kansanga-mark.svg">
+  <meta property="og:url" content="https://lukedira02-boop.github.io/-wdd231/chamber/directory.html">
+  <meta property="og:type" content="website">
+  <title>Food Directory | Kansanga Chamber of Commerce</title>
+  <link rel="icon" href="images/kansanga-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="directory.html" aria-label="Kansanga Chamber of Commerce home">
+      <img src="images/kansanga-mark.svg" alt="" width="48" height="48">
+      <span><strong>Kansanga</strong><small>Chamber of Commerce</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="directory.html" aria-current="page">Directory</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Connect locally</p>
+        <h1 id="page-title">Business directory</h1>
+      </div>
+      <p class="intro-copy">Meet the food businesses helping Kansanga grow. Browse local members along Gaba Road and find your next meal.</p>
+    </section>
+
+    <section class="directory-section" aria-labelledby="directory-heading">
+      <div class="section-toolbar">
+        <div>
+          <p class="eyebrow">Our members</p>
+          <h2 id="directory-heading">Find your next connection</h2>
+        </div>
+        <div class="view-controls" role="group" aria-label="Choose directory view">
+          <button id="grid-view" class="view-button active" type="button" aria-pressed="true" title="Show members as a grid"><span aria-hidden="true">▦</span><span>Grid</span></button>
+          <button id="list-view" class="view-button" type="button" aria-pressed="false" title="Show members as a list"><span aria-hidden="true">☷</span><span>List</span></button>
+        </div>
+      </div>
+      <p id="directory-status" class="directory-status" aria-live="polite">Loading member directory...</p>
+      <div id="member-directory" class="member-directory grid-view" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="footer-brand" href="directory.html"><img src="images/kansanga-mark.svg" alt="" width="34" height="34"><span>Kansanga Chamber of Commerce</span></a>
+      <p class="footer-address">Kansanga–Gaba Road · Kampala, Uganda<br><a href="mailto:hello@kansangachamber.org">hello@kansangachamber.org</a></p>
+    </div>
+    <div class="footer-social" aria-label="Social media links">
+      <a href="https://www.facebook.com/" aria-label="Facebook">f</a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a>
+      <a href="https://www.instagram.com/" aria-label="Instagram">ig</a>
+    </div>
+    <div class="footer-meta">
+      <p>&copy; <span id="currentyear"></span> Dira Luke | WDD 231</p>
+      <p id="lastModified">Last modified: </p>
+    </div>
+  </footer>
+</body>
+</html>
