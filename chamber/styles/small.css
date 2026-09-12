@@ -43,8 +43,8 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .directory-status { color: var(--muted); font-size: .82rem; margin: 2.2rem 0 1rem; }
 .member-directory { display: grid; gap: 1rem; }
 .member-card { background: var(--surface); border: 1px solid var(--line); display: grid; min-width: 0; }
-.member-image { align-items: center; background: var(--teal); display: flex; justify-content: center; min-height: 10rem; padding: 1.25rem; }
-.member-image img { height: 8rem; object-fit: contain; width: 8rem; }
+.member-image { background: var(--teal); height: 10rem; }
+.member-image img { height: 100%; object-fit: cover; width: 100%; }
 .member-content { padding: 1.25rem; }
 .membership { color: var(--accent-dark); font-size: .68rem; font-weight: 700; letter-spacing: .08em; margin: 0 0 .7rem; text-transform: uppercase; }
 .membership-3 { color: var(--teal); }
