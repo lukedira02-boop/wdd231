@@ -17,4 +17,18 @@
   .site-footer { align-items: start; grid-template-columns: 1.5fr .5fr 1fr; padding: 3rem 6vw; }
   .footer-social { justify-content: center; }
   .footer-meta { justify-self: end; text-align: right; }
+  .home-hero { min-height: 42rem; }
+  .home-hero > img { min-height: 42rem; }
+  .hero-overlay { padding: 4rem 10vw; }
+  .hero-overlay > p:not(.eyebrow) { font-size: 1.15rem; }
+  .home-section { padding: 6rem 10vw; }
+  .events-section { display: grid; gap: 5rem; grid-template-columns: .75fr 1.25fr; }
+  .event-list, .weather-panel, .spotlight-grid { margin-top: 0; }
+  .community-section { align-items: start; display: grid; gap: 5rem; grid-template-columns: .75fr 1.25fr; }
+  .weather-panel { display: grid; gap: 3rem; grid-template-columns: .8fr 1.2fr; }
+  .forecast { margin-top: 0; }
+  .spotlight-section { display: grid; gap: 5rem; grid-template-columns: .75fr 1.25fr; }
+  .spotlight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .spotlight-card { display: block; }
+  .spotlight-card img { height: 10rem; min-height: 0; }
 }
