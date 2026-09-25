@@ -1,0 +1,46 @@
+.discover-intro { background: var(--teal); color: var(--surface); }
+.discover-intro .eyebrow { color: #d7ebe1; }
+.discover-intro .intro-copy { color: #f1f5ed; }
+.discover-section { border-top: 1px solid var(--line); padding: 2.6rem 1.1rem 4.5rem; }
+.discover-heading { display: grid; gap: 1.5rem; }
+.visitor-message { align-self: end; background: #fff1ed; border-left: 4px solid var(--accent); color: var(--ink); font-size: .9rem; margin: 0; padding: .9rem 1rem; }
+.discover-cards { display: grid; gap: 1rem; margin-top: 2rem; }
+.discover-card { background: var(--surface); border: 1px solid var(--line); display: grid; min-width: 0; }
+.discover-card figure { aspect-ratio: 3 / 2; background: var(--teal); margin: 0; overflow: hidden; }
+.discover-card img { height: 100%; object-fit: cover; width: 100%; }
+.discover-card-content { display: flex; flex-direction: column; padding: 1.25rem; }
+.discover-card h2 { font-size: 1.65rem; }
+.discover-card address { color: var(--accent-dark); font-size: .8rem; font-style: normal; font-weight: 700; margin: .8rem 0 .55rem; }
+.discover-card p { color: var(--muted); font-size: .88rem; margin: 0; }
+.discover-button { border: 0; cursor: pointer; margin-top: 1.2rem; }
+@media (min-width: 320px) and (max-width: 640px) {
+  .discover-cards { grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six' 'seven' 'eight'; }
+  .card-1 { grid-area: one; }
+  .card-2 { grid-area: two; }
+  .card-3 { grid-area: three; }
+  .card-4 { grid-area: four; }
+  .card-5 { grid-area: five; }
+  .card-6 { grid-area: six; }
+  .card-7 { grid-area: seven; }
+  .card-8 { grid-area: eight; }
+}
+@media (min-width: 641px) {
+  .discover-section { padding: 4rem 8vw 7rem; }
+  .discover-heading { align-items: end; display: flex; justify-content: space-between; }
+  .visitor-message { max-width: 23rem; }
+  .discover-cards { grid-template-areas: 'one two' 'three four' 'five six' 'seven eight'; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card-1 { grid-area: one; }
+  .card-2 { grid-area: two; }
+  .card-3 { grid-area: three; }
+  .card-4 { grid-area: four; }
+  .card-5 { grid-area: five; }
+  .card-6 { grid-area: six; }
+  .card-7 { grid-area: seven; }
+  .card-8 { grid-area: eight; }
+}
+@media (min-width: 1025px) {
+  .discover-section { padding-left: 10vw; padding-right: 10vw; }
+  .discover-cards { grid-template-areas: 'one one two three' 'four five two three' 'four six seven eight'; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .discover-card:hover img { filter: saturate(1.25) contrast(1.08); transform: scale(1.04); }
+  .discover-card img { transition: filter .25s ease, transform .25s ease; }
+}
