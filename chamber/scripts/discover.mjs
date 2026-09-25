@@ -3,6 +3,8 @@ import { places } from '../data/discover.mjs';
 const cards = document.querySelector('#discover-cards');
 const visitorMessage = document.querySelector('#visitor-message');
 const visitKey = 'kansanga-discover-last-visit';
+const currentYear = document.querySelector('#currentyear');
+const lastModified = document.querySelector('#lastModified');
 
 function getVisitMessage() {
   const now = Date.now();
@@ -30,3 +32,5 @@ function placeCard(place, index) {
 
 visitorMessage.textContent = getVisitMessage();
 cards.innerHTML = places.map(placeCard).join('');
+currentYear.textContent = new Date().getFullYear();
+lastModified.textContent += document.lastModified;
