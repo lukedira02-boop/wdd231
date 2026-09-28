@@ -12,7 +12,7 @@
 .discover-card h2 { font-size: 1.65rem; }
 .discover-card address { color: var(--accent-dark); font-size: .8rem; font-style: normal; font-weight: 700; margin: .8rem 0 .55rem; }
 .discover-card p { color: var(--muted); font-size: .88rem; margin: 0; }
-.discover-button { border: 0; cursor: pointer; margin-top: 1.2rem; }
+.discover-button { background: var(--accent-dark); border: 0; cursor: pointer; margin-top: 1.2rem; }
 @media (min-width: 320px) and (max-width: 640px) {
   .discover-cards { grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six' 'seven' 'eight'; }
   .card-1 { grid-area: one; }

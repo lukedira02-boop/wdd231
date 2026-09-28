@@ -1,50 +1,50 @@
 export const places = [
   {
-    name: 'Gaba Road Grill',
-    address: '63 Gaba Road, Kansanga, Kampala',
-    description: 'Smoky grills, generous portions, and a lively local table make this a familiar stop along Gaba Road.',
+    name: 'Lake Victoria Shoreline',
+    address: 'Ggaba Landing Site, Kampala, Uganda',
+    description: 'The shoreline at Ggaba offers a close look at Lake Victoria, local fishing activity, and the communities built around the water.',
     image: 'lake-victoria-shoreline.webp'
   },
   {
-    name: 'Gaba Food Corner',
-    address: '18 Gaba Road, Kansanga, Kampala',
-    description: 'Comforting local plates and quick lunches served from a friendly neighborhood food business.',
+    name: 'Ggaba Beach',
+    address: 'Ggaba, Kampala, Uganda',
+    description: 'A popular lakeside destination where visitors can enjoy Lake Victoria views, boat trips, and time by the water.',
     image: 'ggaba-beach.webp'
   },
   {
-    name: 'Kansanga Fresh Bites',
-    address: '25 Gaba Road, Kansanga, Kampala',
-    description: 'Fresh bowls, bright flavors, and easy takeaways for busy residents and visiting members.',
+    name: 'Kampala Craft Market',
+    address: 'Buganda Road, Kampala, Uganda',
+    description: 'Browse locally made crafts, textiles, artwork, and souvenirs at this open-air market in central Kampala.',
     image: 'kampala-craft-market.webp'
   },
   {
-    name: 'Pearl Kitchen Uganda',
-    address: '7 Valley Road, Kansanga, Kampala',
-    description: 'Thoughtful Ugandan cooking served with a warm welcome in the heart of the Kansanga community.',
+    name: 'Uganda Museum',
+    address: 'Kira Road, Kampala, Uganda',
+    description: 'Uganda’s national museum presents the country’s cultural heritage, history, music, and natural history collections.',
     image: 'uganda-museum.webp'
   },
   {
-    name: 'Gaba Garden Restaurant',
-    address: '5 Garden Lane, Kansanga, Kampala',
-    description: 'Fresh salads and relaxed garden dining offer a calm place to meet near Gaba Road.',
+    name: 'Ndere Cultural Centre',
+    address: 'Plot 4505, Kira Road, Ntinda, Kampala, Uganda',
+    description: 'Experience Ugandan dance, music, storytelling, and cuisine at this cultural centre in Ntinda.',
     image: 'ndere-cultural-centre.webp'
   },
   {
-    name: 'Kampala Food House',
-    address: '11 Lukuli Road, Kansanga, Kampala',
-    description: 'A welcoming neighborhood kitchen with familiar favorites and something for everyone.',
+    name: 'Bahá’í House of Worship',
+    address: 'Kikaya Hill, off Gayaza Road, Kampala, Uganda',
+    description: 'Set on Kikaya Hill, this landmark temple and its gardens welcome visitors seeking architecture, quiet, and panoramic city views.',
     image: 'bahai-temple.webp'
   },
   {
-    name: 'Kansanga Taste Hub',
-    address: '42 Kansanga Drive, Kampala',
-    description: 'A casual gathering place for pizza, friends, and good stories after a busy day nearby.',
+    name: 'Munyonyo Martyrs’ Shrine',
+    address: 'Munyonyo, Kampala, Uganda',
+    description: 'This Catholic shrine commemorates the Uganda Martyrs and is an important place of pilgrimage on the shores of Lake Victoria.',
     image: 'munyonyo-shrine.webp'
   },
   {
-    name: 'Kampala Food House',
-    address: '11 Lukuli Road, Kansanga, Kampala',
-    description: 'A second view of the neighborhood kitchen from its fuller menu selection and welcoming dining room.',
+    name: 'Kansanga Community Gardens',
+    address: 'Kansanga, Kampala, Uganda',
+    description: 'A neighborhood green space offering residents and visitors a quieter view of community life in the Kansanga area.',
     image: 'kansanga-community-gardens.webp'
   }
 ];

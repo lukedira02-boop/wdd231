@@ -20,7 +20,7 @@ function getVisitMessage() {
 
 function placeCard(place, index) {
   return `<article class="discover-card card-${index + 1}">
-    <figure><img src="images/${place.image}" alt="${place.name}" width="300" height="200" loading="${index < 2 ? 'eager' : 'lazy'}"></figure>
+    <figure><img src="images/${place.image}" alt="${place.name}" width="300" height="200" loading="${index === 0 ? 'eager' : 'lazy'}"></figure>
     <div class="discover-card-content">
       <h2>${place.name}</h2>
       <address>${place.address}</address>
