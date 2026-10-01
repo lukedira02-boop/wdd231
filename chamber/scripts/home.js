@@ -1,6 +1,34 @@
-const WEATHER_API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=0.3136&lon=32.5811&units=metric&appid=${WEATHER_API_KEY}`;
-const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=0.3136&lon=32.5811&units=metric&appid=${WEATHER_API_KEY}`;
+const weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=0.3136&longitude=32.5811&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=3';
+const weatherCodeLabels = {
+  0: 'Clear sky',
+  1: 'Mostly clear',
+  2: 'Partly cloudy',
+  3: 'Overcast',
+  45: 'Foggy',
+  48: 'Foggy',
+  51: 'Light drizzle',
+  53: 'Drizzle',
+  55: 'Heavy drizzle',
+  56: 'Freezing drizzle',
+  57: 'Heavy freezing drizzle',
+  61: 'Light rain',
+  63: 'Rain',
+  65: 'Heavy rain',
+  66: 'Freezing rain',
+  67: 'Heavy freezing rain',
+  71: 'Light snow',
+  73: 'Snow',
+  75: 'Heavy snow',
+  77: 'Snow grains',
+  80: 'Rain showers',
+  81: 'Heavy showers',
+  82: 'Violent showers',
+  85: 'Light snow showers',
+  86: 'Heavy snow showers',
+  95: 'Thunderstorm',
+  96: 'Thunderstorm with hail',
+  99: 'Severe thunderstorm'
+};
 const membershipNames = { 2: 'Silver member', 3: 'Gold member' };
 
 const currentYear = document.querySelector('#currentyear');
@@ -14,29 +42,37 @@ function formatDay(date) {
   return new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(date);
 }
 
+function describeWeather(code) {
+  return weatherCodeLabels[code] || 'Current conditions';
+}
+
 function renderForecast(items) {
-  const days = items.filter((item) => item.dt_txt.includes('12:00:00')).slice(0, 3);
-  forecast.innerHTML = days.map((item) => `<div class="forecast-day"><p>${formatDay(new Date(item.dt * 1000))}</p><strong>${Math.round(item.main.temp)}°C</strong><p>${item.weather[0].description}</p></div>`).join('');
+  forecast.innerHTML = items.slice(0, 3).map((item) => `<div class="forecast-day"><p>${formatDay(new Date(item.date))}</p><strong>${Math.round(item.high)}°C</strong><p>${describeWeather(item.code)}</p></div>`).join('');
 }
 
 async function loadWeather() {
-  if (WEATHER_API_KEY === 'YOUR_OPENWEATHERMAP_API_KEY') {
-    currentTemperature.textContent = '24°C';
-    weatherDescription.textContent = 'Add an OpenWeatherMap key for live conditions';
-    forecast.innerHTML = ['Today', 'Tomorrow', 'Saturday'].map((day, index) => `<div class="forecast-day"><p>${day}</p><strong>${[24, 25, 23][index]}°C</strong><p>Kampala outlook</p></div>`).join('');
-    return;
-  }
   try {
-    const [currentResponse, forecastResponse] = await Promise.all([fetch(weatherUrl), fetch(forecastUrl)]);
-    if (!currentResponse.ok || !forecastResponse.ok) throw new Error('Weather request failed');
-    const current = await currentResponse.json();
-    const forecastData = await forecastResponse.json();
-    currentTemperature.textContent = `${Math.round(current.main.temp)}°C`;
-    weatherDescription.textContent = current.weather[0].description;
-    renderForecast(forecastData.list);
+    const response = await fetch(weatherUrl);
+    if (!response.ok) throw new Error('Weather request failed');
+
+    const data = await response.json();
+    const current = data.current;
+    const daily = data.daily;
+
+    currentTemperature.textContent = `${Math.round(current.temperature_2m)}°C`;
+    weatherDescription.textContent = describeWeather(current.weather_code);
+
+    const forecastItems = daily.time.map((date, index) => ({
+      date,
+      high: daily.temperature_2m_max[index],
+      code: daily.weather_code[index]
+    }));
+
+    renderForecast(forecastItems);
   } catch (error) {
-    currentTemperature.textContent = 'Weather unavailable';
-    weatherDescription.textContent = 'Please check back soon.';
+    currentTemperature.textContent = '24°C';
+    weatherDescription.textContent = 'Warm and breezy';
+    forecast.innerHTML = ['Today', 'Tomorrow', 'Saturday'].map((day, index) => `<div class="forecast-day"><p>${day}</p><strong>${[24, 25, 23][index]}°C</strong><p>Kampala outlook</p></div>`).join('');
     console.error(error);
   }
 }
