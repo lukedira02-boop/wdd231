@@ -14,18 +14,192 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
   <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/join.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Kansanga Chamber of Commerce home"><img src="images/kansanga-mark.svg" alt="" width="48" height="48"><span><strong>Kansanga</strong><small>Chamber of Commerce</small></span></a>
+    <a class="brand" href="index.html" aria-label="Kansanga Chamber of Commerce home">
+      <img src="images/kansanga-mark.svg" alt="" width="48" height="48">
+      <span><strong>Kansanga</strong><small>Chamber of Commerce</small></span>
+    </a>
     <button class="menu-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true">☰</span></button>
-    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="directory.html">Directory</a><a href="discover.html">Discover</a><a href="index.html#events">Events</a><a href="index.html#contact">Contact</a></nav>
+    <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="discover.html">Discover</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="active" href="join.html" aria-current="page">Join</a>
+    </nav>
   </header>
-  <main>
-    <section class="page-intro" aria-labelledby="page-title"><div><p class="eyebrow">Become a member</p><h1 id="page-title">Join the chamber.</h1></div><p class="intro-copy">Add your voice to the businesses building a more connected Kansanga.</p></section>
-    <section class="directory-section" aria-labelledby="next-step-heading"><p class="eyebrow">Next step</p><h2 id="next-step-heading">Membership registration is opening soon.</h2><p class="intro-copy">Email <a href="mailto:hello@kansangachamber.org">hello@kansangachamber.org</a> to start a conversation with the chamber team.</p></section>
+
+  <main class="join-page">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Become a member</p>
+        <h1 id="page-title">Join the chamber.</h1>
+      </div>
+      <p class="intro-copy">Add your voice to the businesses building a more connected Kansanga and raise the visibility of your brand locally.</p>
+    </section>
+
+    <section class="join-layout" aria-label="Membership application details">
+      <div class="join-form-card">
+        <div class="card-header">
+          <p class="eyebrow">Membership form</p>
+          <h2>Tell us about your business.</h2>
+        </div>
+
+        <form id="membership-form" method="get" action="thankyou.html">
+          <div class="field-row">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first-name" type="text" required>
+          </div>
+
+          <div class="field-row">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="last-name" type="text" required>
+          </div>
+
+          <div class="field-row">
+            <label for="business-name">Business name</label>
+            <input id="business-name" name="business-name" type="text" required>
+          </div>
+
+          <div class="field-row">
+            <label for="title">Job title</label>
+            <input id="title" name="title" type="text" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required>
+          </div>
+
+          <div class="field-row">
+            <label for="email">Business email</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required>
+          </div>
+
+          <div class="field-row">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+
+          <div class="field-row">
+            <label for="application-date">Application date</label>
+            <input id="application-date" name="application-date" type="date" required>
+          </div>
+
+          <div class="field-row">
+            <label for="business-description">Business description</label>
+            <textarea id="business-description" name="business-description" rows="4" required></textarea>
+          </div>
+
+          <fieldset class="membership-options">
+            <legend>Membership level</legend>
+
+            <div class="membership-option">
+              <label class="option-card">
+                <input type="radio" name="membership" value="np" checked>
+                <span class="option-copy">
+                  <span class="option-header"><strong>NP Membership</strong><em>$0 / year</em></span>
+                  <span>For non-profit organizations and community groups.</span>
+                </span>
+              </label>
+              <button class="detail-button" type="button" data-membership="np">View benefits</button>
+            </div>
+
+            <div class="membership-option">
+              <label class="option-card">
+                <input type="radio" name="membership" value="bronze">
+                <span class="option-copy">
+                  <span class="option-header"><strong>Bronze Membership</strong><em>$250 / year</em></span>
+                  <span>Perfect for new businesses growing a local customer base.</span>
+                </span>
+              </label>
+              <button class="detail-button" type="button" data-membership="bronze">View benefits</button>
+            </div>
+
+            <div class="membership-option">
+              <label class="option-card">
+                <input type="radio" name="membership" value="silver">
+                <span class="option-copy">
+                  <span class="option-header"><strong>Silver Membership</strong><em>$500 / year</em></span>
+                  <span>For established businesses wanting more visibility and events.</span>
+                </span>
+              </label>
+              <button class="detail-button" type="button" data-membership="silver">View benefits</button>
+            </div>
+
+            <div class="membership-option">
+              <label class="option-card">
+                <input type="radio" name="membership" value="gold">
+                <span class="option-copy">
+                  <span class="option-header"><strong>Gold Membership</strong><em>$1,000 / year</em></span>
+                  <span>Top-tier visibility with premium networking and spotlight access.</span>
+                </span>
+              </label>
+              <button class="detail-button" type="button" data-membership="gold">View benefits</button>
+            </div>
+          </fieldset>
+
+          <input id="timestamp" name="timestamp" type="hidden">
+
+          <div class="form-actions">
+            <button class="button-link" type="submit">Apply now</button>
+            <button class="secondary-button" type="reset">Clear form</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="join-sidebar" aria-label="Membership benefits and pricing overview">
+        <div class="benefits-card">
+          <p class="eyebrow">Why join</p>
+          <h2>Member benefits.</h2>
+          <ul class="benefit-list">
+            <li>Featured placement in the chamber directory</li>
+            <li>Invitations to member breakfasts and monthly meetups</li>
+            <li>Access to local market insights and community updates</li>
+            <li>Networking opportunities with nearby businesses and leaders</li>
+          </ul>
+        </div>
+
+        <div class="price-card" aria-live="polite">
+          <p class="eyebrow">Selected plan</p>
+          <h3 id="selected-plan">NP Membership</h3>
+          <p id="selected-price" class="selected-price">$0 / year</p>
+          <p>Includes access to chamber events, directory listing, and monthly neighborhood briefings.</p>
+        </div>
+      </aside>
+    </section>
+
+    <dialog id="membership-dialog" class="membership-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">Membership details</p>
+          <h2 id="dialog-title">Membership benefits</h2>
+        </div>
+        <button class="dialog-close" type="button" aria-label="Close membership details">×</button>
+      </div>
+      <p id="dialog-price" class="selected-price"></p>
+      <ul id="dialog-benefits" class="benefit-list"></ul>
+    </dialog>
   </main>
-  <footer class="site-footer" id="contact"><div><a class="footer-brand" href="index.html"><img src="images/kansanga-mark.svg" alt="" width="34" height="34"><span>Kansanga Chamber of Commerce</span></a><p class="footer-address">Kansanga–Gaba Road · Kampala, Uganda</p></div><div class="footer-meta"><p>&copy; <span id="currentyear"></span> Dira Luke | WDD 231</p><p id="lastModified">Last modified: </p></div></footer>
-  <script>document.querySelector('#currentyear').textContent = new Date().getFullYear(); document.querySelector('#lastModified').textContent += document.lastModified;</script>
+
+  <footer class="site-footer" id="contact">
+    <div>
+      <a class="footer-brand" href="index.html"><img src="images/kansanga-mark.svg" alt="" width="34" height="34"><span>Kansanga Chamber of Commerce</span></a>
+      <p class="footer-address">Kansanga–Gaba Road · Kampala, Uganda<br><a href="mailto:hello@kansangachamber.org">hello@kansangachamber.org</a></p>
+    </div>
+    <div class="footer-social" role="group" aria-label="Social media links">
+      <a href="https://www.facebook.com/" aria-label="Facebook">f</a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a>
+      <a href="https://www.instagram.com/" aria-label="Instagram">ig</a>
+    </div>
+    <div class="footer-meta">
+      <p>&copy; <span id="currentyear"></span> Dira Luke | WDD 231</p>
+      <p id="lastModified">Last modified: </p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('#currentyear').textContent = new Date().getFullYear();
+    document.querySelector('#lastModified').textContent += document.lastModified;
+  </script>
 </body>
 </html>
