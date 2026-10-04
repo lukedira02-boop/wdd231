@@ -12,11 +12,11 @@ const fields = [
   ['First name', 'first-name'],
   ['Last name', 'last-name'],
   ['Job title', 'title'],
-  ['Business name', 'business-name'],
+  ['Organization name', 'organization-name'],
   ['Email', 'email'],
   ['Phone', 'phone'],
   ['Application date', 'application-date'],
-  ['Business description', 'business-description'],
+  ['Organization description', 'organization-description'],
   ['Membership level', 'membership'],
   ['Submitted at', 'timestamp'],
 ];

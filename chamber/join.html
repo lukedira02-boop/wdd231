@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join the Kansanga Chamber of Commerce and connect with local businesses.">
+  <meta name="description" content="Explore membership levels, compare chamber benefits, and apply to join local Kansanga businesses through the Kansanga Chamber of Commerce.">
   <meta name="author" content="Dira Luke">
+  <meta property="og:title" content="Join the Kansanga Chamber of Commerce Today">
+  <meta property="og:description" content="Explore membership levels, compare chamber benefits, and apply to join Kansanga's local business community. Find the right plan for your organization.">
+  <meta property="og:image" content="https://lukedira02-boop.github.io/wdd231/chamber/images/kansanga-mark.png">
+  <meta property="og:url" content="https://lukedira02-boop.github.io/wdd231/chamber/join.html">
+  <meta property="og:type" content="website">
   <title>Join the Chamber | Kansanga Chamber of Commerce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +19,7 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
   <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/footer.js" defer></script>
   <script src="scripts/join.js" defer></script>
 </head>
 <body>
@@ -52,32 +58,32 @@
         <form id="membership-form" method="get" action="thankyou.html">
           <div class="field-row">
             <label for="first-name">First name</label>
-            <input id="first-name" name="first-name" type="text" required>
+            <input id="first-name" name="first-name" type="text" autocomplete="given-name" required>
           </div>
 
           <div class="field-row">
             <label for="last-name">Last name</label>
-            <input id="last-name" name="last-name" type="text" required>
+            <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
           </div>
 
           <div class="field-row">
-            <label for="business-name">Business name</label>
-            <input id="business-name" name="business-name" type="text" required>
+            <label for="organization-name">Organization name</label>
+            <input id="organization-name" name="organization-name" type="text" autocomplete="organization" required>
           </div>
 
           <div class="field-row">
-            <label for="title">Job title</label>
-            <input id="title" name="title" type="text" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required>
+            <label for="title">Organization title</label>
+            <input id="title" name="title" type="text" autocomplete="organization-title" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required>
           </div>
 
           <div class="field-row">
-            <label for="email">Business email</label>
-            <input id="email" name="email" type="email" placeholder="name@example.com" required>
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" title="Enter a valid email address, such as name@example.com." required>
           </div>
 
           <div class="field-row">
-            <label for="phone">Phone number</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+            <label for="phone">Mobile phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" title="Enter a mobile phone number where the chamber can reach you." required>
           </div>
 
           <div class="field-row">
@@ -86,8 +92,8 @@
           </div>
 
           <div class="field-row">
-            <label for="business-description">Business description</label>
-            <textarea id="business-description" name="business-description" rows="4" required></textarea>
+            <label for="organization-description">Organization description</label>
+            <textarea id="organization-description" name="organization-description" rows="4" title="Describe your organization's products, services, or mission." required></textarea>
           </div>
 
           <fieldset class="membership-options">
@@ -197,9 +203,5 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelector('#currentyear').textContent = new Date().getFullYear();
-    document.querySelector('#lastModified').textContent += document.lastModified;
-  </script>
 </body>
 </html>

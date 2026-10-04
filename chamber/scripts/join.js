@@ -62,6 +62,7 @@ function showMembershipDetails(level) {
 }
 
 if (applicationDate) applicationDate.value = getLocalDate();
+if (timestamp) timestamp.value = new Date().toISOString();
 
 membershipOptions.forEach((option) => {
   option.addEventListener('change', updatePlanSummary);
@@ -84,6 +85,7 @@ form?.addEventListener('reset', () => {
   window.setTimeout(() => {
     updatePlanSummary();
     if (applicationDate) applicationDate.value = getLocalDate();
+    if (timestamp) timestamp.value = new Date().toISOString();
   });
 });
 

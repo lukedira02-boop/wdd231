@@ -74,8 +74,8 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .hero-overlay .eyebrow { color: #ffd4bd; }
 .hero-overlay h1 { font-size: clamp(3rem, 14vw, 6.5rem); max-width: 9ch; }
 .hero-overlay > p:not(.eyebrow) { font-size: 1.05rem; margin: 1.25rem 0 1.6rem; max-width: 27rem; }
-.button-link { align-items: center; background: var(--accent); border: 0; color: #fff; cursor: pointer; display: inline-flex; font-size: .78rem; font-weight: 700; gap: .55rem; padding: .9rem 1.1rem; text-decoration: none; text-transform: uppercase; width: fit-content; }
-.button-link:hover { background: var(--accent-dark); }
+.button-link { align-items: center; background: var(--accent-dark); border: 0; color: #fff; cursor: pointer; display: inline-flex; font-size: .78rem; font-weight: 700; gap: .55rem; padding: .9rem 1.1rem; text-decoration: none; text-transform: uppercase; width: fit-content; }
+.button-link:hover { background: var(--ink); }
 .secondary-button { background: transparent; border: 1px solid var(--line); color: var(--ink); cursor: pointer; font-size: .78rem; font-weight: 700; padding: .9rem 1.1rem; text-transform: uppercase; }
 .home-section { border-top: 1px solid var(--line); padding: 3rem 1.1rem; }
 .join-page { padding-bottom: 1rem; }
@@ -106,7 +106,7 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .benefits-card, .price-card { padding: 1.4rem 1.1rem; }
 .benefits-card h2, .price-card h3 { font-size: clamp(1.8rem, 5vw, 2.4rem); margin-top: .5rem; }
 .benefit-list { color: var(--muted); display: grid; gap: .75rem; list-style: none; margin: 1.2rem 0 0; padding: 0; }
-.benefit-list li { background: rgba(47,111,109,.06); border-left: 3px solid var(--teal); padding: .75rem .8rem; }
+.benefit-list li { background: var(--paper); border-left: 3px solid var(--teal); padding: .75rem .8rem; }
 .selected-price { color: var(--accent-dark); font-size: 1.4rem; font-weight: 700; margin: .5rem 0; }
 .price-card p:last-child { color: var(--muted); margin-top: .6rem; }
 .membership-dialog { background: var(--surface); border: 1px solid var(--line); color: var(--ink); max-height: min(80vh, 36rem); margin: auto; max-width: min(34rem, calc(100vw - 2rem)); padding: 1.5rem; width: 100%; }
@@ -120,7 +120,7 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .application-details { display: grid; gap: .25rem 1rem; grid-template-columns: 1fr; margin: 0 0 2rem; max-width: 48rem; }
 .application-details dt { color: var(--accent-dark); font-size: .75rem; font-weight: 700; letter-spacing: .05em; margin-top: .75rem; text-transform: uppercase; }
 .application-details dd { background: var(--surface); border: 1px solid var(--line); margin: 0; overflow-wrap: anywhere; padding: .75rem .9rem; white-space: pre-wrap; }
-.home-section { border-top: 1px solid var(--line); padding: 3rem 1.1rem; }
+
 .section-heading h2 { max-width: 13ch; }
 .event-list { margin-top: 2rem; }
 .event-item { align-items: center; border-top: 1px solid var(--line); display: grid; gap: 1rem; grid-template-columns: 3.2rem 1fr auto; padding: 1.2rem 0; }
