@@ -16,8 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="images/kansanga-mark.png" type="image/png">
   <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/small.css?v=7e7c129">
-  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/small.css?v=accessible-labels">
+  <link rel="stylesheet" href="styles/larger.css?v=accessible-labels">
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/footer.js" defer></script>
   <script src="scripts/join.js?v=7e7c129" defer></script>
@@ -57,43 +57,35 @@
 
         <form method="get" action="thankyou.html">
           <div class="field-row">
-            <label>First name</label>
-            <input name="first-name" type="text" autocomplete="given-name" title="Enter your first name." required>
+            <label><span>First name</span><input name="first-name" type="text" autocomplete="given-name" title="Enter your first name." required></label>
           </div>
 
           <div class="field-row">
-            <label>Last name</label>
-            <input name="last-name" type="text" autocomplete="family-name" title="Enter your last name." required>
+            <label><span>Last name</span><input name="last-name" type="text" autocomplete="family-name" title="Enter your last name." required></label>
           </div>
 
           <div class="field-row">
-            <label>Organization name</label>
-            <input name="organization-name" type="text" autocomplete="organization" title="Enter the full name of your organization." required>
+            <label><span>Organization name</span><input name="organization-name" type="text" autocomplete="organization" title="Enter the full name of your organization." required></label>
           </div>
 
           <div class="field-row">
-            <label>Organization title</label>
-            <input name="title" type="text" autocomplete="organization-title" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required>
+            <label><span>Organization title</span><input name="title" type="text" autocomplete="organization-title" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required></label>
           </div>
 
           <div class="field-row">
-            <label>Email address</label>
-            <input name="email" type="email" autocomplete="email" placeholder="name@example.com" title="Enter a valid email address, such as name@example.com." required>
+            <label><span>Email address</span><input name="email" type="email" autocomplete="email" placeholder="name@example.com" title="Enter a valid email address, such as name@example.com." required></label>
           </div>
 
           <div class="field-row">
-            <label>Mobile phone</label>
-            <input name="phone" type="tel" autocomplete="tel" title="Enter a mobile phone number where the chamber can reach you." required>
+            <label><span>Mobile phone</span><input name="phone" type="tel" autocomplete="tel" title="Enter a mobile phone number where the chamber can reach you." required></label>
           </div>
 
           <div class="field-row">
-            <label>Application date</label>
-            <input name="application-date" type="date" required>
+            <label><span>Application date</span><input name="application-date" type="date" required></label>
           </div>
 
           <div class="field-row">
-            <label>Organization description</label>
-            <textarea name="organization-description" rows="4" title="Describe your organization's products, services, or mission." required></textarea>
+            <label><span>Organization description</span><textarea name="organization-description" rows="4" title="Describe your organization's products, services, or mission." required></textarea></label>
           </div>
 
           <fieldset class="membership-options">

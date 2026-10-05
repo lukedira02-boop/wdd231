@@ -87,8 +87,9 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .card-header h2, .benefits-card h2, .price-card h3 { font-family: var(--serif); font-weight: 400; }
 .card-header h2 { font-size: clamp(1.8rem, 5vw, 2.6rem); }
 form { display: grid; gap: 1.1rem; }
-.field-row { display: grid; gap: .45rem; }
-.field-row label, .membership-options legend { color: var(--ink); font-size: .8rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+.field-row { display: grid; }
+.field-row label { display: grid; gap: .45rem; }
+.field-row label > span, .membership-options legend { color: var(--ink); font-size: .8rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
 .field-row input, .field-row textarea { background: #fff; border: 1px solid var(--line); color: var(--ink); font: inherit; padding: .8rem .9rem; }
 .field-row input:focus, .field-row textarea:focus { border-color: var(--accent); outline: 2px solid rgba(217,93,57,.2); }
 .footer-social svg { display: block; fill: currentColor; height: 1rem; width: 1rem; }
