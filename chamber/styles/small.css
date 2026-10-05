@@ -1,3 +1,4 @@
+* { box-sizing: border-box; }
 :root {
   --ink: #172121;
   --muted: #5f6967;
@@ -14,7 +15,7 @@
   font-family: var(--sans);
   line-height: 1.5;
 }
-body { background: var(--paper); }
+body { background: var(--paper); overflow-x: hidden; }
 a { color: inherit; }
 .site-header { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: .9rem 1.1rem; position: relative; }
 .brand, .footer-brand { align-items: center; display: inline-flex; gap: .65rem; text-decoration: none; }
@@ -66,7 +67,7 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .footer-address { line-height: 1.7; margin: 1rem 0 0; }
 .footer-address a { color: var(--accent-dark); }
 .footer-social { display: flex; gap: .6rem; }
-.footer-social a { align-items: center; border: 1px solid var(--line); display: inline-flex; font-size: .75rem; font-weight: 700; height: 2.25rem; justify-content: center; text-decoration: none; width: 2.25rem; }
+.footer-social a { align-items: center; border: 1px solid var(--line); color: var(--ink); display: inline-flex; font-size: .75rem; font-weight: 700; height: 2.25rem; justify-content: center; text-decoration: none; width: 2.25rem; }
 .footer-meta p { margin: .35rem 0; }
 .home-hero { min-height: 32rem; overflow: hidden; position: relative; }
 .home-hero > img { height: 100%; min-height: 32rem; object-fit: cover; width: 100%; }
@@ -85,11 +86,12 @@ h2 { font-size: clamp(2rem, 8vw, 3.5rem); }
 .card-header { margin-bottom: 1.5rem; }
 .card-header h2, .benefits-card h2, .price-card h3 { font-family: var(--serif); font-weight: 400; }
 .card-header h2 { font-size: clamp(1.8rem, 5vw, 2.6rem); }
-#membership-form { display: grid; gap: 1.1rem; }
+form { display: grid; gap: 1.1rem; }
 .field-row { display: grid; gap: .45rem; }
 .field-row label, .membership-options legend { color: var(--ink); font-size: .8rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
 .field-row input, .field-row textarea { background: #fff; border: 1px solid var(--line); color: var(--ink); font: inherit; padding: .8rem .9rem; }
 .field-row input:focus, .field-row textarea:focus { border-color: var(--accent); outline: 2px solid rgba(217,93,57,.2); }
+.footer-social svg { display: block; fill: currentColor; height: 1rem; width: 1rem; }
 .membership-options { border: 0; display: grid; gap: .8rem; margin: 0; padding: 0; }
 .membership-option { display: grid; gap: .4rem; }
 .option-card { background: #fff; border: 1px solid var(--line); cursor: pointer; display: flex; gap: .85rem; padding: .85rem .9rem; position: relative; }

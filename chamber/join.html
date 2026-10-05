@@ -33,9 +33,9 @@
       <a href="index.html">Home</a>
       <a href="directory.html">Directory</a>
       <a href="discover.html">Discover</a>
-      <a href="index.html#events">Events</a>
-      <a href="index.html#contact">Contact</a>
       <a class="active" href="join.html" aria-current="page">Join</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -55,45 +55,45 @@
           <h2>Tell us about your business.</h2>
         </div>
 
-        <form id="membership-form" method="get" action="thankyou.html">
+        <form method="get" action="thankyou.html">
           <div class="field-row">
-            <label for="first-name">First name</label>
-            <input id="first-name" name="first-name" type="text" autocomplete="given-name" title="Enter your first name." required>
+            <label>First name</label>
+            <input name="first-name" type="text" autocomplete="given-name" title="Enter your first name." required>
           </div>
 
           <div class="field-row">
-            <label for="last-name">Last name</label>
-            <input id="last-name" name="last-name" type="text" autocomplete="family-name" title="Enter your last name." required>
+            <label>Last name</label>
+            <input name="last-name" type="text" autocomplete="family-name" title="Enter your last name." required>
           </div>
 
           <div class="field-row">
-            <label for="organization-name">Organization name</label>
-            <input id="organization-name" name="organization-name" type="text" autocomplete="organization" title="Enter the full name of your organization." required>
+            <label>Organization name</label>
+            <input name="organization-name" type="text" autocomplete="organization" title="Enter the full name of your organization." required>
           </div>
 
           <div class="field-row">
-            <label for="title">Organization title</label>
-            <input id="title" name="title" type="text" autocomplete="organization-title" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required>
+            <label>Organization title</label>
+            <input name="title" type="text" autocomplete="organization-title" minlength="7" pattern="[\p{L}\p{N}\s\x2d]{7,}" title="Use at least 7 letters, numbers, spaces, or hyphens." required>
           </div>
 
           <div class="field-row">
-            <label for="email">Email address</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" title="Enter a valid email address, such as name@example.com." required>
+            <label>Email address</label>
+            <input name="email" type="email" autocomplete="email" placeholder="name@example.com" title="Enter a valid email address, such as name@example.com." required>
           </div>
 
           <div class="field-row">
-            <label for="phone">Mobile phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" title="Enter a mobile phone number where the chamber can reach you." required>
+            <label>Mobile phone</label>
+            <input name="phone" type="tel" autocomplete="tel" title="Enter a mobile phone number where the chamber can reach you." required>
           </div>
 
           <div class="field-row">
-            <label for="application-date">Application date</label>
-            <input id="application-date" name="application-date" type="date" required>
+            <label>Application date</label>
+            <input name="application-date" type="date" required>
           </div>
 
           <div class="field-row">
-            <label for="organization-description">Organization description</label>
-            <textarea id="organization-description" name="organization-description" rows="4" title="Describe your organization's products, services, or mission." required></textarea>
+            <label>Organization description</label>
+            <textarea name="organization-description" rows="4" title="Describe your organization's products, services, or mission." required></textarea>
           </div>
 
           <fieldset class="membership-options">
@@ -148,7 +148,6 @@
 
           <div class="form-actions">
             <button class="button-link" type="submit">Apply now</button>
-            <button class="secondary-button" type="reset">Clear form</button>
           </div>
         </form>
       </div>
@@ -193,9 +192,15 @@
       <p class="footer-address">Kansanga–Gaba Road · Kampala, Uganda<br><a href="mailto:hello@kansangachamber.org">hello@kansangachamber.org</a></p>
     </div>
     <div class="footer-social" role="group" aria-label="Social media links">
-      <a href="https://www.facebook.com/" aria-label="Facebook">f</a>
-      <a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a>
-      <a href="https://www.instagram.com/" aria-label="Instagram">ig</a>
+      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-8h2.7l.4-3h-3.1V7.2c0-.9.3-1.5 1.6-1.5H16V2.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.5v3h2.3v8h3.7Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.9 8.8A1.8 1.8 0 1 1 6.9 5a1.8 1.8 0 0 1 0 3.8ZM5.2 9.8h3.4V18H5.2V9.8Zm5.7 0h3.2v1.1h.1c.4-.9 1.5-1.8 3.2-1.8 3.4 0 4 2.2 4 5.1V18h-3.4v-16.8h3.4v1.1c.8-1.4 2.5-2.8 5.2-2.8 5.6 0 6.6 3.7 6.6 8.4V18h-3.4v-16.8h3.4v1.1c.8-1.4 2.7-3 5.8-3 3.7 0 6.4 2.4 6.4 7.3V18h-3.4v-16.8h3.4v1.1c.8-1.4 2.5-2.8 5.2-2.8 5.6 0 6.6 3.7 6.6 8.4V18h-3.4v-16.8h3.4v1.1c.8-1.4 2.7-3 5.8-3 3.7 0 6.4 2.4 6.4 7.3V18H36.6v-9.4c0-3-1.4-4.8-4-4.8-2.1 0-3.4 1.1-3.9 2.2h-.1v-1.9h-3.3v12.2Z" transform="translate(-5 -2) scale(.85)"/></svg>
+      </a>
+      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Zm5-3.2a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 17 6Z"/></svg>
+      </a>
     </div>
     <div class="footer-meta">
       <p>&copy; <span id="currentyear"></span> Dira Luke | WDD 231</p>

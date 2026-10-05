@@ -1,4 +1,4 @@
-const form = document.querySelector('#membership-form');
+const form = document.querySelector('form[method="get"][action="thankyou.html"]');
 const timestamp = document.querySelector('#timestamp');
 const applicationDate = document.querySelector('#application-date');
 const planTitle = document.querySelector('#selected-plan');
