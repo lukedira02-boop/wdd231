@@ -165,7 +165,7 @@ clearFiltersButton.addEventListener("click", () => {
 
 async function loadDishes() {
   try {
-    const response = await fetch("./foods.json");
+    const response = await fetch("../foods.json");
     if (!response.ok) throw new Error(`Dish data request failed (${response.status})`);
     const data = await response.json();
     if (!Array.isArray(data)) throw new Error("Dish data must be a list");
