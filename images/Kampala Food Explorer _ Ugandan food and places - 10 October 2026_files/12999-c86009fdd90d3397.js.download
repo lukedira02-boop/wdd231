@@ -1,0 +1,62 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="9c2ba360-ca75-4da5-b3d9-2e2d093e080f",e._sentryDebugIdIdentifier="sentry-dbid-9c2ba360-ca75-4da5-b3d9-2e2d093e080f")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[12999],{539058(e,t,a){var n,i=((n=i||{}).BILLING_EMAIL_NOTIFS="billingEmailNotifications",n.COMPANY_DOMAIN_DEFAULT="companyDomainDefault",n.CONTENT_ACCESS_AND_VIEWING="contentAccessAndViewing",n.CONTENT_PRIVACY_RESTRICTIONS="contentPrivacyRestrictions",n.CREATOR_LITE_LIMIT_ENFORCED="creatorLiteLimitEnforced",n.CREATORS_TOP_INVITE_ROLE="creatorsTopInviteRole",n.CUSTOM_ROLE_UPGRADE_MESSAGE="customRoleUpgradeMessage",n.DATA_RETENTION="dataRetention",n.DOMAIN_CAPTURE="domainCapture",n.DATE_ELIGIBLE_FOR_DELETION="dateEligibileForDeletion",n.DOWNLOADS_DISABLED="downloadsDisabled",n.GOOGLE_CONTACT_SYNC="googleContactSync",n.PAYMENT_METHODS_DRIFT="paymentMethodsDrift",n.MANAGED_WORKSPACE_EXP_NET_NEW_MANAGED_REVERSE_TRIAL="managedWorkspaceExpNetNewManagedReverseTrial",n.STARTER_VIDEO_LIMIT_COHORT="starterVideoLimitCohort",n.HAS_CREATOR_LITE="hasCreatorLite",n.LINK_EXPIRATION="linkExpiration",n.LINK_EXPIRATION_EXEMPT_GROUPS_ENABLED="linkExpirationExemptGroupsEnabled",n.MANUAL_SKIP_COMMUNICATION_FLAGS="manualSkipCommunicationFlags",n.MEETING_RECORDINGS_DISABLED="meetingRecordingsDisabled",n.MEMBER_INVITATION_ALLOWED="memberInvitationAllowed",n.MISSING_ACTIVE_SUBSCRIPTION_REMEDIATION="missingActiveSubscriptionRemediation",n.PNP_CREATOR_LITE_DOWNLOAD_UPDATE="pnpCreatorLiteDownloadUpdate",n.PNP_FILLER_WORD_V1_UPDATE="pnpFillerWordV1Update",n.PRIVATE_CONTENT_DEFAULT="privateContentDefault",n.PRIVATE_CONTENT_DEFAULT_V2="privateContentDefaultV2",n.PRIVATE_VIDEO_PREVIEW="showVideoPreview",n.SALESFORCE_VIDEO_DEFAULTS_FOR_GROUPS="salesforceVideoDefaultsForGroups",n.SCIM="scim",n.SCIM_PROVISIONING_EMAILS_DISABLED="scimProvisioningEmailsDisabled",n.SCIM_TOS="scimToS",n.SCIM_USERS_PENDING_ACTION="scimUsersPendingAction",n.SETTINGS_POPULATED="settingsPopulated",n.SLACK_CONTACT_SYNC="slackContactSync",n.SLACK_PRIVATE_VIDEO_PREVIEW="slackPrivateVideoPreview",n.MS_TEAMS_PRIVATE_VIDEO_PREVIEW="msTeamsPrivateVideoPreview",n.SSO_ENFORCEMENT="ssoEnforcement",n.USER_DEPROVISIONING="userDeprovisioning",n.WORKOS="workos",n.WORKSPACE_AUTOJOIN="workspaceAutojoin",n.WORKSPACE_DOMAIN_JOIN_INFO="workspaceDomainJoinInfo",n.WORKSPACE_PERSONA="workspacePersona",n.ZOOM_CONTENT_DEFAULT="zoomContentDefault",n.ZOOM_INGESTION_USER_DEFAULT="zoomIngestionUserDefault",n.ZOOM_INTEGRATION="zoomIntegration",n.ALLOWS_AI="allowsAI",n.ALLOWS_AMN="allowsAMN",n.MEETING_RECORDING_LANGUAGE="meetingRecordingLanguage",n.HIDE_VIEWER_ROLE="hideViewerRole",n.CONTENT_DELETION_PROGRESS="contentDeletionProgress",n.ENABLE_AUTO_USER_MIGRATION="enableAutoUserMigration",n.CONTENT_EXPORT="contentExport",n.REQUIRES_TAX_ID_OR_ADDRESS_CHANGE="requiresTaxIdOrAddressChange",n.ATLASSIAN_SEARCH_BACKFILL_USER="atlassianSearchBackfillUser",n.ATLASSIAN_SEARCH_BACKFILL_GROUP="atlassianSearchBackfillGroup",n.ATLASSIAN_SEARCH_BACKFILL_GROUP_MEMBERSHIP="atlassianSearchBackfillGroupMembership",n.ATLASSIAN_SEARCH_BACKFILL_VIDEO="atlassianSearchBackfillVideo",n.ATLASSIAN_SEARCH_BACKFILL_COMPLETE_SITE="atlassianSearchBackfillCompleteSite",n.ATLASSIAN_SEARCH_BACKFILL="atlassianSearchBackfill",n.FALL_LAUNCH_2024_BUSINESS_DESCOPE_EDIT_BY_TRANSCRIPT="fallLaunch2024BusinessDescopeEditByTranscript",n.FALL_LAUNCH_2024_BUSINESS_DESCOPE_EDIT_BY_TRANSCRIPT_V2="fallLaunch2024BusinessDescopeEditByTranscriptV2",n.FALL_LAUNCH_2024_BUSINESS_DESCOPE_EDIT_BY_TRANSCRIPT_V3="fallLaunch2024BusinessDescopeEditByTranscriptV3",n.CONFLUENCE_ACTIVATION_ID="confluenceActivationId",n.WORKSPACE_DELETION_STAGE="workspaceDeletionStage",n.TEMPORARY_ADDITIONAL_SCOPES="temporaryAdditionalScopes",n.TWC_LEGACY_VIEW_ONLY_WORKSPACE="twcLegacyViewOnlyWorkspace",n.TWC_LEGACY_ACTIVE_WORKSPACE_ID="twcLegacyActiveWorkspaceId",n.TWC_AUTO_PROVISIONING="twcAutoProvisioning",n);a.d(t,{_t:()=>i})},257841(e,t,a){a.d(t,{C_:()=>R,Gj:()=>p,zc:()=>N});var n=a(745975),i=a(397328),s=a(644532),_=a(52287),o=a(756150),r=a(745586),E=a(878396),l=a(243494),S=a(924189);let A={},I=(0,l.J1)`
+    mutation DeleteWorkspaceSetting($name: String!) {
+  result: deleteWorkspaceSetting(name: $name) {
+    ... on DeletedWorkspaceSetting {
+      success
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;var T=a(268712);let c={},O=(0,l.J1)`
+    query GetWorkspaceSetting($settingName: String!, $includeTimestamps: Boolean = false, $workspaceIdv2: ID) {
+  getWorkspaceSetting(
+    settingName: $settingName
+    includeTimestamps: $includeTimestamps
+    workspaceIdv2: $workspaceIdv2
+  ) {
+    ... on Setting {
+      id
+      setting {
+        __typename
+        ... on BooleanObject {
+          id
+          booleanValue: value
+        }
+        ... on IntObject {
+          id
+          intValue: value
+        }
+        ... on StringObject {
+          id
+          stringValue: value
+        }
+        ... on JSONObject {
+          id
+          jsonValue: value
+        }
+      }
+      createdAt @include(if: $includeTimestamps)
+      updatedAt @include(if: $includeTimestamps)
+    }
+  }
+}
+    `,u={},g=(0,l.J1)`
+    mutation UpdateWorkspaceSetting($name: String!, $value: BasicScalar!) {
+  result: updateWorkspaceSetting(name: $name, value: $value) {
+    ... on UpdatedWorkspaceSetting {
+      setting {
+        name
+        value
+      }
+      created
+      updated
+    }
+  }
+}
+    `,N=(e,t=!1,a={})=>{var l;let S,A,{showErrorBar:I}=(0,o.Nl)(),u=(0,s.lV)(),{workspaceIdv2:g,...N}=a,{loading:p,error:R,data:d,refetch:C}=(l={...N,variables:{settingName:e,includeTimestamps:t,workspaceIdv2:g},skip:!u||N.skip},A={...c,...l},T.IT(O,A));(0,n.useEffect)(()=>{if(R){let e="We couldn't grab your workspace setting. Please try again.";E.error(R,{message:e,error:R},{feature:i.Xj.WorkspaceManagement}),I({autoCloseTimer:_.z.THREE_SECONDS,message:e,severity:r.M.ERROR})}},[R,I]);let m=d?.getWorkspaceSetting?.__typename==="Setting"?d.getWorkspaceSetting:null,D=m?.setting;D?.__typename==="StringObject"?S=D.stringValue:D?.__typename==="BooleanObject"?S=D.booleanValue:D?.__typename==="IntObject"?S=D.intValue:D?.__typename==="JSONObject"&&(S=D.jsonValue);let L={loading:p,error:R,value:S,refetch:C};return t&&(L.timestamps={createdAt:m?.createdAt,updatedAt:m?.updatedAt}),L},p=(e,t=!1,a={})=>{var n;let i,{showErrorBar:E}=(0,o.Nl)(),l=(0,s.lV)(),[A,{loading:I,error:T,called:c}]=(n={...a,onCompleted:()=>{t||E({autoCloseTimer:_.z.THREE_SECONDS,message:"Your setting was saved successfully.",severity:r.M.SUCCESS})},onError:()=>{t||E({autoCloseTimer:_.z.THREE_SECONDS,message:"There was a problem while saving your setting. Please try again.",severity:r.M.ERROR})},update:(t,a)=>{let n=t.readQuery({query:O,variables:{settingName:e}}),i=n?.getWorkspaceSetting?.__typename==="Setting"?n.getWorkspaceSetting:null;if(!i)return;let{setting:s}=i;if(!s)return;let _=a.data?.result?.__typename==="UpdatedWorkspaceSetting"?a.data.result:null,o={__typename:"Query",getWorkspaceSetting:{...i,setting:{...s}}};"JSONObject"===s.__typename?o.getWorkspaceSetting.setting.jsonValue={...s.jsonValue,..._?.setting?.value}:"IntObject"===s.__typename?o.getWorkspaceSetting.setting.intValue=_?.setting?.value:"StringObject"===s.__typename?o.getWorkspaceSetting.setting.stringValue=_?.setting?.value:"BooleanObject"===s.__typename&&(o.getWorkspaceSetting.setting.booleanValue=_?.setting?.value),t.writeQuery({query:O,variables:{settingName:e},data:o})}},i={...u,...n},S.n(g,i));return{updateSetting:t=>{if(l)return A({variables:{name:e,value:t}})},loading:I,error:T,called:c}},R=(e,t=!1)=>{var a;let n,{showErrorBar:i}=(0,o.Nl)(),E=(0,s.lV)(),[l,{loading:T,error:c,called:u}]=(a={onCompleted:()=>{t||i({autoCloseTimer:_.z.THREE_SECONDS,message:"Your setting was deleted successfully.",severity:r.M.SUCCESS})},onError:()=>{t||i({autoCloseTimer:_.z.THREE_SECONDS,message:"There was a problem while deleting your setting. Please try again.",severity:r.M.ERROR})},update:t=>{let a=t.readQuery({query:O,variables:{settingName:e}}),n=a?.getWorkspaceSetting?.__typename==="Setting"?a.getWorkspaceSetting:null;n&&t.writeQuery({query:O,variables:{settingName:e},data:{__typename:"Query",getWorkspaceSetting:{...n,setting:null}}})}},n={...A,...a},S.n(I,n));return{deleteSetting:()=>{E&&l({variables:{name:e}})},loading:T,error:c,called:u}}}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/12999-c86009fdd90d3397.js.map

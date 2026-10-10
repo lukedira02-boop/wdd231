@@ -1,0 +1,72 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="c4c2c06b-04e2-4385-a346-daa44eb2aa3d",e._sentryDebugIdIdentifier="sentry-dbid-c4c2c06b-04e2-4385-a346-daa44eb2aa3d")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[82962],{859837(e,t,r){r.d(t,{B:()=>i});var a=r(815894),n=r(745975);function i(){return n.createElement(a.default,{label:"",testId:"ads-refreshed-icon"})}r(577638)},855395(e,t,r){r.d(t,{jY:()=>x,sA:()=>ei,hm:()=>y,eU:()=>E});var a=r(745975),n=r(397328),i=r(480304),l=r(220639),o=r(462377),s=r(278290),c=r(243494),d=r(268712);let u={},p=(0,c.J1)`
+    query GetLiveTranscript($videoId: ID!, $initialLoad: Boolean!) {
+  fetchLiveTranscript(videoId: $videoId, initialLoad: $initialLoad) {
+    __typename
+    ... on LiveTranscript {
+      phrases {
+        ts
+        value
+        speakerName
+        ranges {
+          start
+          length
+          source {
+            monologue
+            element
+            elementId
+            clipId
+          }
+          type
+        }
+      }
+      schemaVersion
+    }
+    ... on LiveTranscriptNotReady {
+      message
+      reason
+    }
+    ... on GenericError {
+      message
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+  }
+}
+    `;var m=r(322259);let h={},v=(0,c.J1)`
+    subscription LiveTranscriptUpdated($videoId: ID!) {
+  liveTranscriptEvent(videoId: $videoId) {
+    ... on LiveTranscriptStatus {
+      status
+    }
+  }
+}
+    `,g=(0,s.Z)(n.Xj.LiveTranscripts),y=(e,t=!1)=>{var r,n;let s,c,[y,f]=(0,a.useState)(!1),[E,T]=(0,a.useState)(null),{isMeetingRecording:b,isLoading:k}=(0,i.q)(e),_=(0,o.B)(),{data:C,error:I,loading:L,refetch:w}=(r={variables:{videoId:e,initialLoad:!0},skip:!b||!e||t||_},s={...u,...r},d.IT(p,s));(0,a.useEffect)(()=>{I&&(g.error(I,{message:"Error fetching live transcript",videoId:e}),f(!0))},[I,e]);let S=(0,a.useMemo)(()=>C?.fetchLiveTranscript&&"GenericError"!==C.fetchLiveTranscript.__typename&&"UserNotAuthorizedError"!==C.fetchLiveTranscript.__typename&&"LiveTranscriptNotReady"!==C.fetchLiveTranscript.__typename&&"InputValidationError"!==C.fetchLiveTranscript.__typename?{phrases:C.fetchLiveTranscript.phrases??[],schemaVersion:C.fetchLiveTranscript.schemaVersion??""}:null,[C]),$=!!(S&&E===l.vMy.Updated),P=L||C?.fetchLiveTranscript?.__typename==="LiveTranscriptNotReady";return(0,a.useEffect)(()=>{C?.fetchLiveTranscript&&("GenericError"===C.fetchLiveTranscript.__typename?(g.error("Error fetching live transcript",{message:C.fetchLiveTranscript.message,videoId:e}),f(!0)):"UserNotAuthorizedError"===C.fetchLiveTranscript.__typename?(g.error("User is not authorized for live transcript",{message:"User is not authorized for live transcript",videoId:e}),f(!0)):("LiveTranscriptNotReady"===C.fetchLiveTranscript.__typename&&g.info("Live transcript not ready",{message:C.fetchLiveTranscript.message,reason:C.fetchLiveTranscript.reason,videoId:e}),f(!1)))},[C,e]),n={variables:{videoId:e},skip:!b||!e||t||_,onData:t=>{let r=t.data.data?.liveTranscriptEvent?.status;if(r===l.vMy.Failed){g.error("Live transcript session failed after retries exhausted",{videoId:e}),f(!0),T(r);return}if(r===l.vMy.Cancelled){g.error("Live transcript session cancelled - permanent error detected (video not found or invalid)",{videoId:e}),f(!0),T(r);return}!L&&e&&r!==l.vMy.Completed&&w({initialLoad:!1}),T(r??null)}},c={...h,...n},m.R(v,c),{transcript:S,hasError:y,loading:P,status:E,shouldShowLiveTranscript:$&&!!S||P,needsAiUpgrade:_,isMeetingLoading:k}};var f=r(832134);let E=()=>{let{video:e}=(0,f.Mc)(),t=e?.id,r=e?.complete,n=y(t,r);return(0,a.useMemo)(()=>!t||r?{transcript:null,hasError:!1,loading:!1,status:null,shouldShowLiveTranscript:!1,needsAiUpgrade:!1,isMeetingLoading:!1}:n,[t,n,r])};var T=r(959151),b=r(644532),k=r(851183),_=r(671821),C=r(462433),I=r(295899);let L=()=>{},w=({onJumpToLatest:e=L,showButton:t,isFloating:r})=>{let n=()=>{e?.()};return t?r?a.createElement($,null,a.createElement(S,{handleJumpToLatest:n,isFloating:r})):a.createElement(S,{handleJumpToLatest:n,isFloating:r}):null},S=({handleJumpToLatest:e,isFloating:t})=>a.createElement(C.$nd,{isFloating:t,icon:a.createElement(I._,null),onClick:e},"Jump to latest"),$=({children:e})=>a.createElement(C.mcf,{position:"absolute",bottom:5,padding:0,zIndex:50,left:0,right:0},a.createElement(C.W30,{alignment:"center"},e));var P=r(80514);let x=({bookmarkInView:e,onJumpToLatest:t,isFloating:r=!1,showButton:n=!1})=>{let i=(0,b.lV)(),[l]=(0,T.d7)(n&&!e,200);return a.createElement(w,{onJumpToLatest:()=>{let e=document.getElementById(k.zc);e&&(e.scrollIntoView({behavior:"smooth",block:"end"}),t?.(),(0,_.u4)(P.b,{isLoggedIn:i}))},showButton:l,isFloating:r})};var D=r(496713),z=r(108697),M=r(298917),R=r(60389),A=r(73842),B=r(319876);let N=({onCopyClick:e,tooltipContent:t})=>a.createElement(C.m_M,{tabIndex:-1,content:t},a.createElement(C.$nd,{size:"small",variant:"neutralSecondary",icon:a.createElement(B.I,null),onClick:e},"Copy"));var U=r(114911),F=r.n(U),V=r(763950);let q=({transcript:e,videoId:t})=>{let[r,n]=(0,a.useState)(D.Li),i=(0,R.T)({videoId:t}),l=(({transcript:e})=>(0,a.useCallback)(()=>{let{phrases:t}=e;if(t.length<1)return;let r=t[t.length-1].ts,a="";t.forEach(({ts:e,value:t,speakerName:n})=>{let i=(0,V.Y)(e,r);n?a+=`${i} ${n}: ${t}
+`:a+=`${i} ${t}
+`}),F()(a)},[e]))({transcript:e});return a.createElement(N,{onCopyClick:()=>{n(D.E7),l(),_.u4(M.M5R,{...(0,A.x)(M.M5R,z.T.video(t,"video_id")),currentUserIsOwner:i})},tooltipContent:r})};var J=r(994882);let G=({onClick:e,tooltipContent:t})=>a.createElement(C.m_M,{tabIndex:-1,content:t},a.createElement(C.$nd,{size:"small",variant:"neutralSecondary",icon:a.createElement(J.j,null),onClick:e},"Search"));var j=r(355221),H=r(13084),K=r.n(H),Z=r(775407),O=r(577638);function W(e){return a.createElement("svg",(0,O.IA)({viewBox:"0 0 24 24",fill:"none"},e),a.createElement("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M11.2929 8.29289C11.6834 7.90237 12.3166 7.90237 12.7071 8.29289L17.7071 13.2929C18.0976 13.6834 18.0976 14.3166 17.7071 14.7071C17.3166 15.0976 16.6834 15.0976 16.2929 14.7071L12 10.4142L7.70711 14.7071C7.31658 15.0976 6.68342 15.0976 6.29289 14.7071C5.90237 14.3166 5.90237 13.6834 6.29289 13.2929L11.2929 8.29289Z",fill:"currentColor"}))}let Y="search-transcript-input",Q="cancel-button",X=({showSearchBar:e,onSearchToggle:t,handleInputChange:r,handleKeyDown:n,incrementPhraseSearchIndex:i,decrementPhraseSearchIndex:l,searchTermIndices:o,searchInputValue:s,currentSearchIndex:c,searchTerm:d})=>e?a.createElement(K(),{active:!0,focusTrapOptions:{escapeDeactivates:!0,clickOutsideDeactivates:!0,returnFocusOnDeactivate:!0,fallbackFocus:`#${Q}`,initialFocus:`#${Y}`}},a.createElement("div",null,a.createElement(C.mcf,{id:"search-header-bar",backgroundColor:"background",padding:"medium",width:"100%",position:"absolute",top:0,left:0,zIndex:1e3},a.createElement(C.zAb,{columns:["1fr","auto","auto"],gap:"small"},a.createElement(C.ksK,{id:Y,size:"small",placeholder:"Search transcript",icon:a.createElement(J.j,null),value:s,onChange:r,onKeyDown:n}),d.length>0&&a.createElement(C.zAb,{autoFlow:"column",gap:"xsmall"},a.createElement(C.EYj,{fontSetting:"tnum"},c,"/",o?.length),a.createElement(C.K0,{size:"small",altText:"Previous Search Term",icon:a.createElement(W,null),isDisabled:0===c,onClick:l}),a.createElement(C.K0,{size:"small",altText:"Next Search Term",icon:a.createElement(Z.q,null),isDisabled:o?.length===0,onClick:i})),a.createElement(C.QWc,{id:Q,onClick:t},"Cancel"))))):null,ee=({showSearchBar:e,onSearchToggle:t,transcript:r})=>{let[n,i]=(0,a.useState)(""),{setSearchPhrase:l,setTranscript:o,transcript:s,openSearch:c,isSearchOpen:d,currentPhraseSearchIndex:u,searchPhraseIndexes:p,searchPhrase:m,closeSearch:h,incrementPhraseSearchIndex:v,decrementPhraseSearchIndex:g}=(0,j.V)();(0,a.useEffect)(()=>{e&&!d?(c(),r&&!s&&o(r)):!e&&d&&(h(),i(""))},[e,d,c,h,r,s,o]);let y=(0,a.useCallback)(e=>{i(e);let t=e.trim();t!==m&&l(t)},[m,l]),f=(0,a.useCallback)(e=>{y(e.target.value)},[y]),E=(0,a.useCallback)(e=>{p&&p.length>0&&e.shiftKey&&"Enter"===e.key?g():p&&p.length>0&&"Enter"===e.key&&v()},[p,v,g]),T=(0,a.useCallback)(()=>{d&&(h(),i("")),t()},[d,h,t]);return a.createElement(X,{showSearchBar:e,onSearchToggle:T,handleInputChange:f,handleKeyDown:E,currentSearchIndex:u,incrementPhraseSearchIndex:v,decrementPhraseSearchIndex:g,searchTermIndices:p,searchInputValue:n,searchTerm:m})};var et=r(867389),er=r(546620),ea=r(575726);let en=({videoId:e,showButton:t=!1})=>{let r=`${ea.J4}/share/${e}`;return t?a.createElement(C.$nd,{as:"a",size:"small",variant:"neutralSecondary",href:r,target:"_blank",iconBefore:a.createElement(C.guG,{variant:"symbol",maxWidth:2,brand:"product"})},"Watch on Loom"):null},ei=({transcript:e,videoId:t,type:r,children:n})=>{let[i,l]=(0,a.useState)(!1),o=()=>{l(e=>!e)},s=(0,a.useRef)(null);return((0,er.m)(s,"--desktop-transcript-header-height"),e)?a.createElement(C.mcf,{backgroundColor:"background",padding:"medium",position:"sticky",top:0,refHandler:e=>{s.current=e},borderColor:D.M3,borderSide:"bottom"},a.createElement(ee,{showSearchBar:i,onSearchToggle:o,transcript:e}),a.createElement(C.zAb,{justifyContent:"space-between"},a.createElement(C.zAb,{gap:"small"},a.createElement(G,{onClick:o,tooltipContent:D.HV}),a.createElement(q,{transcript:e,videoId:t}),a.createElement(en,{videoId:t,showButton:r===et.q.Standard})),n)):null}},321609(e,t,r){var a=r(243494),n=r(268712);let i={},l=(0,a.J1)`
+    query GetMeetingNotesPage($videoId: ID!, $password: String) {
+  getVideo(id: $videoId, password: $password) {
+    ... on RegularUserVideo {
+      id
+      calendarMeetingGuid
+      meetingNotesPage {
+        pageUrl
+      }
+    }
+  }
+}
+    `;function o(e){let t={...i,...e};return n.IT(l,t)}r.d(t,{Vh:()=>o})},68883(e,t,r){var a=r(243494),n=r(268712);let i={},l=(0,a.J1)`
+    query MeetingRecorderHasAmn($recorderId: ID!) {
+  meetingRecorderHasAmn(recorderId: $recorderId) {
+    __typename
+    ... on MeetingRecorderHasAmnPayload {
+      id
+      eligible
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;function o(e){let t={...i,...e};return n.IT(l,t)}r.d(t,{T5:()=>o})},999257(e,t,r){var a=r(108697),n=r(202746),i=r(644532),l=r(298917),o=r(575726),s=r(706768),c=r(371849),d=r(671821),u=r(895250),p=r(73842),m=r(726905);r.d(t,{},{L:e=>{let{openModal:t}=(0,m.U)(),r=(0,c.Ei)(),h=(0,i.pJ)(e=>e.id,null),v=(0,s._Q)(),g=(0,u.z5)(r),y=(0,n.F)();return"request-ai"===e.purchaseType?{onClick:()=>{e.onCloseClick?.(),y("loom-ai",{analyticEvent:l.ZkF,source:e.source})}}:"sales-led"===e.purchaseType?{onClick:()=>{d.u4(l.Puy,{...(0,p.x)(l.Puy,a.T.workspace(r?.id,"string","workspace_id"),a.T.user(h,"user_id")),purchase_type:e.purchaseType,source:e.source,workspace_type:r?.type,member_role:v},()=>{window.location.href=`${o.Zo}${o.Cq}`})}}:"add-on-only"===e.purchaseType?{onClick:()=>{g?y("loom-ai",{analyticEvent:l.ZkF,source:e.source}):(d.u4(l.Puy,{...(0,p.x)(l.Puy,a.T.workspace(r?.id,"string","workspace_id"),a.T.user(h,"user_id")),purchase_type:e.purchaseType,source:e.source,workspace_type:r?.type,member_role:v}),t({modalType:"PURCHASE_AI_MODAL",options:{source:e.source}})),e.onCloseClick?.()}}:"has-ai-addon"===e.purchaseType?{onClick:()=>{d.u4(l.Puy,{...(0,p.x)(l.Puy,a.T.workspace(r?.id,"string","workspace_id"),a.T.user(h,"user_id")),purchase_type:e.purchaseType,source:e.source,workspace_type:r?.type,member_role:v}),e.onCloseClick&&e.onCloseClick()}}:{onClick:()=>{d.u4(l.Puy,{...(0,p.x)(l.Puy,a.T.workspace(r?.id,"string","workspace_id"),a.T.user(h,"user_id")),purchase_type:e.purchaseType,source:e.source,workspace_type:r?.type,member_role:v},async()=>{e.onCloseClick&&await e.onCloseClick(),y("loom-ai",{analyticEvent:l.Puy,source:e.source})})}}}})},193873(e,t,r){var a=r(389741),n=r(371849),i=r(134455),l=r(895250);function o(){let e=(0,n.Ei)(),t=(0,l.z5)(e),r=e?.id,{data:o,loading:s}=(0,i.rC)({variables:{workspaceId:r??""},skip:!r||!t}),c=o?.getCcpBillingDetails?.__typename==="GetCcpBillingDetailsPayload"?o.getCcpBillingDetails.tenantContexts?.[0]?.entitlementInfo?.entitlement:null;return c?{isInPredunning:(0,a.Py)({entitlement:c}).isPreDunning,loading:s}:{isInPredunning:!1,loading:s}}r.d(t,{N:()=>o})},462377(e,t,r){var a=r(331610),n=r(836782);r.d(t,{},{B:()=>{let e=(0,a.I)(),t=(0,n.q)();return!e||t}})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/82962-5fbd7c4645afcb12.js.map

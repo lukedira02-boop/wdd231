@@ -1,0 +1,180 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="491d106e-7988-412f-bb8c-6f3e28a9d2a4",e._sentryDebugIdIdentifier="sentry-dbid-491d106e-7988-412f-bb8c-6f3e28a9d2a4")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[50362],{737537(e,t,l){l.d(t,{Y:()=>X,y:()=>K});var a=l(339043),i=l.n(a),r=l(745975),s=l(811566),o=l(264087),n=l(216237),d=l(416132),y=l(462433),c=l(920760);l(577638);var m=l(227924);function u(){return r.createElement(m.default,{label:"Add to playlist icon",testId:"ads-refreshed-icon"})}var p=l(324289);function v(){return r.createElement(p.A,{label:"Playlist added icon",testId:"ads-refreshed-icon"})}var f=l(397328),h=l(19721),P=l(644532),g=l(39007),b=l(294815),E=l(525203),I=l(16910),w=l(220639),C=l(113833),_=l(575726);function V(e){let t=(0,C.tW)(_.jf,{playlistId:e});return`${_.J4}${t}`}var A=l(278290),F=l(441694),T=l(141869),$=l(800053),k=l(687425),S=l(501140),z=l(243494),D=l(268712);let O={},U=(0,z.J1)`
+    query GetAvailablePlaylistsForPopover($limit: Int, $sortField: AvailablePlaylistsSortField, $sortDirection: AvailablePlaylistsSortDirection) {
+  getAvailablePlaylists(
+    limit: $limit
+    sortField: $sortField
+    sortDirection: $sortDirection
+  ) {
+    ... on GetAvailablePlaylistsPayload {
+      playlists {
+        nodes {
+          playlistId
+          name
+          thumbnailUrl
+          videoCount
+          privacy
+        }
+      }
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;var x=l(541569),G=l(782233);let L={},N=(0,z.J1)`
+    query GetPlaylistIdsForVideo($videoId: ID!) {
+  getPlaylistIdsForVideo(videoId: $videoId) {
+    ... on GetPlaylistIdsForVideoPayload {
+      playlistIds
+    }
+  }
+}
+    `;var j=l(924622);let M={},R=(0,z.J1)`
+    query SearchPlaylists($searchQuery: String!, $sortField: PlaylistSortField, $sortOrder: PlaylistSortOrder, $editableOnly: Boolean) {
+  searchPlaylists(
+    searchQuery: $searchQuery
+    sortField: $sortField
+    sortOrder: $sortOrder
+    editableOnly: $editableOnly
+  ) {
+    ... on SearchPlaylistsPayload {
+      playlists {
+        playlistId
+        name
+        thumbnailUrl
+        videoCount
+        privacy
+      }
+    }
+  }
+}
+    `,q=(0,A.Z)(f.Xj.Playlists),H=d.A.div`
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`,Y=({playlistName:e,isImmutable:t,thumbnailUrl:l,videoThumbnails:a,videoCount:i,isPrivate:s,isDisabled:o,isVideoInPlaylist:n,onRemoveFromPlaylistClick:d,onAddToPlaylistClick:c})=>{let m=(0,E.Sh)({name:e,immutable:t}),p=(0,E.Sh)({name:e,immutable:t},{midSentence:!0}),f=r.createElement(y.zAb,{autoFlow:"column",gap:1.5,justifyContent:"space-between"},r.createElement(y.zAb,{columns:["4rem","auto"],gap:1.5,height:"3rem"},r.createElement(g.NA,{thumbnailUrl:l,videoThumbnails:a,isPopover:!0}),r.createElement(y.zAb,{autoFlow:"row"},r.createElement(y.EYj,{size:"body-md",fontWeight:"bold",hasEllipsis:!0,title:m},m),r.createElement(y.zAb,null,r.createElement(y.EYj,{size:"body-sm"},i," ",1===i?"video":"videos"),s&&r.createElement(y.EYj,{size:"body-sm"},"・Private")))));return n?r.createElement(y.zAb,{gap:1.5,justifyContent:"space-between"},f,r.createElement(y.K0,{icon:r.createElement(v,null),altText:`Remove from ${p} playlist`,size:"medium",onClick:d,disabled:o})):r.createElement("button",{type:"button",onClick:c,disabled:o,style:{background:"none",border:"none",padding:0,cursor:o?"default":"pointer",textAlign:"left",width:"100%"}},r.createElement(y.zAb,{gap:1.5,justifyContent:"space-between"},f,r.createElement(y.K0,{icon:r.createElement(u,null),altText:`Add to ${p} playlist`,size:"medium",onClick:e=>{e.stopPropagation(),o||c()},disabled:o})))},J=({playlist:e,isVideoInPlaylist:t,videoIds:l,fetchPlaylistIdsForVideo:a,refreshPlaylistData:i,refreshPlaylistsOpenSearchData:s})=>{let o=1===l.length,[n]=l,{setShowConfirmationToast:d}=(0,h.U)(),[c,m]=(0,r.useState)(o&&t),{trackPlaylistVideoAdded:u,trackPlaylistVideoRemoved:p}=(0,b.S)(),[v,f]=(0,r.useState)(!1),{data:P}=(0,$.wF)({variables:{playlistId:e.playlistId},fetchPolicy:"cache-first"}),g=(0,r.useMemo)(()=>P?.getPlaylistDetails?.__typename!=="PlaylistDetails"?[]:(P.getPlaylistDetails.videos??[]).filter(e=>!0===e.viewerCanAccess&&!e.isPasswordProtected).map(e=>e.thumbnailUrl).filter(e=>!!e),[P]),[I,{loading:w}]=(0,S.i)(),[C]=(0,k.f)(),[_,{loading:A}]=(0,j._)({onCompleted:t=>{let{removeVideoFromPlaylist:l}=t;if(l?.__typename!=="RemoveVideoFromPlaylistPayload"||!l.success){m(!0),d("Failed to remove video from playlist");return}i(),s(),p({playlistId:e.playlistId,videoId:n,method:"addToPlaylist",videoCountAfter:Math.max(e.videoCount-1,0)}),d("Video removed from playlist")},onError:()=>{m(!0),d("Failed to remove video from playlist")}});(0,r.useEffect)(()=>{m(o&&t)},[o,t,m]);let F=(0,r.useCallback)(async()=>a?(await Promise.all(l.map(async t=>{try{let{data:l}=await a({variables:{videoId:t},fetchPolicy:"network-only"});if(l?.getPlaylistIdsForVideo?.__typename==="GetPlaylistIdsForVideoPayload")return{videoId:t,isInPlaylist:l.getPlaylistIdsForVideo.playlistIds.includes(e.playlistId)}}catch(l){q.error(l,{message:"Failed to check playlist membership before adding video",playlistId:e.playlistId,videoId:t})}return{videoId:t,isInPlaylist:!1}}))).filter(e=>!e.isInPlaylist).map(e=>e.videoId):l,[a,e.playlistId,l]),T=(0,r.useCallback)(()=>{n&&(I({variables:{input:{playlistId:e.playlistId,videoId:n}},refetchQueries:[$.qq],update(t,{data:l}){l?.addVideoToPlaylist?.__typename==="AddVideoToPlaylistPayload"&&l.addVideoToPlaylist.success&&((0,E.LE)(t,e.playlistId,n),t.gc())},onCompleted:t=>{let{addVideoToPlaylist:l}=t;if(l?.__typename==="GenericError"){d(l.message),m(!1);return}if(l?.__typename!=="AddVideoToPlaylistPayload"||!l.success)return void m(!1);i(),s(),u({playlistId:e.playlistId,videoId:n,method:"addToPlaylist",videoCountAfter:e.videoCount+1});let a=V(e.playlistId);d(r.createElement("span",null,"Video added to playlist."," ",r.createElement(y.N_E,{href:a,target:"_blank",rel:"noopener noreferrer",variant:"neutral"},"Open playlist")))},onError:()=>{m(!1),d("Failed to add video to playlist")}}),m(!0))},[I,e.playlistId,e.videoCount,i,s,d,m,u,n]),z=(0,r.useCallback)(async()=>{f(!0);try{let t=await F();if(0===t.length)return void d("Videos already in playlist");let l=[];try{let{data:a}=await C({variables:{input:{playlistId:e.playlistId,videoIds:t}},update(t,{data:l}){let a=l?.addVideosToPlaylist;if(a?.__typename==="AddVideosToPlaylistPayload"){for(let l of a.addedVideoIds??[])(0,E.LE)(t,e.playlistId,l);t.gc()}}}),i=a?.addVideosToPlaylist;i?.__typename==="AddVideosToPlaylistPayload"?l=i.addedVideoIds??[]:(i?.__typename==="GenericError"||i?.__typename==="UserNotAuthorizedError")&&q.warn("Videos not added to playlist",{playlistId:e.playlistId,message:i.message})}catch(t){q.error(t,{message:"Failed to add videos to playlist",playlistId:e.playlistId})}let a=t.length-l.length;if(l.length>0){i(),s();let t=e.videoCount+l.length;l.forEach(l=>{u({playlistId:e.playlistId,videoId:l,method:"addToPlaylist",videoCountAfter:t})})}if(l.length>0&&0===a){let t=V(e.playlistId);d(r.createElement("span",null,B({successfulVideoIds:l,failedCount:a})," ",r.createElement(y.N_E,{href:t,target:"_blank",rel:"noopener noreferrer",variant:"neutral"},"Open playlist")))}else d(B({successfulVideoIds:l,failedCount:a}))}finally{f(!1)}},[C,F,e.playlistId,e.videoCount,i,s,d,u]),D=(0,r.useCallback)(()=>{_({variables:{input:{playlistId:e.playlistId,videoId:n}},refetchQueries:[$.qq],update(t,{data:l}){l?.removeVideoFromPlaylist?.__typename==="RemoveVideoFromPlaylistPayload"&&l.removeVideoFromPlaylist.success&&((0,E.LE)(t,e.playlistId,n),t.gc())}}),m(!1)},[m,_,e.playlistId,n]);return r.createElement(Y,{playlistName:e.name,isImmutable:e.isImmutable,thumbnailUrl:e.thumbnailUrl,videoThumbnails:g,videoCount:e.videoCount,isPrivate:e.isPrivate,isDisabled:o?w||A:w||v,isVideoInPlaylist:o&&c,onAddToPlaylistClick:o?T:()=>void z(),onRemoveFromPlaylistClick:D})},Q=e=>`${e} ${1===e?"video":"videos"} added to playlist`,B=({successfulVideoIds:e,failedCount:t})=>{let l=e.length;return l>0&&0===t?Q(l):l>0?`${Q(l)}. ${t} ${1===t?"video":"videos"} could not be added.`:t>0?`Failed to add ${t} ${1===t?"video":"videos"}.`:"No videos were added"},W=({videoIds:e,onClose:t,renderPlaylistEntry:l,refetchPlaylistIdsForVideo:a,videoOrganizationId:d})=>{var m,u;let p,v,{setShowConfirmationToast:f}=(0,h.U)(),{trackPlaylistSearch:g,trackPlaylistVideoAdded:C}=(0,b.S)(),_=(0,P.dl)(),[A,$]=(0,r.useState)(!1),{createPlaylist:z,loading:L}=(0,T._)(),[N]=(0,S.i)(),[j]=(0,k.f)(),[Y,J]=(0,r.useState)(""),Q=Y.trim(),W=Q.length>0,K=Q.length>0&&Q.length<3,X=Q.length>=3,{data:Z,refetch:ee,loading:et}=(m={variables:{limit:25,sortField:w.jRf.UpdatedAt,sortDirection:w.GOW.Desc},fetchPolicy:"cache-and-network"},p={...O,...m},D.IT(U,p)),[el,{data:ea}]=(0,x.H)();(0,r.useEffect)(()=>{_&&el({variables:{input:{workspaceGuid:_}},context:{sharding:{entityType:"workspace",entityId:_}}})},[el,_]);let ei=(0,r.useMemo)(()=>{let e=ea?.getOrCreateWatchLaterPlaylist;return e?.__typename!=="Playlist"?null:{playlistId:e.playlistId,name:e.name,isImmutable:e.immutable??!0,thumbnailUrl:e.thumbnailUrl,videoCount:e.videoCount,isPrivate:"owner"===e.privacy}},[ea]),[er,{loading:es}]=(u={fetchPolicy:"network-only"},v={...M,...u},G._(R,v)),[eo,en]=(0,r.useState)([]),[ed,ey]=(0,r.useState)(!1),[ec,em]=(0,r.useState)(!1),eu=(0,r.useCallback)(()=>{ee(),a?.()},[ee,a]),ep=(0,r.useMemo)(()=>Z?.getAvailablePlaylists?.__typename==="GetAvailablePlaylistsPayload"?(Z.getAvailablePlaylists.playlists?.nodes||[]).map(e=>({playlistId:e.playlistId,name:e.name,thumbnailUrl:e.thumbnailUrl,videoCount:e.videoCount,isPrivate:"owner"===e.privacy})):[],[Z]),ev=(0,r.useMemo)(()=>K?ep.filter(e=>e.name.toLowerCase().includes(Q.toLowerCase())):ep,[ep,K,Q]),ef=(0,r.useCallback)(async e=>{let{data:t}=await er({variables:{searchQuery:e,sortField:w.HPA.UpdatedAt,sortOrder:w.f3t.Desc,editableOnly:!0}});if(t?.searchPlaylists?.__typename==="SearchPlaylistsPayload"){let l=t.searchPlaylists.playlists?.map(e=>({playlistId:e.playlistId,name:e.name,thumbnailUrl:e.thumbnailUrl,videoCount:e.videoCount,isPrivate:"owner"===e.privacy}))??[];en(l),g({context:"addToPlaylist",queryLength:e.length,resultsCount:l.length})}else em(!0)},[er,g]),eh=(0,r.useMemo)(()=>i()(async e=>{ey(!0),em(!1);try{await ef(e)}catch{em(!0)}},300),[ef]),eP=(0,r.useCallback)(async()=>{if(X)try{await ef(Q)}catch(e){q.error(e,{message:"Failed to refetch search results after adding/removing video from playlist"})}},[X,ef,Q]),eg=(0,I.GP)(d,{allowMissingOrganizationId:!0})&&null!=ei&&(!W||"watch later".includes(Q.toLowerCase())),eb=(0,r.useMemo)(()=>{let e=X?eo:ev,t=ei?e.filter(e=>e.playlistId!==ei.playlistId):e;return eg&&ei?[ei,...t]:t},[X,eo,ev,eg,ei]);(0,r.useEffect)(()=>(X?eh(Q):(eh.cancel(),en([]),ey(!1),em(!1)),()=>eh.cancel()),[Q,X,eh]);let eE=(0,r.useCallback)(async l=>{let a=await z(l);if(!a)return null;let[i]=e;if(!i)return null;try{let{data:e}=await N({variables:{input:{playlistId:a,videoId:i}},update(e,{data:t}){t?.addVideoToPlaylist?.__typename==="AddVideoToPlaylistPayload"&&t.addVideoToPlaylist.success&&((0,E.LE)(e,a,i),e.gc())}}),t=e?.addVideoToPlaylist;if(t?.__typename==="AddVideoToPlaylistPayload"&&t.success){C({playlistId:a,videoId:i,method:"createPlaylist",videoCountAfter:1});let e=V(a);f(r.createElement("span",null,"Playlist created and video added."," ",r.createElement(y.N_E,{href:e,target:"_blank",rel:"noopener noreferrer",variant:"neutral"},"Open playlist")))}else q.warn("Video not added to newly created playlist",{playlistId:a,videoId:i,typename:t?.__typename}),f("Playlist created, but failed to add video")}catch(e){q.error(e,{message:"Failed to add video to newly created playlist"}),f("Playlist created, but failed to add video")}return t(),a},[z,N,e,t,f,C]),eI=(0,r.useCallback)(async l=>{let a=await z(l);if(!a)return null;let i=[];try{let{data:t}=await j({variables:{input:{playlistId:a,videoIds:e}},update(e,{data:t}){let l=t?.addVideosToPlaylist;if(l?.__typename==="AddVideosToPlaylistPayload"){for(let t of l.addedVideoIds??[])(0,E.LE)(e,a,t);e.gc()}}}),l=t?.addVideosToPlaylist;l?.__typename==="AddVideosToPlaylistPayload"?i=l.addedVideoIds??[]:q.warn("Videos not added to newly created playlist",{playlistId:a,typename:l?.__typename})}catch(e){q.error(e,{message:"Failed to add videos to newly created playlist",playlistId:a})}let s=e.length-i.length;if(i.forEach((e,t)=>{C({playlistId:a,videoId:e,method:"createPlaylist",videoCountAfter:t+1})}),i.length>0&&0===s){let e=V(a);f(r.createElement("span",null,`Playlist created. ${B({successfulVideoIds:i,failedCount:s})}`," ",r.createElement(y.N_E,{href:e,target:"_blank",rel:"noopener noreferrer",variant:"neutral"},"Open playlist")))}else f(`Playlist created. ${B({successfulVideoIds:i,failedCount:s})}`);return t(),a},[z,j,e,t,f,C]),ew=1===e.length?eE:eI;return r.createElement(r.Fragment,null,r.createElement(y.zAb,{gap:"medium",autoFlow:"row"},r.createElement(n.default,{isCompact:!0,elemBeforeInput:r.createElement(o.Box,{paddingInlineStart:"space.100"},r.createElement(s.default,{label:"Search playlists"})),placeholder:"Search","aria-label":"Search playlists",value:Y,onChange:e=>J(e.currentTarget.value)}),r.createElement(y.EYj,{size:"body-sm"},"Displaying your playlists. Type 3 or more characters to search all playlists..."),r.createElement(H,null,!W&&et||X&&es?r.createElement(y.mcf,{paddingY:"large"},r.createElement(y.zAb,{justifyContent:"center"},r.createElement(y.aHM,{size:"large"}))):r.createElement(y.zAb,{autoFlow:"row",gap:"1rem",justifyContent:"stretch"},W&&ed&&!es&&!K&&r.createElement(r.Fragment,null,ec?r.createElement(y.EYj,{size:"body-sm"},"Something went wrong. Please try again."):0===eb.length&&r.createElement(y.EYj,{size:"body-md"},"No playlists found")),eb.map(e=>r.createElement(r.Fragment,{key:e.playlistId},l({playlist:e,refreshPlaylistData:eu,refreshPlaylistsOpenSearchData:eP}))))),r.createElement(y.mcf,{paddingTop:"small"},r.createElement(y.$nd,{variant:"primary",iconBefore:r.createElement(c.e,null),width:"full",onClick:()=>$(!0)},"Create new playlist"))),r.createElement(F.E,{isOpen:A,isSubmitting:L,onClose:()=>$(!1),onCreatePlaylist:ew}))},K=({videoId:e,onClose:t,videoOrganizationId:l})=>{var a;let i,s=(0,r.useMemo)(()=>[e],[e]),{data:o,refetch:n}=(a={variables:{videoId:e},fetchPolicy:"cache-and-network"},i={...L,...a},D.IT(N,i)),d=(0,r.useMemo)(()=>o?.getPlaylistIdsForVideo?.__typename==="GetPlaylistIdsForVideoPayload"?o.getPlaylistIdsForVideo.playlistIds:[],[o]),y=(0,r.useCallback)(({playlist:e,refreshPlaylistData:t,refreshPlaylistsOpenSearchData:l})=>r.createElement(J,{playlist:e,videoIds:s,refreshPlaylistData:t,refreshPlaylistsOpenSearchData:l,isVideoInPlaylist:d.includes(e.playlistId)}),[d,s]);return r.createElement(W,{videoIds:s,onClose:t,refetchPlaylistIdsForVideo:n,renderPlaylistEntry:y,videoOrganizationId:l})},X=({videoIds:e,onClose:t,videoOrganizationId:l})=>{let a,[i]=(a={...L,...void 0},G._(N,a)),s=(0,r.useCallback)(({playlist:t,refreshPlaylistData:l,refreshPlaylistsOpenSearchData:a})=>r.createElement(J,{playlist:t,videoIds:e,isVideoInPlaylist:!1,fetchPlaylistIdsForVideo:i,refreshPlaylistData:l,refreshPlaylistsOpenSearchData:a}),[i,e]);return r.createElement(W,{videoIds:e,onClose:t,renderPlaylistEntry:s,videoOrganizationId:l})}},501140(e,t,l){var a=l(243494),i=l(924189);let r={},s=(0,a.J1)`
+    mutation AddVideoToPlaylist($input: AddVideoToPlaylistInput!) {
+  addVideoToPlaylist(input: $input) {
+    ... on AddVideoToPlaylistPayload {
+      success
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;function o(e){let t={...r,...e};return i.n(s,t)}l.d(t,{i:()=>o})},687425(e,t,l){var a=l(243494),i=l(924189);let r={},s=(0,a.J1)`
+    mutation AddVideosToPlaylist($input: AddVideosToPlaylistInput!) {
+  addVideosToPlaylist(input: $input) {
+    ... on AddVideosToPlaylistPayload {
+      addedVideoIds
+      skippedVideoIds
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;function o(e){let t={...r,...e};return i.n(s,t)}l.d(t,{f:()=>o})},924622(e,t,l){var a=l(243494),i=l(924189);let r={},s=(0,a.J1)`
+    mutation RemoveVideoFromPlaylist($input: RemoveVideoFromPlaylistInput!) {
+  removeVideoFromPlaylist(input: $input) {
+    ... on RemoveVideoFromPlaylistPayload {
+      success
+    }
+  }
+}
+    `;function o(e){let t={...r,...e};return i.n(s,t)}l.d(t,{_:()=>o})},441694(e,t,l){var a=l(745975),i=l(753089),r=l(159193),s=l(335348),o=l(588911),n=l(216237),d=l(462433),y=l(397328),c=l(756150),m=l(745586),u=l(436791),p=l(878396);function v(){if("u"<typeof window)return{bottomOffset:0,maxHeight:"100dvh"};let e=window.innerHeight,t=window.visualViewport;return t?{bottomOffset:Math.max(e-t.height-t.offsetTop,0),maxHeight:`${Math.max(t.height,0)}px`}:{bottomOffset:0,maxHeight:`${e}px`}}function f({isOpen:e,isSubmitting:t,onClose:l,onCreatePlaylist:h}){let[P,g]=(0,a.useState)(""),[b,E]=(0,a.useState)(""),I=(0,a.useRef)(null),w=(0,a.useRef)(null),{showErrorBar:C}=(0,c.Nl)(),_=(0,u.P$)(),[V,A]=(0,a.useState)(()=>v());(0,a.useEffect)(()=>{e&&(g(""),E(""),I.current?.focus())},[e]),(0,a.useEffect)(()=>{if(!e||!_)return;let t=()=>{A(v())};t();let l=window.visualViewport;return l?.addEventListener("resize",t),l?.addEventListener("scroll",t),window.addEventListener("resize",t),()=>{l?.removeEventListener("resize",t),l?.removeEventListener("scroll",t),window.removeEventListener("resize",t)}},[_,e]),(0,a.useEffect)(()=>{let t=w.current;if(t){if(!e||!_){t.style.bottom="";return}return t.style.bottom=`${V.bottomOffset}px`,()=>{t.style.bottom=""}}},[_,e,V.bottomOffset]);let F=P.trim(),T=b.trim(),$=F.length>100,k=T.length>500,S=$||k,z=t||S,D=(0,a.useCallback)(async()=>{if(!$&&!k)try{await h({name:F,description:T||null})&&l()}catch(e){C({message:e instanceof Error?e.message:String(e),severity:m.M.ERROR}),p.logger.error(e,{message:"Failed to create playlist"},{feature:y.Xj.Playlists})}},[$,k,T,F,l,h,C]);return a.createElement(d.aFV,{ref:w,maxWidth:_?"100vw":"392px",maxHeight:_?V.maxHeight:"70vh",placement:_?"bottom":"center",isOpen:e,title:"Create new playlist",noPadding:!0,onBackgroundClick:l,onCloseClick:l,initialFocus:()=>I.current??!1},a.createElement(d.mcf,{paddingX:"xlarge",paddingBottom:"medium",marginTop:-1},a.createElement(d.zAb,{autoFlow:"row",gap:"small",justifyContent:"stretch"},a.createElement(i.A,{id:"playlist-name",name:"playlist-name",component:({fieldProps:e})=>a.createElement(a.Fragment,null,a.createElement(n.default,{...e,ref:I,value:P,onChange:e=>g(e.currentTarget.value),placeholder:"My new playlist","aria-invalid":$||void 0,isInvalid:$}),a.createElement(r.b,null,$&&a.createElement(s.K,null,"Title must be 100 characters or fewer.")))}),a.createElement(i.A,{id:"playlist-description",name:"playlist-description",component:({fieldProps:e})=>a.createElement(a.Fragment,null,a.createElement(o.A,{...e,value:b,onChange:e=>E(e.target.value),placeholder:"Description (Optional)",rows:4,resize:"none",isInvalid:k,"aria-invalid":k||void 0}),a.createElement(r.b,null,k&&a.createElement(s.K,null,"Description must be 500 characters or fewer.")))})),a.createElement(d.mcf,{paddingTop:"large"},a.createElement(d.zAb,{gap:"small",justifyContent:_?"stretch":"end",justifyItems:_?"stretch":void 0,alignItems:"center",autoFlow:_?"row":"column"},_&&a.createElement(d.$nd,{variant:"primary",hasLoader:t,onClick:()=>{D()},disabled:z,width:"full"},"Create playlist"),a.createElement(d.$nd,{onClick:l,disabled:t,width:_?"full":void 0},"Cancel"),!_&&a.createElement(d.$nd,{variant:"primary",hasLoader:t,onClick:()=>{D()},disabled:z},"Create playlist")))))}l.d(t,{E:()=>f})},141869(e,t,l){l.d(t,{_:()=>c});var a=l(745975),i=l(294815),r=l(525203),s=l(847707),o=l(243494),n=l(924189);let d={},y=(0,o.J1)`
+    mutation CreatePlaylist($input: CreatePlaylistInput!) {
+  createPlaylist(input: $input) {
+    __typename
+    ... on GenericError {
+      message
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on CreatePlaylistPayload {
+      playlist {
+        playlistId
+      }
+    }
+  }
+}
+    `;function c(){var e;let t,{trackPlaylistCreated:l}=(0,i.S)(),[o,{loading:c}]=(e={update(e,{data:t}){t?.createPlaylist?.__typename==="CreatePlaylistPayload"&&((0,r.DY)(e),e.gc())},refetchQueries:[s.G]},t={...d,...e},n.n(y,t));return{createPlaylist:(0,a.useCallback)(async e=>{let{data:t}=await o({variables:{input:e}});if(t?.createPlaylist?.__typename==="CreatePlaylistPayload"){let e=t.createPlaylist.playlist?.playlistId??null;return e&&l({playlistId:e,creationSource:"createPlaylist",videoCount:0}),e}if(t?.createPlaylist?.__typename==="GenericError"||t?.createPlaylist?.__typename==="UserNotAuthorizedError")throw Error(t.createPlaylist.message);return null},[o,l]),loading:c}}},800053(e,t,l){var a=l(243494),i=l(268712);let r={},s=(0,a.J1)`
+    query GetPlaylistDetails($playlistId: ID!) {
+  getPlaylistDetails(playlistId: $playlistId) {
+    __typename
+    ... on PlaylistDetails {
+      playlistId
+      workspaceGuid
+      name
+      description
+      canEdit
+      canManageAccess
+      immutable
+      thumbnailUrl
+      videoCount
+      backgroundPresetName
+      playlistTotalViews
+      viewers {
+        userId
+        displayName
+        avatarThumbUrl
+      }
+      totalDuration
+      owner {
+        id
+        display_name
+        avatars {
+          thumb
+        }
+      }
+      collaborators {
+        userId
+        access
+        user {
+          id
+          fullName
+          avatarUrl
+        }
+      }
+      videos {
+        videoId
+        sort
+        createdAt
+        name
+        playableDuration
+        thumbnailUrl
+        viewerCanAccess
+        viewerHasWatched
+        isPasswordProtected
+        hasPermissionConflict
+        owner {
+          id
+          display_name
+          avatars {
+            thumb
+          }
+        }
+      }
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;function o(e){let t={...r,...e};return i.IT(s,t)}l.d(t,{wF:()=>o},{qq:s})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/50362-0bb5bb19256f80fd.js.map

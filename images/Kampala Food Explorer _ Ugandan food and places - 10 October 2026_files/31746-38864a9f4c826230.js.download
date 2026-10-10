@@ -1,0 +1,102 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="ef5c5e24-18ab-471e-8014-019d9810e4cf",e._sentryDebugIdIdentifier="sentry-dbid-ef5c5e24-18ab-471e-8014-019d9810e4cf")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[31746],{775407(e,t,r){r.d(t,{q:()=>a});var n=r(745975);function a(){return n.createElement("span",{"aria-hidden":!0,"data-testid":"ads-refreshed-icon"},n.createElement("svg",{viewBox:"-2 -2 16 16"},n.createElement("path",{fill:"currentColor",fillRule:"evenodd",d:"M2.03 3.97 6 7.94l3.97-3.97 1.06 1.06-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5z",clipRule:"evenodd"})))}r(577638)},755018(e,t,r){r.d(t,{v:()=>l});var n=r(19832),a=r(745975);function l(){return a.createElement(n.A,{label:"",testId:"ads-refreshed-icon"})}r(577638)},245713(e,t,r){r.d(t,{V:()=>l});var n=r(722697),a=r(745975);function l(){return a.createElement(n.A,{label:"",testId:"ads-refreshed-icon"})}r(577638)},538496(e,t,r){var n=r(768278);let a=class e extends Error{constructor(t,r,...n){super(...n),Error.captureStackTrace&&Error.captureStackTrace(this,e),this.name="ClipUpdateError",this.reason=t,this.message=r}};(0,n.Mu)(a,"REASONS",{CLIPS_NOT_ACCEPTED:"CLIPS_NOT_ACCEPTED",NO_CLIPS:"NO_CLIPS",DUPLICATE_ENTRIES:"DUPLICATE_ENTRIES",BAD_POSITION:"BAD_POSITION",UNMATCHED_CLIP:"UNMATCHED_CLIP",OVER_DURATION:"OVER_DURATION"}),r.d(t,{},{F3:"Update Transcript Denied",V6:"No screenshots match your search",tk:"Update Transcript Denied"})},820188(e,t,r){r.d(t,{},{$:(e,t,r)=>!!e&&(0===t||!!r&&e!==r?.speakerName)})},355221(e,t,r){r.d(t,{V:()=>E});var n=r(436145),a=r(538496),l=r(220639),o=r(827415),i=r(368910),s=r(243494);let d=(0,s.J1)`
+    mutation CreateTranscriptCorrections($videoId: ID!, $transcriptCorrections: [CreateTranscriptCorrectionsNewCorrectionV2Input!]!) {
+  createTranscriptCorrectionsV2(
+    input: {transcriptCorrections: $transcriptCorrections, videoId: $videoId}
+  ) {
+    __typename
+    ... on CreateTranscriptCorrectionsV2Payload {
+      captionsUrl
+      phrasesUrl
+      version
+    }
+    ... on GenericError {
+      message
+    }
+    ... on Warning {
+      message
+    }
+  }
+}
+    `,c=(0,s.J1)`
+    mutation RemoveAllCorrections($videoId: ID!) {
+  removeAllTranscriptCorrections(input: {videoId: $videoId}) {
+    __typename
+    ... on RemoveAllTranscriptCorrectionsPayload {
+      version
+      source_url
+      captions_source_url
+    }
+    ... on GenericError {
+      message
+    }
+    ... on Warning {
+      message
+    }
+  }
+}
+    `,u="Corrections could not be saved!",p=async e=>{try{let{data:t}=await (0,i.HQ)().mutate({mutation:c,variables:{videoId:e}}),r=t?.removeAllTranscriptCorrections;if(!r)return{message:u};switch(r.__typename){case"RemoveAllTranscriptCorrectionsPayload":return r;case"GenericError":case"InvalidRequestWarning":return{message:r.message};default:return{message:u}}}catch{return{message:u}}},C=async(e,t)=>{try{let{data:r}=await (0,i.HQ)().mutate({mutation:d,variables:{videoId:e,transcriptCorrections:t}}),n=r?.createTranscriptCorrectionsV2;if(!n)return{message:u};switch(n.__typename){case"CreateTranscriptCorrectionsV2Payload":return n;case"GenericError":case"InvalidRequestWarning":return{message:n.message};default:return{message:u}}}catch{return{message:u}}};var g=r(444514);let m={currentPhraseSearchIndex:0,isCorrectMode:!1,isCorrectionsPopupOpen:!1,isCreateClipMode:!1,isProcessingCorrections:!1,isSearchOpen:!1,localCorrections:[],message:null,panelMode:"view",retranscriptionStatus:r(837822).i.NOT_STARTED,searchPhrase:"",searchPhraseIndexes:null,selectedPhraseIndex:null,selectedPhraseIndexInCorrectMode:null,selectedWordSegments:null,transcript:null},h=(e,t)=>{let r=t?.length&&t.length>0&&e.length>0?(0,g.Cv)(e,t):null,n=+!!r?.length;return{searchPhraseIndexes:r,currentPhraseSearchIndex:n}},f=async e=>{if(!e)return;let{setTranscript:t}=E.getState(),{phrasesUrl:r}=e,n=await (0,o.h)(r);if(!n?.ok)throw Error("Failed to fetch transcript json");t(await n.json())},I=async(e,t)=>{let{startProcessingCorrections:r,endProcessingCorrections:n,setMessage:l}=E.getState();r();try{let r=await C(e,t),n=!r||!("phrasesUrl"in r),o=!!r?.message;if(n||o)return void l(r?.message?.replace(`${a.F3}: `,"")??"Could not save corrections");await f(r)}catch{l("Could not save corrections")}finally{n()}},E=(0,n.A)(e=>({...m,closeCorrectionsPopup:()=>e({selectedWordSegments:null,selectedPhraseIndexInCorrectMode:null,isCorrectionsPopupOpen:!1}),closeSearch:()=>{e({isSearchOpen:!1,searchPhrase:""})},decrementPhraseSearchIndex:()=>e(e=>{let{currentPhraseSearchIndex:t,searchPhraseIndexes:r}=e;return{currentPhraseSearchIndex:t>1?t-1:r?.length||0}}),deleteCorrections:async(t,r,n)=>{let{startProcessingCorrections:a,endProcessingCorrections:o}=E.getState();a();try{await I(t,[{clipId:r,elementIds:n,correctionType:l.rbL.Remove}])}catch{e({message:"Could not save corrections"})}finally{o()}},disableCreateClipMode:()=>e({panelMode:"view",isCreateClipMode:!1,selectedPhraseIndex:null}),enableCorrectionMode:()=>e({panelMode:"correction",isCorrectMode:!0,isCreateClipMode:!1}),enableCreateClipMode:()=>e({panelMode:"createClip",isCorrectMode:!1,isCreateClipMode:!0,selectedPhraseIndex:null}),enableViewMode:()=>e({panelMode:"view",isCorrectMode:!1,isCreateClipMode:!1}),endProcessingCorrections:()=>e({isProcessingCorrections:!1}),getCurrentPhraseSearchIndex:()=>{let{currentPhraseSearchIndex:e,searchPhraseIndexes:t}=E.getState();return t?.[e-1]},incrementPhraseSearchIndex:()=>e(e=>{let{currentPhraseSearchIndex:t,searchPhraseIndexes:r}=e;return{currentPhraseSearchIndex:t<(r?.length||0)?t+1:1}}),openCorrectionsPopup:({wordSegments:t,phraseIndex:r})=>e({isCorrectionsPopupOpen:!0,selectedWordSegments:t,selectedPhraseIndexInCorrectMode:r}),openSearch:()=>e({isSearchOpen:!0}),resetTranscription:()=>e({...m}),revertAllCorrections:async e=>{let{startProcessingCorrections:t,endProcessingCorrections:r,setMessage:n}=E.getState();t();try{let t=await p(e),r=!t||!("source_url"in t),l=!!t?.message;if(r||l)return void n(t?.message?.replace(`${a.tk}: `,"")??"");await f({phrasesUrl:t.source_url}),n("All changes have been undone")}catch(e){throw n("Could not undo changes"),e}finally{r()}},saveCorrections:async(t,r,n,a,o)=>{let{startProcessingCorrections:i,endProcessingCorrections:s}=E.getState();i();try{await I(t,[{position:o,elementIds:a,newContent:r,clipId:n,correctionType:l.rbL.Replace}])}catch{e({message:"Could not save corrections"})}finally{s()}},saveCorrectionsAll:async(t,r)=>{let{startProcessingCorrections:n,endProcessingCorrections:a}=E.getState();n();try{await I(t,r)}catch{e({message:"Could not save corrections"})}finally{a()}},setMessage:t=>e({message:t}),setRetranscriptionStatus:t=>e({retranscriptionStatus:t}),setSearchPhrase:t=>e(e=>{let{transcript:r}=e,{searchPhraseIndexes:n,currentPhraseSearchIndex:a}=h(t,r?.phrases);return{searchPhrase:t,searchPhraseIndexes:n,currentPhraseSearchIndex:a}}),setSelectedPhraseIndex:t=>e({selectedPhraseIndex:t}),setTranscript:t=>e(e=>{let{searchPhrase:r}=e,{searchPhraseIndexes:n,currentPhraseSearchIndex:a}=h(r,t.phrases);return{transcript:t,searchPhraseIndexes:n,currentPhraseSearchIndex:a}}),startProcessingCorrections:()=>e({isProcessingCorrections:!0})}))},614353(e,t,r){var n=r(243494),a=r(268712),l=r(782233);let o={},i=(0,n.J1)`
+    query CanCreateCloneletForVideo($videoId: ID!) {
+  canCreateCloneletForVideo(videoId: $videoId) {
+    __typename
+    ... on CanCreateCloneletForVideoPayload {
+      eligible
+      entrypointVisible
+    }
+  }
+}
+    `;function s(e){let t={...o,...e};return a.IT(i,t)}function d(e){let t={...o,...e};return l._(i,t)}r.d(t,{CH:()=>s,em:()=>d},{uC:i})},398217(e,t,r){var n=r(243494),a=r(924189);let l={},o=(0,n.J1)`
+    mutation CreateClonelet($input: CreateCloneletInput!) {
+  createClonelet(input: $input) {
+    __typename
+    ... on CloneletPayload {
+      clonelet {
+        id
+        name
+        folder_id
+      }
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on InputValidationError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+  }
+}
+    `;function i(e){let t={...l,...e};return a.n(o,t)}r.d(t,{F:()=>i})},808233(e,t,r){r.d(t,{uC:()=>M.uC,Iw:()=>y,dY:()=>_,VU:()=>V,Ut:()=>P.U});var n,a=r(745975),l=r(462433),o=r(397328),i=((n=i||{}).ACTIVE="active",n.ARCHIVED="archived",n.DELETED="deleted",n),s=r(644532),d=r(427333),c=r(919642),u=r(133868),p=r(755018);let C=({label:e,href:t})=>{let r=t?a.createElement(l.N_E,{href:t},a.createElement(l.EYj,{isInline:!0},e)):e;return a.createElement(l.zAb,{alignItems:"center",gap:"xsmall"},a.createElement(l.Int,{icon:a.createElement(p.v,null),color:"bodyDimmed",size:2}),a.createElement(l.EYj,{color:"bodyDimmed",noWrap:!0},"Clip from ",r))};var g=r(243494),m=r(268712);let h={},f=(0,g.J1)`
+    query GetCloneletForCloneletVideo($videoId: ID!) {
+  getCloneletForCloneletVideo(videoId: $videoId) {
+    __typename
+    ... on GetCloneletForCloneletVideoPayload {
+      clonelet {
+        id
+        sourceVideoId
+        canViewSourceVideo
+        isSourceVideoOwner
+        sourceVideoStatus
+      }
+    }
+  }
+}
+    `,I={},E=(0,g.J1)`
+    query GetCloneletSourceVideoInformation($videoId: ID!) {
+  getVideo(id: $videoId) {
+    __typename
+    ... on RegularUserVideo {
+      id
+      name
+    }
+  }
+}
+    `,v=({isClonelet:e,videoId:t,cloneletOwnerId:r})=>{var n,o;let d,c,p=(0,s.lV)(),g=(0,s.pJ)(e=>e.id,null),v=(0,u.c)(),y=!p||!(e&&t&&v),{data:_,loading:R}=(n={variables:{videoId:t??""},skip:y},d={...h,...n},m.IT(f,d)),T=_?.getCloneletForCloneletVideo?.__typename==="GetCloneletForCloneletVideoPayload"?_.getCloneletForCloneletVideo:null,b=T?.clonelet??null,S=b?.sourceVideoId??null,x=b?.sourceVideoStatus??null,V=b?.canViewSourceVideo??!1,P=b?.isSourceVideoOwner??!1,M=!!r&&r===g||P,w=!y&&M&&!!S&&(x===i.ARCHIVED||x===i.ACTIVE)&&V,{data:A,loading:D}=(o={variables:{videoId:S??""},skip:!w},c={...I,...o},m.IT(E,c));if(!v||!e||!t)return null;if(!y&&(R||w&&D))return a.createElement(a.Fragment,null,a.createElement(l.EYj,{color:"border"},"・"),a.createElement(l.lsp,{width:"200px",height:"20px",radius:"medium",animated:!0}));if(!b||!x||!M)return null;let N=function({status:e,canViewSourceVideo:t,sourceVideoId:r,sourceVideoName:n}){let a=r?`/share/${r}`:null;if(e===i.DELETED)return{label:"Deleted Video",href:a};if(e===i.ARCHIVED)return t&&n?{label:n,href:a}:{label:"Archived Video",href:a};if(e===i.ACTIVE){if(!t)return{label:"Private Video",href:a};if(n)return{label:n,href:a}}return null}({status:x,canViewSourceVideo:V,sourceVideoId:S,sourceVideoName:A?.getVideo?.__typename==="RegularUserVideo"?A.getVideo.name:null});return N?a.createElement(a.Fragment,null,a.createElement(l.EYj,{color:"border"},"・"),a.createElement(C,{label:N.label,href:N.href})):null},y=({isClonelet:e,videoId:t,cloneletOwnerId:r})=>a.createElement(d.i,{feature:o.Xj.Clonelet,errorType:c.Y.SILENT},a.createElement(v,{isClonelet:e,videoId:t,cloneletOwnerId:r})),_=({dataName:e,isCreatingClip:t=!1,isDisabled:r=!1,onClick:n,size:o="small",timestampLabel:i,variant:s})=>{let d="small"===o?"body-md":"body-lg",c=t?"Creating clip...":a.createElement(l.B19,{direction:"row",gap:"small",wrap:"nowrap"},a.createElement(l.EYj,{fontWeight:"bold",size:d},"Create clip"," "),i?a.createElement(l.EYj,{fontWeight:"book",size:d},i):null);return a.createElement(l.$nd,{size:o,variant:s,iconBefore:a.createElement(p.v,null),onClick:n,isDisabled:r||t,"data-name":e},c)};var R=r(690310),T=r(355221),b=r(505669),S=r(764227),x=r(398217);let V=({isActive:e,committedRanges:t,phrases:r,videoId:n,onCloneletCreated:l})=>{let{disableCreateClipMode:o}=(0,T.V)(),i=(0,S.RW)(e=>e.clearCreateClipError),s=(0,S.RW)(e=>e.finishCreatingClip),d=(0,S.RW)(e=>e.isCreatingClip),c=(0,S.RW)(e=>e.setCreateClipError),u=(0,S.RW)(e=>e.startCreatingClip),{data:p}=(0,R.T0t)({skip:!e||0===t.length,variables:{id:n}}),C=p?.getVideo,g=(C?.__typename==="RegularUserVideo"&&null!=C.playable_duration&&Number.isFinite(C.playable_duration)?1e3*C.playable_duration:void 0)??0,m=(0,a.useMemo)(()=>(0,S.sf)(t),[t]),h=(0,a.useMemo)(()=>m.map(e=>(0,b.n5)(r,e.startIndex,e.endIndex,g)).filter(e=>null!=e),[m,r,g]),f=(0,a.useMemo)(()=>{if(0===h.length)return null;let e=h.reduce((e,t)=>e+t.durationMs,0);return{fromMs:h[0].fromMs,toMs:h[h.length-1].toMs,durationMs:e}},[h]),I=(0,a.useMemo)(()=>(0,b.Y7)(f),[f]),E=t.length>0?t.map(e=>`${e.startIndex}-${e.endIndex}`).join("|"):null;(0,a.useEffect)(()=>{i()},[i,E]);let[v]=(0,x.F)({onCompleted:e=>{let t=e?.createClonelet;if(t?.__typename==="CloneletPayload"){if(t.clonelet?.id){i(),s(),l?.(t.clonelet.id),o();return}c("Could not create clip. Try again.");return}t?.__typename==="UserNotAuthorizedError"||t?.__typename==="InputValidationError"||t?.__typename==="GenericError"?c(t.message):c("Something went wrong. Try again.")},onError:e=>{c(e.message||"Something went wrong. Try again.")}}),y=(0,a.useCallback)(()=>{d||0===h.length||!n||u()&&v({variables:{input:{videoId:n,sectionPlayRangesMs:h.map(e=>({from:e.fromMs,to:e.toMs}))}}})},[v,d,h,u,n]);return e?a.createElement(_,{variant:"primary",onClick:y,isDisabled:0===h.length||!n,isCreatingClip:d,timestampLabel:I||void 0}):null};var P=r(734507),M=r(614353)},133868(e,t,r){var n=r(343332),a=r(624687);function l(){return!0===(0,a.lo)({flag:n.Y0.LOOM_SHARE_CLIPS_CLONELETS,controlType:n.mD.STATSIG_FEATURE_GATE,activationValues:[!0]})}r.d(t,{c:()=>l})},734507(e,t,r){var n=r(614353),a=r(133868);function l(e){let t=(0,a.c)(),{data:r,loading:l}=(0,n.CH)({variables:{videoId:e},skip:!e||!t});if(l)return;let o=r?.canCreateCloneletForVideo,i=o?.__typename==="CanCreateCloneletForVideoPayload"&&!0===o.eligible,s=o?.__typename==="CanCreateCloneletForVideoPayload"&&!0===o.entrypointVisible;return{showEntrypoint:t&&s,allowCreate:t&&i}}r.d(t,{U:()=>l})},484119(e,t,r){var n=r(243494),a=r(322259);let l={},o=(0,n.J1)`
+    subscription ThumbnailsChangedForVideo($videoId: ID!) {
+  gifGeneratedForVideo(id: $videoId) {
+    default
+    animatedPreview
+  }
+}
+    `;function i(e){let t={...l,...e};return a.R(o,t)}r.d(t,{e:()=>i})},505669(e,t,r){function n(e,t){let r=e?.[t];return null!=r&&Number.isFinite(r)?Math.round(1e3*r):null}function a(e,t){return n(e[t],"ts")}function l(e,t,r){let a=n(e[t],"end_ts");if(null!=a)return a;let l=n(e[t],"ts"),o=Number.isFinite(r)&&r>0,i=n(e[t+1],"ts");return null!=i&&null!=l?o?Math.min(i,r):i:o?null!=l?Math.min(l+3e3,r):r:l??0}function o(e,t,r,n){if(!Number.isFinite(r))return!1;let o=a(e,t);if(null==o)return!1;let i=l(e,t,n),s=t===e.length-1;return r>=o&&(s?r<=i:r<i)}function i(e,t,r,n){let o=a(e,t);if(null==o)return null;let i=Math.max(o,l(e,r,n));return{fromMs:o,toMs:i,durationMs:i-o}}function s(e){let t=Number.isFinite(e)?Math.max(0,Math.round(e)):0,r=Math.floor(t/3600),n=Math.floor(t%3600/60),a=t%60,l=[];return r>0&&l.push(`${r}h`),n>0&&l.push(`${n}m`),(a>0||0===l.length)&&l.push(`${a}s`),l.join(" ")}function d(e){return!e||e.durationMs<=0?"":s(e.durationMs/1e3)}r.d(t,{$:()=>l,UY:()=>o,X4:()=>s,Y7:()=>d,aD:()=>a,n5:()=>i})},764227(e,t,r){var n=r(436145);function a(e){return{startIndex:Math.min(e.startIndex,e.endIndex),endIndex:Math.max(e.startIndex,e.endIndex)}}function l(e,t){return!!t&&e>=t.startIndex&&e<=t.endIndex}function o({committedRanges:e,selectedRange:t}){return t?e.find(e=>e.startIndex===t.startIndex&&e.endIndex===t.endIndex)??null:null}function i({committedRanges:e,interactedRange:t}){let r=a(t);return e.find(e=>e.startIndex<=r.startIndex&&e.endIndex>=r.endIndex)??null}function s(e){let t=e.map(e=>a(e)).sort((e,t)=>e.startIndex-t.startIndex),r=[];for(let e of t){let t=r[r.length-1];if(!t){r.push(e);continue}if(e.startIndex<=t.endIndex+1){r.pop(),r.push({...t,endIndex:Math.max(t.endIndex,e.endIndex)});continue}r.push(e)}return r}let d=(0,n.A)((e,t)=>({committedRanges:[],createClipErrorMessage:null,hoveredPhraseIndex:null,selectedRange:null,scrollToRangeStartRequest:null,isCreatingClip:!1,setCommittedRanges:t=>e(e=>{if(e.isCreatingClip)return e;let r=s(t);return{committedRanges:r,selectedRange:o({committedRanges:r,selectedRange:e.selectedRange})}}),appendRange:t=>e(e=>{if(e.isCreatingClip)return e;let r=s([...e.committedRanges,t]);return{committedRanges:r,selectedRange:i({committedRanges:r,interactedRange:t})}}),replaceRange:(t,r)=>e(e=>{if(e.isCreatingClip||t<0||t>=e.committedRanges.length)return e;let n=s([...e.committedRanges.filter((e,r)=>r!==t),r]);return{committedRanges:n,selectedRange:i({committedRanges:n,interactedRange:r})}}),clearAllRanges:()=>e(e=>e.isCreatingClip?e:{committedRanges:[],hoveredPhraseIndex:null,selectedRange:null}),clearCreateClipError:()=>e({createClipErrorMessage:null}),clearRangeContainingIndex:t=>e(e=>{if(e.isCreatingClip)return e;let r=e.committedRanges.filter(e=>t<e.startIndex||t>e.endIndex);return{committedRanges:r,selectedRange:o({committedRanges:r,selectedRange:e.selectedRange})}}),finishCreatingClip:()=>e({isCreatingClip:!1}),setCreateClipError:t=>e({createClipErrorMessage:t,isCreatingClip:!1}),setHoveredPhraseIndex:t=>e({hoveredPhraseIndex:t}),setSelectedRange:t=>e(e=>({selectedRange:o({committedRanges:e.committedRanges,selectedRange:t})})),clearSelectedRange:()=>e({selectedRange:null}),requestScrollToRangeStart:t=>e(e=>({scrollToRangeStartRequest:{phraseIndex:t,requestId:(e.scrollToRangeStartRequest?.requestId??0)+1}})),startCreatingClip:()=>!t().isCreatingClip&&(e({createClipErrorMessage:null,hoveredPhraseIndex:null,isCreatingClip:!0}),!0)}));r.d(t,{Te:()=>l,sf:()=>s},{RW:d})},444514(e,t,r){var n=r(745975),a=r(730889),l=r(820188),o=r(878396);let{y5:i}=a,s=e=>RegExp(`(${i(e)})`,"gi"),d=(e,t,r="",a="",l=0)=>{try{let o=e.split(s(t));if(1===o.length)return[e];let i=[],d=t.toLowerCase(),c=0;for(let e of o)if(""!==e)if(e.toLowerCase()!==d)i.push(e);else{let t=r;l===c&&(t+=` ${a}`),i.push(n.createElement("mark",{key:c,className:t,"data-index":c},e)),c++}return i}catch(t){if(o.warning(t,{message:"Error replacing search words in phrase"}),t)return[e]}};r.d(t,{},{Cv:(e,t)=>{if(!(e=e.trim())||t.length<1)return[];let r=[];try{let n=s(e);return t.forEach((e,a)=>{let o=e.value,i=e.speakerName||"",s=0;for(;n.exec(o);)r.push({index:a,counter:s}),s++;n.lastIndex=0;let d=a>0?t[a-1]:void 0;if((0,l.$)(i,a,d))for(;n.exec(i);)r.push({index:a,counter:s}),s++}),r}catch(e){return o.warning(e,{message:"Error finding indices of search phrase in phrases"}),[]}},fA:({phraseValue:e,wordClassName:t,ranges:r,searchPhrase:n="",searchMatchBaseClass:a="",searchMatchActiveClass:l=""})=>{let o,i=(o=[],r.length?(r.forEach(t=>{let r=t.start+t.length;o.push({value:e.substring(t.start,r),sourceTag:`${t.source.monologue}-${t.source.element}`,selectable:!0,elementId:t.source.elementId,clipId:t.source.clipId,word:"text"===t.type})}),o):[{value:e}]);if(1===i.length)return[];let s=e=>e;n.length&&(s=e=>d(e,n,a,l,-1));let c=[],u=0;for(let[e,r]of i.entries())""!==r.value&&(r.value=s(r.value),c.push({className:t,charCount:u,segment:r})),u+=r.value.length;return c},gg:d})},837822(e,t,r){var n,a=((n={}).NOT_STARTED="not-started",n.STARTED="started",n.FINISHED="finished",n);r.d(t,{i:()=>a})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/31746-38864a9f4c826230.js.map

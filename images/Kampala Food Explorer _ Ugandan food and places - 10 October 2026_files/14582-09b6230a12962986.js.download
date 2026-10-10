@@ -1,0 +1,65 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="7c111215-9974-4610-9f2e-9ae67da032dd",e._sentryDebugIdIdentifier="sentry-dbid-7c111215-9974-4610-9f2e-9ae67da032dd")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[14582],{929957(e,t,n){var r,o=((r=o||{}).name="name",r.companyName="company_name",r.variable="variable",r);n.d(t,{S:()=>o})},776593(e,t,n){var r=n(929957);let o=/({[^}]+}|\s+)/,a=({inputText:e,includeBraces:t=!0})=>{let n=e.split(o),a=new Set(Object.values(r.S).map(e=>"{".concat(e,"}"))),i=n.reduce((e,t,n)=>(a.has(t)&&/{\w+}/.test(t)&&e.push(n),e),[]);if(!t&&i.length>0){let e=n[i[0]].slice(1,-1);for(let t of i)n[t]=e}return{text:n,variableIndexes:i}};n.d(t,{},{En:e=>a({inputText:e,includeBraces:!1}).variableIndexes.length>0,GI:a})},870836(e,t,n){var r=n(243494),o=n(924189);let a={},i=(0,r.J1)`
+    mutation UpdateVideoName($id: ID!, $name: String!, $force: Boolean) {
+  result: updateVideoName(id: $id, name: $name, force: $force) {
+    ... on GenericError {
+      message
+    }
+    ... on InputValidationError {
+      message
+      failedFields {
+        field
+        message
+      }
+    }
+    ... on UpdateVideoNamePayload {
+      __typename
+      video {
+        id
+        name
+      }
+    }
+  }
+}
+    `;function l(e){let t={...a,...e};return o.n(i,t)}n.d(t,{y:()=>l})},403714(e,t,n){n.d(t,{z:()=>d});var r=n(96961),o=n.n(r),a=n(745975),i=n(462433),l=n(245713);let d=({children:e,canEdit:t,triggerLabel:n,onStartEditing:r,isEditing:d=!1,editor:s,iconSize:c=3,hasEditIcon:u=!0,className:m})=>{let f=(0,a.useRef)(null),p=(0,a.useRef)(!1);(0,a.useEffect)(()=>{!d&&p.current&&(p.current=!1,f.current?.focus())},[d]);let g=t&&u;return a.createElement("div",{className:o()("editable-title_container_e2b",t&&"editable-title_editable_rDs",m),style:{"--editable-title-icon-units":c}},d?s:a.createElement(a.Fragment,null,a.createElement("div",{className:o()("editable-title_title_UkX",g&&"editable-title_titleWithIcon_fvT")},e),g&&a.createElement("span",{className:"editable-title_editIcon_TQG","aria-hidden":"true"},a.createElement(i.Int,{icon:a.createElement(l.V,null),color:"primary",size:c})),t&&a.createElement("button",{ref:f,type:"button",className:"editable-title_trigger_DLm",onClick:e=>{p.current=0===e.detail,r()},"aria-label":n})))}},34605(e,t,n){let r=(0,n(436145).A)(e=>({isDownloading:!1,downloadingPercentage:0,setDownloading:()=>e(()=>({isDownloading:!0})),setDownloadingPercentage:t=>e(()=>({downloadingPercentage:t})),resetDownloading:()=>e(()=>({isDownloading:!1,downloadingPercentage:0}))}));n.d(t,{},{t:r})},13872(e,t,n){var r=n(243494),o=n(268712),a=n(782233);let i={},l=(0,r.J1)`
+    query GetVideoTranscodedUrl($videoId: ID!, $forceOriginal: Boolean) {
+  getVideoTranscodedUrl(videoId: $videoId, forceOriginal: $forceOriginal) {
+    ... on VideoSource {
+      url
+    }
+  }
+}
+    `;function d(e){let t={...i,...e};return o.IT(l,t)}function s(e){let t={...i,...e};return a._(l,t)}n.d(t,{$6:()=>s,lE:()=>d})},365601(e,t,n){let r=(0,n(436145).A)(e=>({url:null,setUrl:t=>e(()=>({url:t})),clearUrl:()=>e(()=>({url:null}))}));n.d(t,{},{G:r})},616696(e,t,n){n.d(t,{p:()=>g});var r=n(745975),o=n(462433),a=n(703665),i=n(641378),l=n(96961),d=n.n(l);let s=({size:e=4.5,backgroundColor:t="",removeBorder:n,children:a,padding:i})=>r.createElement(o.mcf,{className:d()("icon-circle_iconCircleContainer_QTY",{"icon-circle_withBorder_RXD":!n}),backgroundColor:t,radius:"100",width:e,height:e,padding:i},a),c=({children:e,tooltipText:t,tooltipDirection:n,inActivitySidebar:i=!1})=>r.createElement("div",{className:"businessHighlightTooltipWrapper"},r.createElement(o.m_M,{placement:n,tabIndex:-1,triggerOffset:8,maxWidth:i?30:void 0,isInline:!1,keepOpen:!0,content:r.createElement(r.Fragment,null,r.createElement(o.zAb,{gap:"small"},r.createElement(o.Int,{color:"upgradeHover",size:2,icon:r.createElement(a.C,null)}),r.createElement(o.EYj,{color:"upgradeHover",size:"body-sm",fontWeight:"bold"},"Available with your trial")),r.createElement(o.hKd,{bottom:1}),r.createElement(o.EYj,{size:"body-sm"},t))},e));var u=n(535040),m=n(127121),f=n(23343),p=n(384342);let g=({scope:e,placement:t="bottomCenter",title:n,feature:l=p.o1.DEFAULT,highlightText:d,inActivitySidebar:g=!1})=>{let w=(0,m.z)();return(0,f.s1)(e)?w?r.createElement(c,{tooltipDirection:t,tooltipText:d,inActivitySidebar:g},r.createElement(o.zAb,{gap:"small"},n,r.createElement(s,{size:"var(--lns-space-large)",backgroundColor:"upgrade"},r.createElement(o.Int,{icon:r.createElement(a.C,null),size:2,color:"body"})))):r.createElement(r.Fragment,null,n):r.createElement(u.Q,{placement:t,feature:l,inActivitySidebar:g},r.createElement(o.zAb,{gap:"var(--ds-space-075)"},r.createElement(o.EYj,{color:"disabledContent",size:g?"medium":void 0,fontWeight:g?"medium":void 0},n),r.createElement(o.Int,{icon:r.createElement(i._,null),size:2,color:"disabledContent"})))}},627893(e,t,n){var r=n(745975),o=n(462433);n.d(t,{},{O:({title:e,content:t})=>r.createElement(o.m_M,{placement:"rightCenter",content:t},r.createElement(o.EYj,{color:"disabledContent"},e))})},865205(e,t,n){n.d(t,{},{$3:"Archive",Cq:"Contact Sales",Dy:"Manage folder",HS:"Add to playlist",Lm:"Notifications",Lz:"Download video",OF:"Report abuse",R_:"Copy link",S$:"Admin management",Zg:"Download captions",bZ:"Make public",dC:"Download",hs:"Move folder into Space",i2:"Move...",iF:"Turn off notifications",jT:"Turn on notifications",mj:"Duplicate",nF:"Turn on thumbnail gif",op:"Preparing download...",qk:"Turn off thumbnail gif",tn:"Make private",wo:"Change thumbnail",wx:"Unarchive",xN:"Animated thumbnail",xf:"Dive (Admin)",zv:"Copy embed code"})},650030(e,t,n){var r=n(243494),o=n(924189);let a={},i=(0,r.J1)`
+    mutation ArchiveVideos($videoIds: [ID!]!, $isArchived: Boolean!) {
+  result: archiveVideos(videoIds: $videoIds, isArchived: $isArchived) {
+    ... on ArchiveVideosPayload {
+      videos {
+        id
+      }
+    }
+  }
+}
+    `;function l(e){let t={...a,...e};return o.n(i,t)}n.d(t,{N:()=>l})},152536(e,t,n){var r=n(243494),o=n(924189);let a={},i=(0,r.J1)`
+    mutation DuplicateVideo($videoId: ID!, $newName: String!, $spaceId: ID, $password: String) {
+  duplicateVideo(
+    videoId: $videoId
+    newName: $newName
+    spaceId: $spaceId
+    password: $password
+  ) {
+    __typename
+    ... on GenericError {
+      __typename
+      message
+    }
+    ... on DuplicateVideoPayload {
+      __typename
+      newVideo {
+        __typename
+        id
+        name
+      }
+    }
+  }
+}
+    `;function l(e){let t={...a,...e};return o.n(i,t)}n.d(t,{D:()=>l})},94635(e,t,n){let r,o;n.d(t,{rf:()=>D,km:()=>C,Qn:()=>$});var a=n(397328),i=n(34605),l=n(13872),d=n(365601),s=n(298917),c=n(671821),u=n(83749),m=n.n(u),f=n(878396),p=n(368885);let g=(0,n(278290).Z)(a.Xj.VideoDownload),w=e=>(e.preventDefault(),e.returnValue="Download in progress. Are you sure you want to leave?",e.returnValue);async function b(e,t,n=3){for(let r=0;r<=n;r++){try{let o=await window.fetch(e,t);if(o.ok||206===o.status)return o;if(r===n)throw Error(`Request failed with status ${o.status}`)}catch(e){if(e instanceof DOMException&&"AbortError"===e.name||r===n)throw e}await function(e){return new Promise(t=>setTimeout(t,e))}(1e3*Math.pow(2,r))}throw Error("Exhausted retries")}async function v(e){let t=await e.arrayBuffer();return{pieces:[t],bytesRead:t.byteLength}}async function h(e,t,n,r){let{pieces:o,bytesRead:a}=await v(e);n.pieces.push(...o),n.downloadedBytes+=a,r&&t>0&&r(Math.floor(100*n.downloadedBytes/t))}async function E(e,t,n){let r=await b(e,{headers:{Range:`bytes=${t.start}-${t.end}`},signal:n});if(206!==r.status&&200!==r.status)throw Error(`Expected 206 Partial Content or 200 OK, got ${r.status}.`);return r}async function y(e,t,n,r){if(t<=0)throw Error(`chunkSize must be > 0, got ${t}`);let o={pieces:[],downloadedBytes:0},a=await E(e,{start:0,end:t-1},n),i=a.headers.get("Content-Type");if(200===a.status){let{pieces:e}=await v(a);return r?.(100),new Blob(e,{type:i??void 0})}let l=function(e){let t=e.headers.get("Content-Range");if(!t)throw Error("Missing Content-Range header");let n=t.match(/\/(\d+)$/);if(!n)throw Error(`Invalid Content-Range header: ${t}`);return parseInt(n[1],10)}(a);for(let i of(await h(a,l,o,r),(function(e,t){let n=[];for(let r=0;r<e;r+=t)n.push({start:r,end:Math.min(r+t-1,e-1)});return n})(l,t).slice(1))){if(n.aborted)throw new DOMException("Download aborted","AbortError");let t=await E(e,i,n);await h(t,l,o,r)}return new Blob(o.pieces,{type:i??void 0})}var _=n(577146);function I(){o&&(f.info("Abort ranged download",{}),o.abort(),o=void 0)}let D=(e,t,n)=>{let{setDownloading:r,setDownloadingPercentage:l,resetDownloading:d}=i.t.getState();I();let u=function(e){let t,{url:n,filename:r,chunkSizeBytes:o=0x3200000,onProgress:i,onCompleted:l,onError:d}=e,s=new AbortController;return window.addEventListener("beforeunload",w),(async()=>{try{g.info("Starting ranged download",{chunkSizeBytes:o}),t=await y(n,o,s.signal,i),g.info("Ranged download completed",{totalSizeBytes:t.size}),l?.()}catch(e){if(e instanceof DOMException&&"AbortError"===e.name)return void g.info("Ranged download aborted",{});g.error("Ranged download failed",{errorType:e instanceof Error?e.name:"Unknown"},{feature:a.Xj.VideoDownload}),d?.()}finally{window.removeEventListener("beforeunload",w)}})(),{abort(){s.abort(),t=void 0,window.removeEventListener("beforeunload",w)},save(){t&&(m()(t,r),t=void 0)}}}({url:e,filename:t,onProgress:e=>{l(e)},onCompleted:()=>{u.save(),d(),o=void 0,(0,_.E)(n.video_id),c.u4(s.jyt,{...n,downloadType:"ranged"})},onError:()=>{o=void 0,c.u4(s.b6p,{...n,downloadType:"ranged"}),d()}});o=u,r()};function $(){let{isDownloading:e}=(0,i.t)(),[t]=(0,l.$6)(),{setUrl:n}=(0,d.G)();return r=>{let{url:o,name:i,opts:l,password:d}=r;if(e)return;let s=(e=>{if(!e)return null;try{return new URL(e).searchParams.get("Policy")}catch(e){return f.error(e,{message:"Failed to get policy from Url"},{team:a.u.Mint}),null}})(o);s&&(0,p.OE)(s)?t({variables:{videoId:l.video_id},fetchPolicy:"network-only"}).then(e=>{if(e.error)return Promise.reject(e.error.message);let t=e.data?.getVideoTranscodedUrl;return t?"VideoSource"===t.__typename&&t.url?void(n(t.url),D(t.url,i,l)):Promise.reject(`Error refreshing credentials for download url: ${t.__typename}`):Promise.reject("Error refreshing credentials for download url: no data found")}).catch(e=>{throw f.warning(e,{video_id:l.video_id}),Error(e)}):D(o,i,l)}}function C(){let{resetDownloading:e}=(0,i.t)();return()=>{e(),r&&(f.info("Abort download",{}),r.abort()),I()}}},343305(e,t,n){var r=n(13084),o=n.n(r),a=n(745975),i=n(462433),l=n(397328),d=n(427333),s=n(919642),c=n(67265),u=n(737537);let m=({videoId:e,setIsOpen:t,videoOrganizationId:n})=>{let{featureLoadedRef:r}=(0,c.b)();return a.createElement(o(),{focusTrapOptions:{clickOutsideDeactivates:!0,allowOutsideClick:!0,onDeactivate:()=>t(!1)}},a.createElement(i.mcf,{backgroundColor:"background",borderSide:"all",padding:2.5,radius:"200",maxWidth:"410px",refHandler:r},a.createElement(u.y,{videoId:e,onClose:()=>t(!1),videoOrganizationId:n})))};n.d(t,{},{G:({videoId:e,setIsOpen:t,videoOrganizationId:n})=>a.createElement(d.i,{feature:l.Xj.Playlists,errorType:s.Y.SILENT},a.createElement(m,{videoId:e,setIsOpen:t,videoOrganizationId:n}))})},177080(e,t,n){function r(e){return e.length<200}n.d(t,{C:()=>r})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/14582-09b6230a12962986.js.map

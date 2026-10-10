@@ -1,0 +1,517 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="c22c641a-f283-45b8-96cb-3594bc04be9b",e._sentryDebugIdIdentifier="sentry-dbid-c22c641a-f283-45b8-96cb-3594bc04be9b")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[25201],{867469(e,t,a){a.d(t,{},{A:{card:"media-card_card_R1E",hoverShow:"media-card_hoverShow_EyS",selected:"media-card_selected_R6Y",forceShowHoverContent:"media-card_forceShowHoverContent_RWx",thumbnailWrapper:"media-card_thumbnailWrapper_mO3",link:"media-card_link_tWQ",thumbnail:"media-card_thumbnail_kzB",body:"media-card_body_R03"}})},837455(e,t,a){a.d(t,{},{A:{videoCard:"video-card_videoCard_vn8",videoCardHoverShow:"video-card_videoCardHoverShow_nGE",activeCheckState:"video-card_activeCheckState_PtM",activeHoverState:"video-card_activeHoverState_mRI",videoCardLink:"video-card_videoCardLink_Jvt",showHoverState:"video-card_showHoverState_Q48",stayOpen:"video-card_stayOpen_rBQ",videoCardHoverHide:"video-card_videoCardHoverHide_l9V",videoCardThumbnailWrapper:"video-card_videoCardThumbnailWrapper_ixQ",hideInteractivity:"video-card_hideInteractivity_Hjg",hasTags:"video-card_hasTags_cJL",videoCardInsights:"video-card_videoCardInsights_WOb",videoCardTags:"video-card_videoCardTags_mNp",videoCardButton:"video-card_videoCardButton_pWs",pinButtonActive:"video-card_pinButtonActive_wJ2",videoVisibility:"video-card_videoVisibility_jH9",titleField:"video-card_titleField_wId",titleRename:"video-card_titleRename_ItO",videoCardFooter:"video-card_videoCardFooter_Mly",visibilityCard:"video-card_visibilityCard_x2x",visibilityCardNewNav:"video-card_visibilityCardNewNav_o9N",visibilityButton:"video-card_visibilityButton_qqT",nameRow:"video-card_nameRow_UKP",nameRowName:"video-card_nameRowName_Z4b",checkmark:"video-card_checkmark_CM8",ftuxHighlight:"video-card_ftuxHighlight_eYr"}})},214972(e,t,a){a.d(t,{j:()=>o});var r=a(540447),i=a(745975);function o(){return i.createElement(r.default,{label:"",testId:"ads-refreshed-icon"})}a(577638)},892841(e,t,a){a.d(t,{c:()=>o});var r=a(113425),i=a(745975);function o(){return i.createElement(r.default,{label:"",testId:"ads-refreshed-icon"})}a(577638)},999020(e,t,a){a.d(t,{U:()=>o});var r=a(275088),i=a(745975);function o(){return i.createElement(r.A,{label:"",testId:"ads-refreshed-icon"})}a(577638)},37089(e,t,a){var r,i,o,n=((r=n||{}).DAYS="days",r.YEARS="years",r),l=((i=l||{}).TEAM="team",i.PUBLISHED="published",i),s=((o=s||{}).NO_LIMIT="NoLimit",o.INFINITE="Infinite",o.LIMIT="Limit",o);a.d(t,{ET:()=>s,Y3:()=>l,YZ:()=>n})},131910(e,t,a){let r="PUBLISH_STATUS",i="CREATED_BY",o="FOLDER_STATUS",n="TAGS_STATUS",l="PUBLISHED",s="UNPUBLISHED",d="CREATED_BY_ME",c="CREATED_BY_OTHERS",m="IN_FOLDER",u="NOT_IN_FOLDER",p="SECONDARY_PUBLISH_STATUS",_="VIDEO_TYPE",g="MEETING_RECORDING",v="CLONELETS",y="ACTIVITY",h="NEVER_WATCHED",E="STALE",S=[h,E];var f,b,I=((f=I||{})[f.VIDEOS=0]="VIDEOS",f[f.FOLDERS=1]="FOLDERS",f[f.ARCHIVE=2]="ARCHIVE",f[f.PROFILE=3]="PROFILE",f[f.SCREENSHOTS=4]="SCREENSHOTS",f[f.SYNCED_MEETINGS=5]="SYNCED_MEETINGS",f[f.NOTIFICATIONS_ALL=6]="NOTIFICATIONS_ALL",f[f.NOTIFICATIONS_SHARED=7]="NOTIFICATIONS_SHARED",f[f.NOTIFICATIONS_COMMENT=8]="NOTIFICATIONS_COMMENT",f[f.TAGS=9]="TAGS",f[f.SPACES=10]="SPACES",f[f.FOLDER_IN_SPACES=11]="FOLDER_IN_SPACES",f[f.FOLDER_IN_MY_LIBRARY=12]="FOLDER_IN_MY_LIBRARY",f[f.BROWSE_SPACES_CLOSED=13]="BROWSE_SPACES_CLOSED",f[f.BROWSE_SPACES_ARCHIVED=14]="BROWSE_SPACES_ARCHIVED",f);let C="GENERAL_ACCESS",T="PUBLIC_ACCESS",w="OPEN_ACCESS",A="RESTRICTED_ACCESS",$=[T,w,A],P={type:E,label:"Stale",defaultValue:String(90),valueOptions:[30,90,180].map(e=>({value:String(e),label:"Older than ".concat(e," days")}))};var R=((b=R||{}).MY_LIBRARY_TO_SPACE="MY_LIBRARY_TO_SPACE",b.SPACE_TO_MY_LIBRARY="SPACE_TO_MY_LIBRARY",b.SPACE_TO_NEW_SPACE="SPACE_TO_NEW_SPACE",b.SAME_ROOT_CONTEXT="SAME_ROOT_CONTEXT",b);a.d(t,{rd:()=>R,yW:()=>I},{DJ:S,DS:$,DW:h,E5:c,HP:"PROFILE",He:w,Hg:"ARCHIVED",Kn:T,L4:v,OD:"ARCHIVED",QM:A,TQ:"WORKSPACE_PROFILE",TZ:{type:"COMMUNITY_PUBLISHED",label:"Community Looms",queryParam:"community"},Tz:{type:C,label:"Access",filterOptions:[{type:T,label:"Public"},{type:w,label:"Open"},{type:A,label:"Restricted"}]},U6:"USER_PROFILE_SPACES",Ur:l,V2:"SECONDARY_TAG",VI:i,Vk:g,Vz:d,WN:{type:r,label:"Post status",filterOptions:[{type:s,label:"Not posted",parent:p},{type:l,label:({workspace:e})=>(null==e?void 0:e.name)?"Posted to ".concat(e.name):"Posted",parent:p}]},Wd:n,XJ:{type:l,label:"Transferrable Content",queryParam:"transferrable"},Xs:{type:y,label:"Activity",filterOptions:[{type:h,label:"Never watched"},P]},b6:r,eQ:{type:i,label:"Created by",filterOptions:[{type:d,label:"Me"},{type:c,label:"Others"}]},fM:{type:n,label:"Tagged with",filterOptions:[]},h5:"USER_SPACE",iB:"ALL_PUBLIC_SPACES",kn:o,oL:{type:d,label:"Created by me"},u0:_,uH:"USER_PUBLIC_SPACES",uo:{type:_,label:"Video type",filterOptions:[{type:g,label:"Meeting recordings"},{type:"LOOMS",label:"Loom videos"},{type:v,label:"Clips"}]},ux:m,vV:C,vq:s,xF:{type:o,label:"Folder status",filterOptions:[{type:u,label:"Not in a folder"},{type:m,label:"In a folder"}]},yw:u,z0:y})},198492(e,t,a){a.d(t,{},{J:(e={},t=null)=>!!t&&t&&e[t]&&e[t].show&&!e[t].complete,uY:(e={},t=null)=>!!t&&e[t]&&e[t].complete})},450008(e,t,a){a.d(t,{w:()=>l});var r=a(745975),i=a(462433),o=a(214972);let n="See how Loom can save you time at work from Loom employees and people like you.",l=()=>r.createElement(i.m_M,{content:n,placement:"rightCenter",triggerOffset:18,tabIndex:-1,ariaLive:!0},r.createElement("button",{className:"community-looms-tooltip_tooltipButton_Sco"},r.createElement(i.mcf,{backgroundColor:"highlight",padding:".375rem",radius:"100"},r.createElement(i.zAb,null,r.createElement(i.Int,{altText:n,size:2,icon:r.createElement(o.j,null)})))))},505145(e,t,a){a.d(t,{ZI:()=>s,ZQ:()=>c,ro:()=>d});var r=a(96961),i=a.n(r),o=a(745975),n=a(204327),l=a(867469);let s=(0,o.forwardRef)(function({children:e,isSelected:t=!1,forceShowHoverContent:a=!1,className:r,surface:s,...d},c){let m=o.useRef(s);return(0,o.useEffect)(()=>{n.L.addAction("loom.media_card.rendered",{surface:m.current??"unknown",status:"success"})},[]),o.createElement("div",{ref:c,className:i()(l.A.card,{[l.A.selected]:t,[l.A.forceShowHoverContent]:a},r),...d},e)}),d=e=>{let t=e.aspectRatio?{aspectRatio:e.aspectRatio}:void 0;return o.createElement("div",{className:l.A.thumbnailWrapper,style:t},e.media??o.createElement("img",{className:l.A.thumbnail,src:e.imageUrl,alt:e.alt}),e.overlay)},c=({children:e})=>o.createElement("div",{className:l.A.body},e)},931628(e,t,a){var r,i=((r={}).ShareButton="share_button",r.ChangePrivacy="change_privacy",r.KebabMenu="kebab_menu",r.TipsAndTricksShareButton="tips_and_tricks_share_button",r.QuickShare="quick_share",r.ShareFtux="share_ftux",r);a.d(t,{C:()=>i})},511058(e,t,a){var r=a(243494),i=a(924189);let o={},n=(0,r.J1)`
+    mutation RegenerateMP4($input: RegenerateMP4Input!) {
+  regenerateMP4(input: $input) {
+    ... on RegenerateMP4Payload {
+      __typename
+      success
+    }
+    ... on GenericError {
+      __typename
+      message
+    }
+    ... on VideoNotFoundError {
+      __typename
+      message
+    }
+  }
+}
+    `;function l(e){let t={...o,...e};return i.n(n,t)}a.d(t,{c:()=>l})},143903(e,t,a){var r=a(243494);let i=(0,r.J1)`
+    fragment VideoFields on RegularUserVideo {
+  id
+  name
+  complete
+  archived
+  createdAt
+  s3_id
+  totalReactions
+  totalComments
+  organization_idv2
+  currentUserHasWatched
+  views {
+    id
+    total
+  }
+  thumbnails {
+    default
+    defaultPlay
+    ogFull
+    full
+    fullPlay
+    defaultGif
+    defaultGifPlay
+    animatedPreview
+  }
+  owner {
+    first_name
+    last_name
+    id
+    avatars {
+      name
+      large
+      thumb
+      isAtlassianMastered
+    }
+  }
+  processing_information {
+    videoUploadValid
+    videoUploadMessage
+    trim_id
+  }
+  playable_duration
+  video_properties {
+    thumbnail_is_png
+    recording_version
+    width
+    height
+  }
+  organization {
+    id
+    name
+  }
+  owner_id
+  current_user_is_owner
+  download_enabled
+  downloadable
+  downloadableBy
+  currentUserCanEdit
+  tags
+  use_gif
+  visibility
+  is_protected
+  privacy
+  isCommunityLoom
+  spaces {
+    name
+    id
+    isArchived
+    privacy
+    is_primary
+    data_age_limit_in_seconds
+  }
+  folder {
+    id
+    name
+    special_id
+    owner_id
+    visibility
+    owner {
+      first_name
+      id
+      last_name
+    }
+  }
+  isParentOfPersonalizedCopies
+  personalizationType
+  videoVariant
+}
+    `;a.d(t,{},{V:i})},312528(e,t,a){var r=a(243494),i=a(924189);let o={},n=(0,r.J1)`
+    mutation RemoveVideoFromWatchLaterList($videoId: ID!) {
+  removeVideoFromWatchLaterList(videoId: $videoId) {
+    ... on RemoveVideoFromWatchLaterListPayload {
+      success
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+    __typename
+  }
+}
+    `;function l(e){let t={...o,...e};return i.n(n,t)}a.d(t,{X:()=>l})},825878(e,t,a){var r=a(243494),i=a(143903),o=a(88275),n=a(268712);let l={},s=(0,r.J1)`
+    query GetCommunityLoomIdsForEmptyStates($returnAll: Boolean) {
+  getCommunityLoomIdsForEmptyStates(returnAll: $returnAll) {
+    ... on GetCommunityLoomIdsForEmptyStatesPayload {
+      watchSortedAndRandomizedIds
+      starterVideos {
+        ...VideoFields
+        ...VideoPlayerV2Fragment
+      }
+    }
+    ... on Error {
+      message
+    }
+  }
+}
+    ${i.V}
+${o.z}`;function d(e){let t={...l,...e};return n.IT(s,t)}a.d(t,{OA:()=>d})},308403(e,t,a){var r=a(243494),i=a(143903),o=a(88275),n=a(782233);let l={},s=(0,r.J1)`
+    query GetLoomsForFeedQuery($followingFilters: [[LoomsCollectionFilter!]!], $publishedFilters: [[LoomsCollectionFilter!]!], $skipFollowingQuery: Boolean!, $numberFromFollowing: Int!, $numberFromNewlyPublished: Int!, $followingSource: LoomsSource!, $followingSourceValues: [String!], $newlyPublishedSource: LoomsSource!, $newlyPublishedValues: [String!]) {
+  following: getLooms @skip(if: $skipFollowingQuery) {
+    __typename
+    ... on GetLoomsPayload {
+      videos(
+        first: $numberFromFollowing
+        source: $followingSource
+        sourceValues: $followingSourceValues
+        sortType: RECENT
+        sortOrder: DESC
+        filters: $followingFilters
+      ) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+  newlyPublished: getLooms {
+    __typename
+    ... on GetLoomsPayload {
+      videos(
+        first: $numberFromNewlyPublished
+        source: $newlyPublishedSource
+        sourceValues: $newlyPublishedValues
+        sortType: RECENT
+        sortOrder: DESC
+        filters: $publishedFilters
+      ) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+}
+    `,d=(0,r.J1)`
+    query GetLoomsForNearlyEmptyFeedQuery($followingFilters: [[LoomsCollectionFilter!]!], $publishedFilters: [[LoomsCollectionFilter!]!], $skipFollowingQuery: Boolean!, $numberFromFollowing: Int!, $numberFromNewlyPublished: Int!, $followingSource: LoomsSource!, $followingSourceValues: [String!], $newlyPublishedSource: LoomsSource!, $newlyPublishedValues: [String!]) {
+  following: getLooms @skip(if: $skipFollowingQuery) {
+    __typename
+    ... on GetLoomsPayload {
+      videos(
+        first: $numberFromFollowing
+        source: $followingSource
+        sourceValues: $followingSourceValues
+        sortType: RECENT
+        sortOrder: DESC
+        filters: $followingFilters
+      ) {
+        edges {
+          node {
+            ...VideoFields
+            ...VideoPlayerV2Fragment
+          }
+        }
+      }
+    }
+  }
+  newlyPublished: getLooms {
+    __typename
+    ... on GetLoomsPayload {
+      videos(
+        first: $numberFromNewlyPublished
+        source: $newlyPublishedSource
+        sourceValues: $newlyPublishedValues
+        sortType: RECENT
+        sortOrder: DESC
+        filters: $publishedFilters
+      ) {
+        edges {
+          node {
+            ...VideoFields
+            ...VideoPlayerV2Fragment
+          }
+        }
+      }
+    }
+  }
+}
+    ${i.V}
+${o.z}`;function c(e){let t={...l,...e};return n._(s,t)}function m(e){let t={...l,...e};return n._(d,t)}a.d(t,{$K:()=>m,tX:()=>c},{DY:s})},889610(e,t,a){var r=a(745975),i=a(808580),o=a(865567),n=a(258271);let l=(0,i.s)(n.t),s=o.Q;a.d(t,{},{n:({children:e})=>{let t=(0,r.useRef)(l);if(!t.current.dragDropManager)throw Error("DragDropManager not initialized");return r.createElement(s,{manager:t.current.dragDropManager},e)}})},827089(e,t,a){var r=a(243494);let i=(0,r.J1)`
+    fragment SpaceRegularUserVideo on SpaceRegularUserVideo {
+  id
+  name
+  isArchived
+  privacy
+  is_primary
+  data_age_limit_in_seconds
+}
+    `;a.d(t,{},{b:i})},99945(e,t,a){a.d(t,{G:()=>J});var r=a(13084),i=a.n(r),o=a(743514),n=a.n(o),l=a(745975),s=a(775916),d=a(113425),c=a(462433),m=a(397328),u=a(108697),p=a(19721),_=a(889668),g=a(726905),v=a(931628),y=a(308403),h=a(208818),E=a(550075),S=a(556551),f=a(721678),b=a(298917),I=a(948138),C=a(671821),T=a(878396),w=a(427333),A=a(919642),$=a(67265),P=a(73842),R=a(994882);let L=({inputValue:e,setInputValue:t,firstKeyPressed:a,setFirstKeyPressed:r,modalVariant:i})=>{!a&&e&&(C.u4(b.X05,{modal_variant:i}),r(!0));let o=(0,l.useRef)(null);return!function(e,t=!1){(0,l.useEffect)(()=>{if(e.current){if(t){let t=e.current.value.length;e.current.setSelectionRange(t,t)}e.current.focus()}},[e,t])}(o),l.createElement(c.mcf,{position:"relative",width:{default:"100%",small:"auto"}},l.createElement(c.ksK,{ref:o,"aria-label":"Search",placeholder:"Search",value:e,icon:l.createElement(R.j,null),size:"small",onChange:e=>{t(e.currentTarget.value),C.u4(b.aX0,{modal_variant:i})}}),e.length>0&&l.createElement(c.mcf,{position:"absolute",height:"100%",right:"xsmall",top:0},l.createElement(c.W30,{alignment:"center"},l.createElement(c.QWc,{onClick:()=>{t(""),o.current?.focus()},size:"small"},"Clear"))))};var F=a(19485),O=a(337308),N=a(706768);let V=({isSwitchDisabled:e,onChange:t,spaces:a})=>{let r=(0,N.Ei)(),{data:i}=(0,O.ei)(),o=a?.map(e=>e.id),n=i?.getPrimarySpace?.__typename==="GetPrimarySpacePayload"?i.getPrimarySpace.space:null;return l.createElement(l.Fragment,null,l.createElement(c.mcf,{padding:"small",radius:"medium",backgroundColor:"backgroundSecondary"},l.createElement(c.zAb,{justifyContent:"space-between"},l.createElement(c.mcf,{paddingLeft:"small"},l.createElement(c.zAb,{gap:"small",alignItems:"start"},l.createElement(c.mcf,null,l.createElement(F.p,{spaceName:n?.name??""})),l.createElement(c.mcf,null,l.createElement(c.EYj,{fontWeight:"bold",size:"body-md"},"Share to ",n?.name),l.createElement(c.hKd,{top:"xsmall"}),l.createElement(c.EYj,{id:`suggested-space-hint-text-${n?.id}`,color:"grey6",size:"body-sm"},"Make your video discoverable to anyone in ",r.name)))),l.createElement(c.mcf,null,l.createElement(c.dOG,{size:"medium",isActive:n?.id!=null&&!!o?.includes(n.id),isDisabled:e,ariaDescribedby:`suggested-space-hint-text-${n?.id}`,onChange:e=>{var r;let i,o;return r=e.target.checked,void(t&&n&&(r?(i=[...a||[],n],o=`A video was shared to ${n.name}`):(i=a?.filter(e=>e.id!==n.id),o=`A video was unshared from ${n.name}`),t(i,a||[],o)))}})))))};var k=a(228821),D=a(371849);let x=({space:e,clicked:t})=>{let[a,r]=(0,l.useState)(t),i=a?`Space was added - ${e.name}, click to remove`:`Add to Suggested Space - ${e.name}`;return(0,l.useEffect)(()=>{r(t)},[t]),l.createElement(c.Sc0,{id:`share-space-checkbox-${e.id}`,"aria-label":i,isChecked:a,"aria-describedby":`suggested-space-hint-text-${e.id}`})},M=({spacesToShow:e,selectedSpaceIds:t,setSelectedSpaces:a,inputValue:r,showPrimarySpaceDescription:i})=>{let[o,n]=function(){let e=(0,l.useRef)(null),[t,a]=(0,l.useState)(!1);return(0,l.useEffect)(()=>{let t=new IntersectionObserver(([e])=>{a(e.isIntersecting)},{threshold:1});e.current&&t.observe(e.current)},[e]),[e,t]}(),s=(0,D.Ei)();return l.createElement(c.mcf,{maxHeight:"10rem",className:"quick-share_suggestedSpacesTable_skt",paddingX:"medium",borderSide:n?void 0:"top"},l.createElement(c.B8B,{columns:["1fr","0fr"],gap:"small",variant:"stripe",role:"group","aria-label":"Suggested Spaces"},e.map((e,n)=>l.createElement(c.vS5,{key:e.id,padding:"small"},l.createElement(c.mcf,{onClick:i=>{i.stopPropagation(),i.preventDefault(),t.has(e.id)?(a(t=>t.filter(t=>t.id!==e.id)),r&&C.u4(b.Hby,{modal_variant:I.s9,is_space:!0,action:"space_removed",...(0,P.x)(b.Hby,u.T.space(e.id,"string","result_id"))})):(a(t=>[...t,e]),r&&C.u4(b.Hby,{modal_variant:I.s9,is_space:!0,action:"space_added",...(0,P.x)(b.Hby,u.T.space(e.id,"string","result_id"))}))}},l.createElement(c.zAb,{justifyContent:"space-between"},l.createElement(c.zAb,{justifyContent:"space-between"},l.createElement(c.mcf,{paddingLeft:"small"},l.createElement("div",{ref:0===n?o:void 0}),l.createElement(F.W,{space:e})),l.createElement(c.mcf,{paddingLeft:"small"},l.createElement(k.mD,{spaceId:String(e.id),toolTipPlacement:"bottomCenter"}))),l.createElement(c.mcf,null,l.createElement(x,{space:e,clicked:t.has(e.id)}))),i&&e.is_primary&&l.createElement(c.mcf,{paddingLeft:"40px",paddingRight:"15px"},l.createElement(c.EYj,{fontWeight:"book",size:"body-sm",color:"grey6",id:`suggested-space-hint-text-${e.id}`},`Make your video discoverable to anyone in
+                        ${s?.name}`)))))))};function U({allSpaces:e,selectedSpaceIdSet:t,setSelectedSpaces:a,title:r,showToggle:i=!1,onShare:o,spaces:n,isModal:s=!1}){let[d,m]=(0,l.useState)(""),[u,p]=(0,l.useState)(!1),_=i?e.filter(e=>!e.is_primary):e,g=(0,l.useMemo)(()=>{let e=d?_.filter(e=>e?.name?.toLowerCase().includes(d.toLowerCase())):_;return d&&C.u4(b.XJe,{modal_variant:I.s9,total_results:e.length,spaces:e.length}),e},[_,d]);return l.createElement(c.mcf,{role:"dialog","aria-modal":"false","aria-labelledby":"shareVideoToSpacesModal"},l.createElement(c.mcf,{className:"p:medium"},l.createElement(c.hKd,{bottom:"small"},l.createElement(c.EYj,{htmlTag:"h2",id:"shareVideoToSpacesModal",size:"body-md",alignment:"left",fontWeight:"bold"},r)),l.createElement(L,{inputValue:d,setInputValue:m,firstKeyPressed:u,setFirstKeyPressed:p,modalVariant:I.s9}),n&&i&&l.createElement(l.Fragment,null,l.createElement(c.hKd,{bottom:"medium"}),l.createElement(V,{isSwitchDisabled:!1,spaces:n,onChange:o}))),l.createElement(M,{spacesToShow:g,selectedSpaceIds:t,setSelectedSpaces:a,inputValue:d,showPrimarySpaceDescription:!s}))}let B=({areSpacesRemoved:e,disabled:t,onClick:a})=>l.createElement(s.A,{appearance:"primary",isDisabled:t,onClick:a},e?"Update":"Share");var H=a(243494),G=a(268712);let W={},z=(0,H.J1)`
+    fragment SuggestedSpace on Space {
+  id
+  name
+  is_primary
+  isArchived
+  privacy
+}
+    `,Y=(0,H.J1)`
+    query GetSuggestedSpaces($recommendedSpaceLimit: Int!, $after: String) {
+  recommendedSpaces: getSharingRecommendations {
+    ... on GetSharingRecommendationsPayload {
+      recommendations(first: $recommendedSpaceLimit, after: $after) {
+        nodes {
+          ... on SpaceRecommendationType {
+            space {
+              ...SuggestedSpace
+            }
+          }
+        }
+      }
+      totalRecommendations
+    }
+    ... on Error {
+      message
+    }
+  }
+  primarySpace: getPrimarySpace {
+    ... on GetPrimarySpacePayload {
+      space {
+        ...SuggestedSpace
+      }
+    }
+  }
+}
+    ${z}`,J=e=>l.createElement(w.i,{feature:m.Xj.ShareToSpaceButton,errorType:A.Y.SILENT},l.createElement(Q,e)),Q=({videoId:e,spaces:t,isOpen:a,setIsOpen:r,setVideo:o,source:w,returnFocusRef:A})=>{let{openModal:R}=(0,g.U)(),{featureLoadedRef:L}=(0,$.b)(),{setShowConfirmationToast:F}=(0,p.U)(),[O,N]=(0,l.useState)(t||[]);(0,l.useEffect)(()=>{t&&N(t)},[t]);let V=new Set(t?.map(e=>e.id)),k=new Set(O.map(e=>e.id)),D=O.filter(e=>!V.has(e.id)),x=t?.filter(e=>!k.has(e.id))||[],M=new Set(x.map(e=>e.id)),H=function(){var e;let t,{data:a}=(e={variables:{recommendedSpaceLimit:30}},t={...W,...e},G.IT(Y,t));if(!a)return null;let r=a.primarySpace?.__typename==="GetPrimarySpacePayload"?a.primarySpace:null,i=r?.space,o=a.recommendedSpaces?.__typename==="GetSharingRecommendationsPayload"?a.recommendedSpaces:null,n=o?.recommendations?.nodes?.map(e=>e?.__typename==="SpaceRecommendationType"?e.space:null).filter(Boolean).filter(e=>!e?.is_primary)??[],l=Math.min(3,o?.totalRecommendations??0);return[i,...n.slice(0,l),...[...n.slice(l,n.length)].sort((e,t)=>e.name.localeCompare(t.name))].filter(Boolean)}(),z=new Set(H?.map(e=>e.id)),J=new Set(t?.map(e=>e.id)),Q=H?.filter(e=>!J.has(e.id));(0,l.useEffect)(()=>{a&&C.u4(b.OtD,{source:w,contextPagePath:window.location.href,modal_variant:I.s9,has_toggle:!0,...(0,P.x)(b.OtD,u.T.video(e,"video_id"))})},[e,w,a]);let q=(0,l.useMemo)(()=>{if(Q)return Q.forEach(t=>{!M.has(t.id)&&a&&C.u4(b.Nz8,{suggestion_type:"space",source:"share_modal",modal_variant:I.s9,...(0,P.x)(b.Nz8,u.T.video(e,"video_id"),u.T.space(t.id,"string","suggested_space_id"))})}),[...t||[],...Q]},[t,Q,a,M,e]),[j]=(0,E.c)(),K=O.map(e=>e.id).sort(),X=t?.map(e=>e.id).sort();if(!q)return null;let Z=(t,a,r)=>{try{j({variables:{videoIds:[e],spaceIds:t.map(e=>e.id)},refetchQueries:[h.E4,y.DY,S.Vi,{query:f.lX,variables:{videoId:e,shouldFetchVideoVariableReplacementQuery:!1,includeSpaces:!0},context:{sharding:{entityType:"video",entityId:e}}}]}),o&&o({spaces:t}),F(r),t.forEach(t=>{C.u4(b.BW0,{modal_variant:I.s9,...(0,P.x)(b.BW0,u.T.video(e,"video_id"),u.T.space(t.id||null,"string","space_id"))}),z.has(t.id)&&C.u4(b.rg2,{suggestion_type:"space",source:"share_modal",modal_variant:I.s9,...(0,P.x)(b.rg2,u.T.video(e,"video_id"),u.T.space(t.id,"string","suggested_space_id"))}),C.u4(b.sKi,{source:w,modal_variant:I.s9,is_shared:!0,...(0,P.x)(b.sKi,u.T.video(e,"video_id"),u.T.space(t.id||null,"string","space_id"))})}),a.forEach(t=>{C.u4(b.sKi,{source:w,modal_variant:I.s9,is_shared:!1,...(0,P.x)(b.sKi,u.T.video(e,"video_id"),u.T.space(t.id||null,"string","space_id"))})})}catch(a){T.error(a,{message:"Error sharing video to spaces",newSpacesToShareTo:t,videoId:e},{feature:m.Xj.Spaces})}};return l.createElement(i(),{focusTrapOptions:{clickOutsideDeactivates:!0,allowOutsideClick:!0,onDeactivate:()=>r(!1)}},l.createElement("div",null,l.createElement(c.mcf,{backgroundColor:"background",width:"23em",borderSide:"all",radius:"large",shadow:"medium",refHandler:e=>{L(e)}},l.createElement(U,{allSpaces:q,spaces:t,selectedSpaceIdSet:k,setSelectedSpaces:N,title:"Share video to Spaces",onShare:Z}),l.createElement("div",{className:"p:medium borderTop"},l.createElement(c.B19,{alignItems:"flex-end",justifyContent:"space-between"},l.createElement(c.kS2,null,l.createElement(c.mcf,{paddingBottom:".1rem"},l.createElement(s.A,{appearance:"subtle",onClick:()=>{R({modalType:_.uH,options:{source:v.C.QuickShare,videoId:e,setVideo:o,returnFocusRef:A}}),r(!1)},iconBefore:d.default},"More options"))),l.createElement(c.kS2,null,l.createElement(B,{areSpacesRemoved:x.length>0,disabled:n()(K,X),onClick:()=>{let e,a,i,o,n,l;Z(O,t,(a="A video was shared",i="A video was unshared",(n=D.length)>1?e=`${a} with ${n} Spaces`:n&&(e=`${a} to ${D[0]?.name}`),(l=x.length)>1?o=`${i} with ${l} Spaces`:l&&(o=`${i} from ${x[0]?.name}`),e&&o?`${e}
+${o}`:e||o)),r(!1)}})))))))}},228821(e,t,a){a.d(t,{mD:()=>I,$g:()=>h});var r=a(745975),i=a(850645),o=a.n(i),n=a(37089);let l=e=>{if(-1===e)return{type:n.ET.INFINITE,compact:"Forever",expanded:"Forever"};if(0!==e&&e%31536e3==0){let t=e/31536e3;return{type:n.ET.LIMIT,compact:`${t}y`,expanded:`${t} ${o()("year",t)}`}}let t=Math.floor(e/86400);return{type:n.ET.LIMIT,compact:`${t}d`,expanded:`${t} ${o()("day",t)}`}};var s=a(316931),d=a(66644);let c=({dataAgeLimitFormatted:e})=>r.createElement(d.A,{appearance:"information",iconBefore:s.default},e);var m=a(68522),u=a(673613);let p=({children:e})=>r.createElement(u.M,{name:m.VD},e);var _=a(462433);let{Jd:g}=a(390676),v=e=>-1===e?1/0:e,y=(e,t)=>{let a=v(e.data_age_limit_in_seconds),r=v(t.data_age_limit_in_seconds);return null===a?t:null===r||a<r?e:t},h=({createdAt:e,spaces:t})=>{var a;let i=t&&t.length>0?t.reduce(y):null;if(i?.data_age_limit_in_seconds==null||null==e)return null;let o=l((a=i.data_age_limit_in_seconds,-1===a?-1:Math.max(a-g(e),0))),s=o.type===n.ET.INFINITE?"This video is shared to a Space with a data retention policy of Forever.":`This video is shared to a Space with a data retention policy and will be deleted in ${o.expanded}. If you would like to preserve this video, unshare it from ${i.name}.`;return r.createElement(p,null,r.createElement(_.m_M,{content:s,maxWidth:60,placement:"bottomCenter",keepOpen:!0},r.createElement(c,{dataAgeLimitFormatted:o.compact})))};var E=a(243494),S=a(268712);let f={},b=(0,E.J1)`
+    query GetSpaceDataAgeLimit($spaceId: ID!) {
+  getSpace(spaceId: $spaceId) {
+    __typename
+    ... on GetSpacePayload {
+      __typename
+      space {
+        data_age_limit_in_seconds
+        id
+      }
+    }
+    ... on Error {
+      message
+    }
+  }
+}
+    `,I=({spaceId:e,toolTipPlacement:t})=>{let a=(e=>{var t;let a,{data:r}=(t={variables:{spaceId:e}},a={...f,...t},S.IT(b,a)),i=r?.getSpace?.__typename==="GetSpacePayload"?r.getSpace.space?.data_age_limit_in_seconds:null;return null==i?null:l(i)})(e);if(null==a)return null;let i="Forever"===a.compact?"Videos shared to only this Space will never be deleted as per the Space's data retention policy":r.createElement(_.EYj,null,"Videos shared to this Space will be permanently deleted once they are older than ",a.expanded,"."," ",r.createElement(_.N_E,{variant:"neutral",target:"_blank",href:"https://support.atlassian.com/loom/docs/configure-data-retention-rules-for-your-team-enterprise-only/",onClick:e=>{e.stopPropagation()}},"Learn more."));return r.createElement(p,null,r.createElement(_.m_M,{keepOpen:!0,content:i,maxWidth:50,placement:t},r.createElement(c,{dataAgeLimitFormatted:a.compact})))}},550075(e,t,a){var r=a(243494),i=a(924189);let o={},n=(0,r.J1)`
+    mutation BatchShareVideosToSpaces($videoIds: [ID!]!, $spaceIds: [ID!]!) {
+  batchShareVideosToSpaces(videoIds: $videoIds, spaceIds: $spaceIds) {
+    __typename
+    ... on BatchShareVideosToSpacesPayload {
+      __typename
+      success
+    }
+    ... on Error {
+      message
+    }
+  }
+}
+    `;function l(e){let t={...o,...e};return i.n(n,t)}a.d(t,{c:()=>l})},337308(e,t,a){var r=a(243494),i=a(268712);let o={},n=(0,r.J1)`
+    query GetPrimarySpace {
+  getPrimarySpace {
+    ... on GetPrimarySpacePayload {
+      space {
+        id
+        name
+        privacy
+        is_primary
+      }
+    }
+  }
+}
+    `;function l(e){let t={...o,...e};return i.IT(n,t)}a.d(t,{ei:()=>l})},556551(e,t,a){var r=a(243494),i=a(268712);let o={},n=(0,r.J1)`
+    query GetSpaceNameAndMembers($spaceId: ID!, $first: Int!, $after: String) {
+  getSpaceMembers(spaceId: $spaceId) {
+    __typename
+    ... on GetSpaceMembersPayload {
+      members(spaceId: $spaceId, first: $first, after: $after) {
+        edges {
+          node {
+            id
+            user {
+              id
+              first_name
+              last_name
+              avatars {
+                thumb
+              }
+            }
+          }
+        }
+      }
+    }
+    ... on Error {
+      message
+    }
+  }
+  getSpace(spaceId: $spaceId) {
+    __typename
+    ... on GetSpacePayload {
+      __typename
+      space {
+        id
+        is_primary
+        name
+        privacy
+        totalFolders
+        totalVideos
+        topUsedTags {
+          tag
+        }
+        membersCount
+        currentUserIsMember
+        isArchived
+        createdAt
+      }
+    }
+    ... on Error {
+      message
+    }
+  }
+}
+    `;function l(e){let t={...o,...e};return i.IT(n,t)}a.d(t,{rQ:()=>l},{Vi:n})},699241(e,t,a){a.d(t,{F:()=>u});var r=a(96961),i=a.n(r),o=a(745975),n=a(113833),l=a(148830),s=a(462433),d=a(575726),c=a(872218);let m="tag-link_tagLink_H3D";function u({tag:e,context:t,useReactLink:a,className:r="",textColor:p="primary",textSize:_="small",textWeight:g="book",variant:v="neutral",onKeyDown:y}){let{pathname:h}=(0,n.zy)(),E=(0,c.U)(),S=()=>{E({variables:{tag:e,context:t}})},f=o.createElement(s.EYj,{size:_,color:p,fontWeight:g,hasEllipsis:!0},`#${e}`),b=RegExp("^/profile/[^/]+").test(h);return a?o.createElement(l.N_,{onClick:S,to:`/tag/${e}`,className:i()(r,m),onKeyDown:y,rel:b?"nofollow":void 0},f):o.createElement(s.N_E,{onClick:S,href:`${d.J4}/tag/${e}`,className:i()(r,m),variant:v,onKeyDown:y,rel:b?"nofollow":void 0},f)}},872218(e,t,a){a.d(t,{U:()=>c,E:()=>m});var r=a(745975),i=a(243494),o=a(924189);let n={},l=(0,i.J1)`
+    mutation logTagClicked($tag: String!, $context: String!) {
+  result: logTagClicked(tag: $tag, context: $context) {
+    ... on TagClickedPayload {
+      success
+      tag
+    }
+  }
+}
+    `,s={},d=(0,i.J1)`
+    mutation logTagViewed($tag: String!) {
+  result: logTagViewed(tag: $tag) {
+    ... on TagViewedPayload {
+      success
+      tag
+    }
+  }
+}
+    `;function c(){let e,[t]=(e={...n,...void 0},o.n(l,e));return t}function m(e){let t,[a]=(t={...s,...void 0},o.n(d,t));(0,r.useEffect)(()=>{a({variables:{tag:e}})},[a,e])}},213546(e,t,a){a.d(t,{e:()=>c});var r=a(745975),i=a(462433),o=a(446103),n=a(104992),l=a(512274),s=a(111924),d=a(767287);function c({profileId:e,type:t="avatar",avatarSize:a,fontSize:m,fallbackUserName:u,fallbackUserAvatar:p,ariaHidden:_=!1}){let{loading:g,data:v}=(0,d.g$)({variables:{userId:e},fetchPolicy:"no-cache",skip:!e});if(g)return r.createElement(r.Fragment,null,"name"===t?r.createElement("div",{className:"user-profile_rowLoading_DvJ"},r.createElement(i.mcf,{height:"small",width:"4.5rem",backgroundColor:"disabledBackground",radius:"medium"})):r.createElement("div",{className:"user-profile_avatarLoading_bMz"},r.createElement(i.mcf,{height:a,width:a,backgroundColor:"disabledBackground"})));let y=v?.user?.__typename==="RegularUserPayload"||v?.user?.__typename==="CommunityUserPayload"?v?.user?.user:null,h=!y&&u?u:(0,s.$G)(y),E=!y&&p?p:(0,l.xh)(y?.avatars??[]);return r.createElement(n.a,{avatarSrc:E,name:h,profileId:e,avatarMode:"avatar"===t,ariaHidden:_},"name"===t?r.createElement(i.mcf,{height:"1.125rem"},r.createElement(i.EYj,{size:m,fontWeight:"medium",hasEllipsis:!0},h)):r.createElement(o.H,{isDecorativeImage:!0,avatarSize:a,avatarSrc:E,name:h}))}},721678(e,t,a){a.d(t,{lX:()=>s,d5:()=>d});var r=a(243494);let i=(0,r.J1)`
+    fragment VideoCardFieldsBase on RegularUserVideo {
+  id
+  name
+  complete
+  archived
+  createdAt
+  s3_id
+  totalReactions
+  totalComments
+  organization_idv2
+  currentUserHasWatched
+  views {
+    id
+    total
+  }
+  thumbnails {
+    default
+    defaultPlay
+    default4X3
+    ogFull
+    full
+    fullPlay
+    defaultGif
+    defaultGifPlay
+    animatedPreview
+  }
+  owner {
+    first_name
+    last_name
+    id
+    avatars {
+      name
+      large
+      thumb
+      isAtlassianMastered
+    }
+  }
+  processing_information {
+    videoUploadValid
+    trim_id
+    videoUploadMessage
+  }
+  playable_duration
+  video_properties {
+    thumbnail_is_png
+    recording_version
+    width
+    height
+    externalUpload
+  }
+  organization {
+    id
+    name
+  }
+  owner_id
+  current_user_is_owner
+  download_enabled
+  downloadable
+  downloadableBy
+  currentUserCanEdit
+  isDirectlySharedWithCurrentUser
+  tags
+  use_gif
+  visibility
+  is_protected
+  privacy
+  isCommunityLoom
+  folder {
+    id
+    name
+    special_id
+    owner_id
+    visibility
+    owner {
+      first_name
+      id
+      last_name
+    }
+  }
+  isParentOfPersonalizedCopies
+  personalizationType
+  videoVariant
+}
+    `;var o=a(827089),n=a(268712);let l={},s=(0,r.J1)`
+    query GetVideoCardDetails($videoId: ID!, $shouldFetchVideoVariableReplacementQuery: Boolean!, $archived: Boolean, $includeSpaces: Boolean = true) {
+  video: getVideo(id: $videoId, archived: $archived) {
+    ... on RegularUserVideo {
+      __typename
+      id
+      ...VideoCardFieldsBase
+      spaces @include(if: $includeSpaces) {
+        ...SpaceRegularUserVideo
+      }
+      variableReplacement @include(if: $shouldFetchVideoVariableReplacementQuery) {
+        originalWord
+        replacementWord
+      }
+    }
+  }
+}
+    ${i}
+${o.b}`;function d(e){let t={...l,...e};return n.IT(s,t)}},5607(e,t,a){var r=a(96961),i=a.n(r),o=a(745975),n=a(822065),l=a(547190),s=a(462433),d=a(775407),c=a(892841),m=a(241011),u=a(68522),p=a(343332),_=a(401503),g=a(902343),v=a(99945),y=a(624687),h=a(23343),E=a(827706),S=a(837455);let f=({text:e,isShared:t,textSize:a,position:r="left",color:i,shouldShowDropdownIcon:n=!0})=>e?(i||(i=t?"bodyDimmed":"primary"),o.createElement(o.Fragment,null,"left"===r&&o.createElement(s.Int,{icon:o.createElement(c.c,null),size:"2.25",color:i}),o.createElement(s.EYj,{color:i,size:a,hasEllipsis:!0,"data-visibility-text":!0},e),"right"===r&&n&&o.createElement(s.Int,{icon:o.createElement(d.q,null),size:"1.5"}))):null;a.d(t,{},{W:({video:e,textSize:t="medium",setHasActiveHoverState:a,setVideo:r})=>{let d,c,b,[I,C]=(0,o.useState)(!1),T=(0,o.useRef)(null),[w,A]=(0,o.useState)(!1),{id:$,currentUserCanEdit:P,isDirectlySharedWithCurrentUser:R,spaces:L=[],organization_id:F,isCommunityLoom:O=!1}=e,{selectedWorkspace:N}=(0,g._d)(),V=(0,E.g$)().fromPublicSharePage,k=Number(L.length),D=(0,_.fG)(N?.id,F),x=(0,y.lo)({flag:m.ts,controlType:p.mD.MIGRATED_FEATURE_FLAG,activationValues:m.kB,eligibilityPreCheckFunction:()=>O?{pass:!0}:{pass:!1,failReason:"Ineligible: video is not a community loom."}}),M=O&&x,U=!!k||M,B=!!R&&!P;(0,o.useEffect)(()=>{a&&a(I)},[a,I]),(0,o.useEffect)(()=>{if(!B||w||0===k)return;let e=T.current;if(!e)return;let t=()=>{let t=e.querySelector("[data-visibility-text]");t&&t.scrollWidth>t.clientWidth&&A(!0)};requestAnimationFrame(t);let a=new l.A(t);return a.observe(e),()=>a.disconnect()},[B,w,k]);let{renderLayer:H,triggerProps:G,layerProps:W}=(0,n.Z4)({isOpen:I,ResizeObserver:l.A,placement:"bottom-start",auto:!0,onOutsideClick:()=>C(!1)}),z=(0,h.s1)(u.n4),Y=P&&z;if(void 0===x||V&&!U&&!P)return null;let J=!0;if(D){let e;switch(k){case 0:if(M)e="Loom's Community";else if(P)e="Share to Spaces",J=!1,d="right",c="bodyDimmed";else{if(!B)return null;e="Shared with you"}break;case 1:{let t=M?"1 Space and the Community":`${L[0].name??"1 Space"}`;e=B?w?`${t} +1`:`${t}, shared with you`:t;break}default:{let t=M?`${k} Spaces and the Community`:`${k} Spaces`;e=B?w?`${t} +1`:`${t}, shared with you`:t}}b=o.createElement(f,{text:e,isShared:J,textSize:t,position:d,color:c,shouldShowDropdownIcon:Y})}else{if(!M)return null;b=o.createElement(f,{text:"Loom's Community",isShared:!0,textSize:t,shouldShowDropdownIcon:Y})}return o.createElement(o.Fragment,null,o.createElement("div",{ref:T},o.createElement("button",{className:i()(S.A.visibilityButton),...G,disabled:!Y,onClick:()=>Y&&C(!I)},o.createElement(s.zAb,{gap:"xsmall"},b))),I&&H(o.createElement("span",{className:S.A.visibilityCardNewNav,...W},o.createElement(v.G,{videoId:$,spaces:L,isOpen:I,setIsOpen:C,source:"shared_with",setVideo:r}))))}})},948138(e,t,a){a.d(t,{},{$M:"Summary",k4:"Meeting Recap",l1:"Chapters",s9:"quick_share"})},873099(e,t,a){let r="history-context",i="home-context",o="looms-context",n="my-library-context",l="profile-context",s="share-context",d="tag-context",c="space-context",m="community-profile-context",u="watch-later-context",p="playlist-context",_="public-folder-context",g="checklist-context";a.d(t,{},{$X:c,FX:d,FY:_,K9:{canDrag:[n,o,c],hasBulkActions:[n,o,d,c,p],hasDropdownActions:[r,o,n,l,d,c,p],hasShareToSpaceIcon:[r,i,o,n,l,d,c,s,m,u,p,_],canRenameTitleInline:[n],hasPinIcon:[l],promptOnUnpublish:[l],hasRemoveFromWatchLater:[u],hasNoInteractivity:[g],hasHiddenInsights:[g]},Mx:m,Ni:u,Ur:s,XK:n,YQ:l,fg:"embed-space-context",fi:"archived-context",rS:r,sA:i,xk:o})},63986(e,t,a){var r=a(198492),i=a(644532),o=a(699444);let{J:n}=r;function l(e){return n((0,i.pJ)(e=>(0,o.a)(e.triggers??[]),{}),e)}a.d(t,{C:()=>l})},536348(e,t,a){a.d(t,{h:()=>g});var r=a(745975),i=a(198492),o=a(397328),n=a(91858),l=a(644532),s=a(699444),d=a(243494),c=a(924189);let m={},u=(0,d.J1)`
+    mutation UpdateUserTriggerV2($triggers: UpdateUserTriggerV2Input!) {
+  updateUserTriggerV2(triggers: $triggers) {
+    ... on GenericError {
+      __typename
+      message
+      error
+    }
+    ... on UserNotAuthorizedError {
+      __typename
+      message
+      feature {
+        name
+      }
+    }
+    ... on UpdateUserTriggerV2Payload {
+      __typename
+      user {
+        id
+        triggers {
+          complete
+          name
+          show
+        }
+      }
+    }
+  }
+}
+    `;var p=a(878396);let{uY:_}=i;function g(){let e,t=(0,l.lV)(),a=(0,l.pJ)(e=>e.id,0),i=(0,l.pJ)(e=>e.triggers,[]),d=(0,l.pJ)(e=>(0,s.a)(e.triggers),{}),[g]=(e={...m,...void 0},c.n(u,e));return(0,r.useCallback)(e=>n.y2.includes(e)?t?_(d,e)?void 0:g({variables:{triggers:{[e]:{complete:!0,show:!1}}},optimisticResponse:{__typename:"Mutation",updateUserTriggerV2:{__typename:"UpdateUserTriggerV2Payload",user:{__typename:"RegularUser",id:a?.toString(),triggers:[...i,{__typename:"CompletableTrigger",complete:!0,name:e,show:!1}]}}},onError:t=>{p.error(t,{message:"Failed to update trigger",triggerName:e},{team:o.u.Activation})}}):void 0:void p.warning(Error("invalid trigger name"),{cause:`tried to complete invalid trigger: ${e}`}),[t,a,i,d,g])}},563985(e,t,a){var r=a(243494),i=a(322259);let o={},n=(0,r.J1)`
+    subscription VideoTrimProgressUpdated($videoId: ID!) {
+  videoTrimProgressUpdated(videoId: $videoId) {
+    progress
+    transcodedUrl
+  }
+}
+    `;function l(e){let t={...o,...e};return i.R(n,t)}a.d(t,{c:()=>l})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/25201-7314f108fe1bb321.js.map

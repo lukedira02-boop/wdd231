@@ -1,0 +1,94 @@
+try{let e="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},t=(new e.Error).stack;t&&(e._sentryDebugIds=e._sentryDebugIds||{},e._sentryDebugIds[t]="4a6ace3f-5556-4da3-8f68-cf597ea78d1c",e._sentryDebugIdIdentifier="sentry-dbid-4a6ace3f-5556-4da3-8f68-cf597ea78d1c")}catch(e){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[61371],{641378(e,t,n){n.d(t,{_:()=>a});var r=n(246908),i=n(745975);function a(){return i.createElement(r.default,{label:"",testId:"ads-refreshed-icon"})}n(577638)},481383(e,t,n){var r,i,a,l=((r=l||{}).OWNER="owner",r.WORKSPACE="workspace",r.PUBLIC="public",r),s=((i=s||{}).OWNER="owner",i.WORKSPACE="workspace",i),o=((a=o||{}).WORKSPACE="workspace",a.PUBLIC="public",a);n.d(t,{Ny:()=>s,O5:()=>o,WG:()=>l})},821303(e,t,n){let r=["gradient_blue_pink","gradient_yellow_pink","gradient_purple_yellow","gradient_green_blue","gradient_pink_purple","gradient_orange_purple","gradient_blue_white","gradient_green_white","gradient_purple_blue"];var i,a=((i=a||{}).HEX="hex",i.PRESET="preset",i.CUSTOM="custom",i);function l(e){return r.includes(e)}function s(e){return/^#([0-9a-fA-F]{6})$/.test(e)}n.d(t,{XT:()=>l,fd:()=>s,hK:()=>a},{Mv:r})},679813(e,t,n){var r=n(745975);n.d(t,{},{d:({children:e,...t})=>r.createElement("label",t,e)})},480202(e,t,n){n.d(t,{D:()=>u,P:()=>p});let r=n.p+"img/background-for-editing/gradient_blue_pink-d65e1afab1ee6ce1.svg",i=n.p+"img/background-for-editing/gradient_blue_white-a3a9f20417c35898.svg",a=n.p+"img/background-for-editing/gradient_green_blue-fa7c0dfbd6c03348.svg",l=n.p+"img/background-for-editing/gradient_green_white-00404ddf31e46f97.svg",s=n.p+"img/background-for-editing/gradient_orange_purple-cd2fd69040aa8d84.svg",o=n.p+"img/background-for-editing/gradient_pink_purple-41d5fd5efd217215.svg",c=n.p+"img/background-for-editing/gradient_purple_blue-1c0d06d4dbe012c0.svg",d=n.p+"img/background-for-editing/gradient_purple_yellow-4fee1e33d58dd267.svg",u={gradient_blue_pink:r,gradient_yellow_pink:n.p+"img/background-for-editing/gradient_yellow_pink-8e8fb81db6630d11.svg",gradient_purple_yellow:d,gradient_green_blue:a,gradient_pink_purple:o,gradient_orange_purple:s,gradient_blue_white:i,gradient_green_white:l,gradient_purple_blue:c},p=Object.entries(u).map(([e,t])=>({presetBackgroundName:e,src:t}))},639175(e,t,n){var r=n(745975);function i({color:e="currentColor",className:t,size:n=40}){return r.createElement("svg",{className:t,width:n,height:n,viewBox:"0 0 31.9828 31.9829",fill:"none",xmlns:"http://www.w3.org/2000/svg","aria-hidden":!0,style:{color:e,display:"block"}},r.createElement("g",null,r.createElement("path",{d:"M16.2314 14.6872C16.6938 14.4192 17.2635 14.4163 17.7275 14.6814L24.7275 18.6814C25.1948 18.9485 25.4834 19.4459 25.4834 19.9841C25.4833 20.5223 25.1948 21.0198 24.7275 21.2869L17.7275 25.2869C17.2635 25.5518 16.6937 25.549 16.2314 25.281C15.769 25.0127 15.4835 24.5187 15.4834 23.9841V15.9841C15.4834 15.4495 15.769 14.9556 16.2314 14.6872Z",fill:"currentColor"}),r.createElement("path",{d:"M7.98279 13.2329C7.98316 10.334 10.3338 7.98327 13.2328 7.98294H21.3383L20.6566 4.78372C20.3983 3.56828 19.2041 2.79302 17.9887 3.0513L4.78358 5.85794C3.56809 6.1163 2.79279 7.31042 3.05115 8.5259L5.85779 21.731C6.07744 22.7638 6.97275 23.4753 7.98279 23.5083V13.2329ZM10.9828 26.7329C10.9828 27.9754 11.9904 28.9826 13.2328 28.9829H26.7328C27.9754 28.9829 28.9828 27.9756 28.9828 26.7329V13.2329C28.9824 11.9906 27.9752 10.9829 26.7328 10.9829H13.2328C11.9907 10.9833 10.9832 11.9908 10.9828 13.2329V26.7329ZM31.9828 26.7329C31.9828 29.6324 29.6323 31.9829 26.7328 31.9829H13.2328C10.3336 31.9826 7.98279 29.6322 7.98279 26.7329V26.5083C5.58501 26.4762 3.44182 24.7984 2.92225 22.354L0.115606 9.14895C-0.486786 6.31306 1.32463 3.52518 4.16053 2.92239L17.3637 0.115748C20.1998 -0.487091 22.9893 1.32454 23.5922 4.16067L24.4047 7.98294H26.7328C29.6321 7.98294 31.9824 10.3338 31.9828 13.2329V26.7329Z",fill:"currentColor"})))}n.d(t,{_:()=>i})},557836(e,t,n){var r=n(243494),i=n(268712),a=n(782233);let l={},s=(0,r.J1)`
+    query GetPlaylistAccess($playlistId: ID!) {
+  getPlaylistAccess(playlistId: $playlistId) {
+    __typename
+    ... on PlaylistAccessData {
+      ownerId
+      generalAccessLevel
+      generalPermissionLevel
+      users {
+        playlistId
+        userId
+        access
+        user {
+          id
+          fullName
+          email
+          avatarUrl
+        }
+      }
+      spaces {
+        playlistId
+        spaceId
+        access
+        space {
+          id
+          name
+        }
+      }
+    }
+    ... on GenericError {
+      message
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+  }
+}
+    `;function o(e){let t={...l,...e};return i.IT(s,t)}function c(e){let t={...l,...e};return a._(s,t)}n.d(t,{qg:()=>o,un:()=>c})},48359(e,t,n){var r=n(243494),i=n(924189);let a={},l=(0,r.J1)`
+    mutation UpdatePlaylistAccess($input: UpdatePlaylistAccessInput!) {
+  updatePlaylistAccess(input: $input) {
+    __typename
+    ... on PlaylistAccessData {
+      ownerId
+      generalAccessLevel
+      generalPermissionLevel
+      users {
+        playlistId
+        userId
+        access
+        user {
+          id
+          fullName
+          email
+          avatarUrl
+        }
+      }
+      spaces {
+        playlistId
+        spaceId
+        access
+        space {
+          id
+          name
+        }
+      }
+    }
+    ... on GenericError {
+      message
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+  }
+}
+    `;function s(e){let t={...a,...e};return i.n(l,t)}n.d(t,{g:()=>s})},525203(e,t,n){var r=n(572220),i=n(164480),a=n(237232),l=n(745975),s=n(178821),o=n(963531),c=n(641378),d=n(899104),u=n(821303),p=n(480202),g=n(185341),f=n(345566),_=n(924603),m=n(220639),y=n(512274);let b=u.Mv.map(e=>({presetBackgroundName:e,src:p.D[e]})),v=b.map(e=>e.src);function w(e,t){return function(e){if(null!=e&&u.Mv.includes(e))return p.D[e]}(t)??function(e){let t=0;for(let n of e)t=31*t+n.charCodeAt(0)|0;return v[Math.abs(t)%v.length]}(e)}function h(e){if(null==e||!Number.isFinite(e)||e<=0)return;let t=Math.round(e);return(0,_.$j)(t,{showMinutesAndSeconds:t<180})}function k(e,t){return e.immutable&&"Watch Later"===e.name?t?.midSentence?"watch later":"Watch later":e.name??""}function C(e){return(e??[]).map((e,t)=>({id:e.videoId??`unknown-${t}`,title:e.name??"Untitled",thumbnailUrl:e.thumbnailUrl??void 0,durationLabel:h(e.playableDuration),creatorName:e.owner?.display_name??"",creatorAvatarUrl:(0,y.mF)(e.owner?.avatars??[]),viewerCanAccess:e.viewerCanAccess??!0,isPasswordProtected:e.isPasswordProtected??!1}))}function P(e){let t=[];for(let n of e)!0===n.viewerCanAccess&&!n.isPasswordProtected&&n.thumbnailUrl&&t.push(n.thumbnailUrl);return t}function A(e){return e?new Date(e).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}):void 0}function I(e){return"public"===e||e===m.gkA.Public?"Public":"open"===e||e===m.gkA.Workspace?"Open":"Restricted"}function E(e){switch(e){case"public":return{icon:l.createElement(o.I,null),circleBg:f._o.public,iconColor:f.B1.public};case"open":return{icon:l.createElement(d.F,null),circleBg:f._o.open,iconColor:f.B1.open};case"restricted":return{icon:l.createElement(c._,null),circleBg:f._o.restricted,iconColor:f.B1.restricted};default:throw Error(`Unexpected access tier: ${e}`)}}function N(e,t=!0,n=!1,r=!1){return(0,g.cO)({workspaceName:e,isPublicSharingAllowed:t,companyDomainsEnabled:n,isAccessAlignmentPrivacyControlsEnabled:r,contentKind:"playlist"})}function S(e,t,n=!1,r=!1){return[...t?[{level:m.gkA.Public,...E("public"),title:"Public",description:r?"Anyone can find and view":"Anyone with the link can view"}]:[],{level:m.gkA.Workspace,...E("open"),title:"Open",description:function(e,t,n=!1){let r=t?"Anyone in your company":`Anyone in ${e}`;return n?`${r} can find and view`:r}(e,n,r)},{level:m.gkA.Owner,...E("restricted"),title:"Restricted",description:r?"Only specific people can find and view":"Only specific people and spaces"}]}function O(e){e.evict({fieldName:"getAvailablePlaylists"}),e.evict({fieldName:"getInProgressPlaylists"}),e.evict({fieldName:"searchPlaylists"})}function T(e,t){e.evict({fieldName:"getPlaylistDetails",args:{playlistId:t}}),e.evict({fieldName:"getPlaylistAccess",args:{playlistId:t}});let n=e.identify({__typename:"Playlist",playlistId:t});n&&e.evict({id:n})}function W(e,t,n){t&&(T(e,t),O(e)),n&&e.evict({fieldName:"getPlaylistIdsForVideo",args:{videoId:n}})}function D(e,t){e.evict({fieldName:"getPlaylistAccess",args:{playlistId:t}})}function L(e,t,n){let r=new Map;n.forEach((e,t)=>r.set(e,t));try{e.modify({fields:{getPlaylistDetails:(e,{storeFieldName:n,readField:i})=>{if(!n.includes(JSON.stringify({playlistId:t}))||!e||(0,s.A_)(e)||"PlaylistDetails"!==e.__typename||!e.videos||0===e.videos.length)return e;let a=[...e.videos.filter(e=>null!=e)].sort((e,t)=>{let n=i("videoId",e)??null,a=i("videoId",t)??null,l=null!=n?r.get(n)??-1:-1,s=null!=a?r.get(a)??-1:-1;return -1===l&&-1===s?0:-1===l?1:-1===s?-1:l-s}).map((e,t)=>({...e,sort:t}));return{...e,videos:a}}}})}catch{}}function U(e){return{startDate:(0,r.A)((0,i.A)(e,1),{representation:"date"}),endDate:(0,r.A)((0,a.A)(e,1),{representation:"date"})}}n.d(t,{$x:()=>N,Cd:()=>h,DY:()=>O,Il:()=>U,LE:()=>W,Sh:()=>k,WF:()=>w,Y3:()=>T,_f:()=>L,bc:()=>P,hB:()=>C,in:()=>S,lq:()=>D,yH:()=>I,zq:()=>A},{R:b})},339217(e,t,n){var r=n(243494),i=n(268712);let a={},l=(0,r.J1)`
+    query GetGroupsWithPublicContentPermissions($workspaceId: ID!, $withContentPermissions: ContentVisibilityProperty!) {
+  getWorkspaceGroupsForWorkspace(
+    workspaceId: $workspaceId
+    withContentPermissions: $withContentPermissions
+  ) {
+    ... on getWorkspaceGroupsPayload {
+      results {
+        id
+        name
+        members {
+          id
+          user_id
+        }
+      }
+    }
+  }
+}
+    `;function s(e){let t={...a,...e};return i.IT(l,t)}n.d(t,{aT:()=>s})},649444(e,t,n){var r=n(539058),i=n(343332),a=n(481383),l=n(644532),s=n(339217),o=n(220639),c=n(624687),d=n(257841);function u(e,t,n){return!!e||t?.getWorkspaceGroupsForWorkspace?.__typename==="getWorkspaceGroupsPayload"&&(t.getWorkspaceGroupsForWorkspace.results.map(e=>e.members.map(e=>e.user_id))??[]).flat().includes(String(n))}function p({workspaceId:e}){let{value:t}=(0,d.zc)(r._t.CONTENT_ACCESS_AND_VIEWING,!1,{skip:!e,workspaceIdv2:e}),{value:n}=(0,d.zc)(r._t.CONTENT_PRIVACY_RESTRICTIONS,!1,{skip:!e,workspaceIdv2:e}),g=(0,l.pJ)(e=>e.id,NaN),f=(0,c.lo)({flag:i.Y0.PUBLIC_LINK_GROUP_SAVING,controlType:i.mD.STATSIG_FEATURE_GATE,activationValues:[!0],skip:!e}),_=!(e&&void 0===f)&&(!0!==f||t!==a.O5.WORKSPACE),m=_&&n?.visibility!==a.O5.WORKSPACE,{data:y}=(0,s.aT)({variables:{workspaceId:e||"",withContentPermissions:o.JNS.Public},skip:!e||!_||m});return _&&u(m,y,g)}n.d(t,{J:()=>u,V:()=>p})},889122(e,t,n){n.d(t,{},{R:({isCopied:e})=>e?"Link copied!":"Copy link"})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/61371-4cde9b4c924450bf.js.map

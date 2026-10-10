@@ -1,0 +1,86 @@
+try{let o="u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{},e=(new o.Error).stack;e&&(o._sentryDebugIds=o._sentryDebugIds||{},o._sentryDebugIds[e]="94d75b3e-a013-4352-93b2-dafa04ad51be",o._sentryDebugIdIdentifier="sentry-dbid-94d75b3e-a013-4352-93b2-dafa04ad51be")}catch(o){}("u">typeof window?window:"u">typeof global?global:"u">typeof globalThis?globalThis:"u">typeof self?self:{}).SENTRY_RELEASE={id:"loom-web-app@fa34326"};"use strict";(self.rspackChunk_loomhq_web_client=self.rspackChunk_loomhq_web_client||[]).push([[98079],{780328(o,e,t){t.d(e,{W:()=>d});var i=t(745975),d=()=>i.createElement("svg",{viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg"},i.createElement("path",{d:"M15.1456 12.6501L12.5456 18.5C12.0285 18.5 11.5325 18.2946 11.1668 17.9289C10.8011 17.5632 10.5957 17.0672 10.5957 16.55V13.9501H6.91675C6.72831 13.9522 6.54166 13.9134 6.36974 13.8362C6.19781 13.759 6.04471 13.6454 5.92106 13.5032C5.7974 13.361 5.70614 13.1936 5.6536 13.0126C5.60106 12.8317 5.58849 12.6414 5.61677 12.4551L6.51376 6.60521C6.56076 6.29523 6.71822 6.01268 6.95711 5.80963C7.196 5.60657 7.50022 5.49669 7.81373 5.50023H15.1456M15.1456 12.6501V5.50023M15.1456 12.6501H16.8811C17.2489 12.6566 17.6064 12.5278 17.8856 12.2882C18.1648 12.0485 18.3462 11.7147 18.3955 11.3501V6.80021C18.3462 6.43561 18.1648 6.1018 17.8856 5.86216C17.6064 5.62252 17.2489 5.49373 16.8811 5.50023H15.1456",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round"}));t(577638)},275043(o,e,t){t.d(e,{t:()=>d});var i=t(745975),d=()=>i.createElement("svg",{viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg"},i.createElement("path",{d:"M8.63816 11.35L11.2381 5.5C11.7553 5.5 12.2513 5.70544 12.617 6.07114C12.9827 6.43683 13.1881 6.93282 13.1881 7.44999V10.05H16.8671C17.0555 10.0478 17.2422 10.0867 17.4141 10.1639C17.5861 10.241 17.7392 10.3546 17.8628 10.4969C17.9865 10.6391 18.0777 10.8064 18.1303 10.9874C18.1828 11.1684 18.1954 11.3586 18.1671 11.545L17.2701 17.3949C17.2231 17.7049 17.0656 17.9875 16.8267 18.1905C16.5879 18.3936 16.2836 18.5035 15.9701 18.4999H8.63816M8.63816 11.35V18.4999M8.63816 11.35H6.68818C6.3434 11.35 6.01274 11.4869 5.76894 11.7307C5.52515 11.9745 5.38818 12.3052 5.38818 12.65V17.1999C5.38818 17.5447 5.52515 17.8754 5.76894 18.1192C6.01274 18.363 6.3434 18.4999 6.68818 18.4999H8.63816",stroke:"currentColor",strokeWidth:"1.5",strokeLinecap:"round",strokeLinejoin:"round"}));t(577638)},518522(o,e,t){t.d(e,{I:()=>w,_:()=>R});var i=t(745975),d=t(647560),n=t(369027),s=t(232308),a=t(243494),l=t(625421),r=t(379396),u=t(924189);let m={},c=(0,a.J1)`
+    mutation ConsolidatedAddEditZoomInstructionToVideo($input: AddEditZoomInstructionToVideoInput!) {
+  addEditZoomInstructionToVideo(input: $input) {
+    __typename
+    ... on AddEditZoomInstructionToVideoPayload {
+      video {
+        ...ConsolidatedEditZoomInstructions
+        ...ConsolidatedEditVideoPreview
+      }
+      zoomId
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+    ... on GenericError {
+      message
+    }
+    ... on InvalidRequestWarning {
+      message
+    }
+  }
+}
+    ${l.Yw}
+${r.Ft}`,I={},p=(0,a.J1)`
+    mutation ConsolidatedEditAddAutoZoomsToVideo($videoId: ID!) {
+  addAutoZoomsToVideo(videoId: $videoId) {
+    __typename
+    ... on AddAutoZoomsToVideoPayload {
+      video {
+        ...ConsolidatedEditZoomInstructions
+        ...ConsolidatedEditVideoPreview
+      }
+      numberOfZoomsAdded
+    }
+  }
+}
+    ${l.Yw}
+${r.Ft}`,E={},_=(0,a.J1)`
+    mutation ConsolidatedRemoveAllEditZoomInstructions($videoId: ID!) {
+  removeAllEditZoomInstructions(videoId: $videoId) {
+    __typename
+    ... on RemoveAllEditZoomInstructionsPayload {
+      video {
+        ...ConsolidatedEditZoomInstructions
+        ...ConsolidatedEditVideoPreview
+      }
+    }
+    ... on GenericError {
+      message
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+  }
+}
+    ${l.Yw}
+${r.Ft}`,C={},v=(0,a.J1)`
+    mutation ConsolidateEditZoomInstructionRemovalByVideoId($input: RemoveEditZoomInstructionInput!) {
+  removeEditZoomInstruction(input: $input) {
+    ... on RemoveEditZoomInstructionPayload {
+      video {
+        ...ConsolidatedEditZoomInstructions
+        ...ConsolidatedEditVideoPreview
+      }
+    }
+    ... on GenericError {
+      message
+    }
+    ... on UserNotAuthorizedError {
+      message
+    }
+  }
+}
+    ${l.Yw}
+${r.Ft}`;var A=t(268712);let T={},g=(0,a.J1)`
+    query ConsolidatedEditZoomInstructionsData($videoId: ID!, $password: String) {
+  getVideo(id: $videoId, password: $password) {
+    ... on RegularUserVideo {
+      ...ConsolidatedEditZoomInstructions
+      ...ConsolidatedEditVideoPreview
+    }
+  }
+}
+    ${l.Yw}
+${r.Ft}`;var Z=t(68522),V=t(343332),y=t(624687),b=t(23343);let R=()=>{let o=(0,b.s1)(Z.TX),e=(0,y.lo)({flag:V.Y0.ZOOM_TO_CLICK,controlType:V.mD.STATSIG_FEATURE_GATE,activationValues:[!0],eligibilityPreCheckFunction:()=>o?{pass:!0}:{pass:!1,failReason:"ineligible"}}),t=(0,y.lo)({flag:V.Rv.CAM_SPLIT_WITH_AUTO_ZOOM_AND_LOCATION_PICKER,controlType:V.mD.STATSIG_EXPERIMENT,activationValues:[V.ZD.VARIANT,V.ZD.VARIANT_EXCLUDED],eligibilityPreCheckFunction:()=>o?{pass:!0}:{pass:!1,failReason:"ineligible"}});return{hasEditZoomInstructionsAccess:o,isLoomZoomToClickEnabled:e||t}},w=o=>{var e,t;let a,l,r,Z,V,[y,b]=(0,i.useState)(!1),[w,f]=(0,i.useState)(null),{hasEditZoomInstructionsAccess:P,isLoomZoomToClickEnabled:k}=R(),{password:h}=(0,s.l)(),{data:D,loading:$}=(e={variables:{videoId:o,password:h},skip:!P||!k},a={...T,...e},A.IT(g,a)),[L]=(l={...C,...void 0},u.n(v,l)),[M]=(r={...E,...void 0},u.n(_,r)),[O,{loading:U,data:N}]=(Z={...I,...void 0},u.n(p,Z)),[S]=(t={onCompleted:o=>{o?.addEditZoomInstructionToVideo?.__typename!=="AddEditZoomInstructionToVideoPayload"?b(!0):(f(o.addEditZoomInstructionToVideo.zoomId),b(!1))}},V={...m,...t},u.n(c,V)),F=(0,i.useMemo)(()=>N?.addAutoZoomsToVideo?.__typename!=="AddAutoZoomsToVideoPayload"?null:N.addAutoZoomsToVideo.numberOfZoomsAdded,[N]),{zooms:q,supportsEditZoomInstructions:H}=(0,i.useMemo)(()=>{if(D?.getVideo?.__typename!=="RegularUserVideo")return{zooms:[],supportsEditZoomInstructions:!1};let o=D.getVideo.supportsEditZoomInstructions;return{zooms:o?D.getVideo.editZoomInstructions:[],supportsEditZoomInstructions:o}},[D]),G=(0,i.useMemo)(()=>D?.getVideo?.__typename!=="RegularUserVideo"?null:D.getVideo.editPreview,[D]),Y=(0,i.useMemo)(()=>D?.getVideo?.__typename!=="RegularUserVideo"?[]:D.getVideo.clips,[D]),z=(0,i.useCallback)(e=>{L({variables:{input:{videoId:o,zoomId:e}},optimisticResponse:{__typename:"Mutation",removeEditZoomInstruction:{__typename:"RemoveEditZoomInstructionPayload",video:{__typename:"RegularUserVideo",id:o,editZoomInstructions:q.filter(o=>o.id!==e),editPreview:G,clips:Y,supportsEditZoomInstructions:H}}}})},[L,o,q,H,G,Y]),W=(0,i.useCallback)(()=>{let e=(0,n.cL)({task:n.ZU.RemoveAllZooms,feature:d.T.VideoZooms,videoId:o});M({variables:{videoId:o},optimisticResponse:{__typename:"Mutation",removeAllEditZoomInstructions:{__typename:"RemoveAllEditZoomInstructionsPayload",video:{__typename:"RegularUserVideo",id:o,editZoomInstructions:[],editPreview:G,clips:Y,supportsEditZoomInstructions:H}}},onCompleted:o=>{o?.removeAllEditZoomInstructions?.__typename!=="RemoveAllEditZoomInstructionsPayload"?(b(!0),(0,n.qq)({taskId:e})):(b(!1),(0,n.FH)({taskId:e}))},onError:()=>{b(!0),(0,n.qq)({taskId:e})}})},[M,o,G,Y,H]),J=(0,i.useCallback)(()=>{let e=(0,n.cL)({task:n.ZU.AddAutoZooms,feature:d.T.VideoZooms,videoId:o});O({variables:{videoId:o},onCompleted:o=>{o?.addAutoZoomsToVideo?.__typename!=="AddAutoZoomsToVideoPayload"?(b(!0),(0,n.qq)({taskId:e})):(b(!1),(0,n.FH)({taskId:e}))},onError:()=>{b(!0),(0,n.qq)({taskId:e})}})},[O,o]),X=(0,i.useCallback)(o=>{S({variables:{input:o}})},[S]),x=(0,i.useCallback)(()=>{null!==w&&z(w)},[w,z]);return{zooms:q,supportsEditZoomInstructions:H,isZoomQueryLoading:$,removeZoomById:z,removeAllZooms:W,addAutoZoomsToVideo:J,addZoomToVideo:X,isAddAutoZoomsToVideoLoading:U,hadErrorInRemovingOrAddingAutoZooms:y,numberOfZoomsAdded:F,deleteRecentlyCreatedZoom:x}}},688246(o,e,t){var i=t(68522),d=t(343332),n=t(624687),s=t(23343);t.d(e,{},{t:()=>{let o=(0,s.s1)(i.Oc),e=(0,n.lo)({flag:d.Y0.LOOM_CAM_LOCATION_PICKER,controlType:d.mD.STATSIG_FEATURE_GATE,activationValues:[!0],eligibilityPreCheckFunction:()=>o?{pass:!0}:{pass:!1,failReason:"ineligible"}}),t=(0,n.lo)({flag:d.Rv.CAM_SPLIT_WITH_AUTO_ZOOM_AND_LOCATION_PICKER,controlType:d.mD.STATSIG_EXPERIMENT,activationValues:[d.ZD.VARIANT,d.ZD.VARIANT_EXCLUDED],eligibilityPreCheckFunction:()=>o?{pass:!0}:{pass:!1,failReason:"ineligible"}});return e||t}})}}]);
+//# sourceMappingURL=https://cdn.loom.com/internal-public/webapp-sourcemaps/js/98079-65c04f6858c2cad9.js.map
